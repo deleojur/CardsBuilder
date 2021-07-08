@@ -228,14 +228,14 @@ MonoBehaviour:
       m_Width: 256
       m_Height: 256
       m_HorizontalBearingX: 0
-      m_HorizontalBearingY: 230
+      m_HorizontalBearingY: 200
       m_HorizontalAdvance: 256
     m_GlyphRect:
       m_X: 768
       m_Y: 512
       m_Width: 256
       m_Height: 256
-    m_Scale: 1.6
+    m_Scale: 2
     m_AtlasIndex: 0
     sprite: {fileID: 5267262571336107739, guid: 803cb485f984aa74bb56cfc5a4c34939,
       type: 3}
@@ -244,14 +244,14 @@ MonoBehaviour:
       m_Width: 256
       m_Height: 256
       m_HorizontalBearingX: 0
-      m_HorizontalBearingY: 230
+      m_HorizontalBearingY: 200
       m_HorizontalAdvance: 256
     m_GlyphRect:
       m_X: 0
       m_Y: 256
       m_Width: 256
       m_Height: 256
-    m_Scale: 1.6
+    m_Scale: 2
     m_AtlasIndex: 0
     sprite: {fileID: -2295200638971006390, guid: 803cb485f984aa74bb56cfc5a4c34939,
       type: 3}
@@ -260,14 +260,14 @@ MonoBehaviour:
       m_Width: 256
       m_Height: 256
       m_HorizontalBearingX: 0
-      m_HorizontalBearingY: 230
+      m_HorizontalBearingY: 200
       m_HorizontalAdvance: 256
     m_GlyphRect:
       m_X: 256
       m_Y: 256
       m_Width: 256
       m_Height: 256
-    m_Scale: 1.6
+    m_Scale: 2
     m_AtlasIndex: 0
     sprite: {fileID: 3046974494637172782, guid: 803cb485f984aa74bb56cfc5a4c34939,
       type: 3}
@@ -276,14 +276,14 @@ MonoBehaviour:
       m_Width: 256
       m_Height: 256
       m_HorizontalBearingX: 0
-      m_HorizontalBearingY: 230
+      m_HorizontalBearingY: 200
       m_HorizontalAdvance: 256
     m_GlyphRect:
       m_X: 512
       m_Y: 256
       m_Width: 256
       m_Height: 256
-    m_Scale: 1.6
+    m_Scale: 2
     m_AtlasIndex: 0
     sprite: {fileID: 5334563011350838855, guid: 803cb485f984aa74bb56cfc5a4c34939,
       type: 3}
@@ -292,14 +292,14 @@ MonoBehaviour:
       m_Width: 256
       m_Height: 256
       m_HorizontalBearingX: 0
-      m_HorizontalBearingY: 230
+      m_HorizontalBearingY: 200
       m_HorizontalAdvance: 256
     m_GlyphRect:
       m_X: 768
       m_Y: 256
       m_Width: 256
       m_Height: 256
-    m_Scale: 1.6
+    m_Scale: 2
     m_AtlasIndex: 0
     sprite: {fileID: 3848940562769508745, guid: 803cb485f984aa74bb56cfc5a4c34939,
       type: 3}

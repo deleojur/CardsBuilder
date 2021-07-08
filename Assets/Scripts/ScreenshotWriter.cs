@@ -12,11 +12,14 @@ public class ScreenshotWriter : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        width = System.Convert.ToInt32(rectT.rect.width);
-        height = System.Convert.ToInt32(rectT.rect.height);
+        if (rectT != null)
+        {
+            width = Convert.ToInt32(rectT.rect.width);
+            height = Convert.ToInt32(rectT.rect.height);
+        }
     }
 
-    private IEnumerator TakeScreenshot()
+    private IEnumerator YieldAndTakeScreenshot(string name)
     {
         yield return new WaitForEndOfFrame(); // it must be a coroutine 
 
@@ -32,14 +35,11 @@ public class ScreenshotWriter : MonoBehaviour
         var bytes = tex.EncodeToPNG();
         Destroy(tex);
 
-        File.WriteAllBytes(Application.dataPath + "/ScreenShot.png", bytes);
+        File.WriteAllBytes(string.Format("{0}/Screenshots/{1}.png", Application.dataPath, name), bytes);
     }
 
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartCoroutine(TakeScreenshot());
-        }
+    public void MakeScreenshot(string name)
+    {        
+        StartCoroutine(YieldAndTakeScreenshot(name));        
     }
 }

@@ -1,9 +1,9 @@
-"cards": 
+{
+	"cards": 
 	[
 		{
 			"title": "Warehouse",
 			"backgroundUrl": "assets/cards/background/construction.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
 			"type": "construct",
 			"faction": ["Science", "Barter"],
 			"amount":3,
@@ -3433,3 +3433,4 @@
 			"amount":3
 		}
 	]
+}

@@ -11,6 +11,7 @@ namespace Json
     public class JsonSerializer : MonoBehaviour
     {
         private Cards cards;
+        private ResourceSort resourceSort;
 
         [SerializeField]
         private TextAsset JSONCards;
@@ -22,19 +23,22 @@ namespace Json
         private TextMeshProUGUI title;
 
         [SerializeField]
-        private RectTransform factionPanel_1;
+        private RectTransform guildPanel_1;
 
         [SerializeField]
-        private RectTransform factionPanel_2;
+        private RectTransform guildPanel_2;
 
         [SerializeField]
-        private Image faction_1;
+        private Image guild_1;
 
         [SerializeField]
-        private Image[] faction_2;
+        private Image[] guild_2;
 
         [SerializeField]
         private TextMeshProUGUI description;
+
+        [SerializeField]
+        private TextMeshProUGUI flavor;
 
         [SerializeField]
         private RectTransform resourcesPanel;
@@ -56,40 +60,65 @@ namespace Json
 
         private void Awake()
         {
+            resourceSort = new ResourceSort();
             cards = JsonUtility.FromJson<Cards>(JSONCards.text);
-            CreateCard(cards.cards[0]);
-            screenshotWriter.MakeScreenshot(cards.cards[0].title);
+            StartCoroutine(YieldAndBuildCards());
+        }
+
+        private IEnumerator YieldAndBuildCards()
+        {            
+            for (int i = 0; i < cards.cards.Length; i++)
+            {
+                yield return new WaitForEndOfFrame();
+
+                CreateCard(cards.cards[i]);
+                screenshotWriter.MakeScreenshot(cards.cards[i]);
+            }
         }
 
         private void CreateCard(Card card)
         {
-            background.sprite = LoadSprite(card.backgroundUrl);
-            type.sprite = LoadSprite(card.typeUrl);
+            background.sprite = LoadSprite(string.Format("Background/{0}.png", card.background.ToLower()));
+            type.sprite = LoadSprite(string.Format("Types/{0}.png", card.type.ToLower()));
             title.text = card.title;
             description.text = card.description;
+            description.fontSize = card.descriptionFontSize > 0 ? card.descriptionFontSize : 22;
 
-            CreateFactions(card);
+            if (card.flavor != null)
+            {
+                flavor.gameObject.SetActive(true);
+                flavor.text = card.flavor;
+            }
+            else flavor.gameObject.SetActive(false);
+            
+
+            CreateGuilds(card);
             CreateTier(card);
             CreateResources(card);
         }
 
-        private void CreateFactions(Card card)
+        private void CreateGuilds(Card card)
         {
-            if (card.faction.Length == 1)
+            if (card.guilds.Length == 0)
             {
-                factionPanel_1.gameObject.SetActive(true);
-                factionPanel_2.gameObject.SetActive(false);
-
-                faction_1.sprite = LoadSprite(card.faction[0]);
+                guildPanel_1.gameObject.SetActive(false);
+                guildPanel_2.gameObject.SetActive(false);
             }
-            else if (card.faction.Length == 2)
+            else if (card.guilds.Length == 1)
             {
-                factionPanel_1.gameObject.SetActive(false);
-                factionPanel_2.gameObject.SetActive(true);
+                guildPanel_1.gameObject.SetActive(true);
+                guildPanel_2.gameObject.SetActive(false);
 
-                for (int i = 0; i < card.faction.Length; i++)
+                guild_1.sprite = LoadSprite(string.Format("Guilds/{0}.png", card.guilds[0].ToLower()));
+            }
+            else if (card.guilds.Length == 2)
+            {
+                guildPanel_1.gameObject.SetActive(false);
+                guildPanel_2.gameObject.SetActive(true);
+
+                for (int i = 0; i < card.guilds.Length; i++)
                 {
-                    faction_2[i].sprite = LoadSprite(card.faction[i]);
+                    guild_2[i].sprite = LoadSprite(string.Format("Guilds/{0}.png", card.guilds[i].ToLower()));
                 }
             }
         }
@@ -109,6 +138,8 @@ namespace Json
 
         private void CreateResources(Card card)
         {
+            Array.Sort(card.cost, resourceSort);
+
             for (int i = 0; i < 4; i++)
             {
                 try
@@ -116,7 +147,7 @@ namespace Json
                     Resource resource = card.cost[i];
                     resources[i].gameObject.SetActive(true);
 
-                    resources[i].SetImageAndAmound(LoadSprite(resource.typeUrl), resource.amount);
+                    resources[i].SetImageAndAmound(LoadSprite(string.Format("Resources/{0}.png", resource.type.ToLower())), resource.amount);
                 }
                 catch (IndexOutOfRangeException)
                 {

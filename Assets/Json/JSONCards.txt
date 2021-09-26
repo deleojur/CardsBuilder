@@ -1,13 +1,12 @@
 {
-	"cards": 
+	"cards":
 	[
 		{
 			"title": "Warehouse",
-			"backgroundUrl": "assets/cards/background/construction.png",
-			"type": "construct",
-			"faction": ["Science", "Barter"],
-			"amount":3,
-			"description": "For as long as your {guild_science} or {guild_barter} member is on the warehouse, whenever you visit a basic {food} or {sheep} tile, you gain +1 {any}.",
+			"background": "building",
+			"type": "building",
+			"guilds": ["shadow", "Barter"],
+			"description": "While you occupy the Warehouse, whenever you resolve a basic <sprite=1> or <sprite=5> tile, you gain 1 <sprite=0>.",			
 			"cost": 
 			[
 				{
@@ -25,18 +24,34 @@
 			]
 		},
 		{
+			"title": "Bastion",
+			"background": "building",
+			"type": "building",
+			"guilds": ["battle"],
+			"description": "You may make an additional placement action from one basic tile you occupy to two other basic tiles. Other placement rules still apply",
+			"cost": 
+			[				
+				{
+					"type": "food",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
+					"amount": 2
+				}
+			]
+		},
+		{
 			"title": "Tailor",
-			"backgroundUrl": "assets/cards/background/construction.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "construct",			
-			"faction": ["Barter"],
-			"amount": 3,
-			"description": "Gain 1 {wool}.",
+			"background": "Building",
+			"type": "building",			
+			"guilds": ["Barter"],
+			"description": "Choose one:\n<indent=25px>\u2022 Gain 1 <sprite=6>.\n<indent=25px>\u2022 Pay 2 <sprite=4> to gain 2 <sprite=6>.",
 			"cost": 
 			[
 				{
 					"type": "gold",
-					"amount": 3
+					"amount": 2
 				},
 				{
 					"type": "food",
@@ -46,72 +61,65 @@
 		},
 		{
 			"title": "Jeweler",
-			"backgroundUrl": "assets/cards/background/construction.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "construct",
-			"faction": ["Barter"],			
-			"amount": 3,
-			"description" : "Pay 3 {gold} to gain 2 {gems}.",
+			"background": "Building",
+			"type": "building",			
+			"guilds": ["Barter"],
+			"description": "Pay 3 <sprite=4> to gain 2 <sprite=3>.",
 			"cost": 
 			[
 				{
-					"type": "gold",
-					"amount": 3
+					"type": "wool",
+					"amount": 1
 				},
 				{
-					"type": "wool",
+					"type": "gold",
 					"amount": 1
 				}
 			]
 		},
 		{
 			"title": "Tavern",
-			"backgroundUrl": "assets/cards/background/construction.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "construct",
-			"faction": ["Espionage"],
-			"description": "Appoint another player. As long as your {guild_espionage} member is on the tavern, that player must leave at least 2 commoners on their nation.",
-			"amount": 3,
+			"background": "Building",
+			"type": "building",			
+			"guilds": ["shadow"],
+			"description": "Take a guild <sprite=2> from another player at random and put it into your hand.",
 			"cost": 
 			[
 				{
-					"type": "gold",
-					"amount": 4
-				},
-				{
-					"type": "food",
-					"amount": 3
-				},
-				{
-					"type": "sheep",
+					"type": "wool",
 					"amount": 1
-				}
-			]		
-		},
-		{
-			"title": "Docks",
-			"backgroundUrl": "assets/cards/background/construction.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "construct",
-			"faction": ["Espionage"],
-			"description": "Look at another player's hand.",
-			"amount":3,
-			"cost": 
-			[				
+				},
 				{
-					"type": "sheep",
+					"type": "gold",
 					"amount": 2
 				}
 			]
 		},
 		{
+			"title": "Docks",
+			"background": "Building",
+			"type": "building",			
+			"guilds": ["shadow"],
+			"description": "Return a commoner from Limbo to your village.",
+			"cost": 
+			[
+				{
+					"type": "food",
+					"amount": 2
+					
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
 			"title": "Armory",
-			"backgroundUrl": "assets/cards/background/construction.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "construct",
-			"faction": ["Battle"],
-			"description": "For as long as you {guild_battle} member is on the armory, the strength of all your commoners is increased by 1.",
-			"amount": 3,
+			"background": "Building",
+			"type": "building",			
+			"guilds": ["battle"],
+			"description": "While you occupy the Armory, your commoners gain 1 <sprite=12>.",
 			"cost": 
 			[
 				{
@@ -130,52 +138,32 @@
 		},
 		{
 			"title": "Barracks",
-			"backgroundUrl": "assets/cards/background/construction.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "construct",
-			"faction": ["Battle"],
-			"description": "For as long as your {guild_battle} member is on the barracks, its tier is considered to be +1.",
-			"amount": 3,
+			"background": "Building",
+			"type": "building",			
+			"guilds": ["battle"],
+			"description": "Eliminate a commoner of another player.",
 			"cost": 
 			[
 				{
 					"type": "gold",
+					"amount": 1
+				},
+				{
+					"type": "food",
 					"amount": 2
 				},
 				{
 					"type": "wool",
-					"amount": 2
+					"amount": 1
 				}
 			]
 		},
 		{
 			"title": "Church",
-			"backgroundUrl": "assets/cards/background/construction.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "construct",
-			"faction": ["Celestial"],
-			"description" : "Return all your citizens from a single province to your nation.",
-			"amount": 3,
-			"cost": 
-			[
-				{
-					"type": "gold",
-					"amount": 4
-				},
-				{
-					"type": "food",
-					"amount": 3
-				}
-			]
-		},
-		{
-			"title": "Cemetery",
-			"backgroundUrl": "assets/cards/background/construction.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "construct",
-			"faction": ["Celestial", "Espionage"],
-			"description": "Reactivate a tile that holds one or more of your citizens.",
-			"amount": 3,
+			"background": "Building",
+			"type": "building",			
+			"guilds": ["celestial"],
+			"description": "While you occupy the Church, when citizens under your control are bumped from a basic tile, they share that tile instead.",
 			"cost": 
 			[
 				{
@@ -183,11 +171,21 @@
 					"amount": 2
 				},
 				{
-					"type": "food",
-					"amount": 1
-				},
-				{
 					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Cemetery",
+			"background": "Building",
+			"type": "building",			
+			"guilds": ["shadow", "celestial"],
+			"description": "While you occupy the Cemetery, whenever you place one or more citizens on a basic tile, gain 1 <sprite=4>.",
+			"cost": 
+			[
+				{
+					"type": "food",
 					"amount": 1
 				},
 				{
@@ -198,41 +196,15 @@
 		},
 		{
 			"title": "Barbican",
-			"backgroundUrl": "assets/cards/background/construction.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "construct",
-			"faction": ["Battle", "Espionage"],
-			"description" : "Destroy a commoner on a tile that is in the same province of the barbican.",
-			"amount": 3,
+			"background": "Building",
+			"type": "building",			
+			"guilds": ["battle", "shadow"],
+			"description": "While you occupy the Barbican, whenever you bump another player from a basic tile, eliminate one of their commoners.",
 			"cost": 
 			[
 				{
 					"type": "gold",
 					"amount": 3
-				},
-				{
-					"type": "food",
-					"amount": 3
-				}
-			]
-		},
-		{
-			"title": "Workshop",
-			"backgroundUrl": "assets/cards/background/construction.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "construct",
-			"faction": ["Science"],
-			"description": "For as long as your {guild_science} member is on the workshop, {guild_science} and {construct} cards cost 2 {any} less to play.",
-			"amount": 3,
-			"cost": 
-			[
-				{
-					"type": "gold",
-					"amount": 3
-				},
-				{
-					"type": "food",
-					"amount": 2
 				},
 				{
 					"type": "wool",
@@ -241,171 +213,72 @@
 			]
 		},
 		{
-			"title": "University",
-			"backgroundUrl": "assets/cards/background/construction.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "construct",
-			"faction": ["Science"],
-			"description": "Draw and reveal cards from the guild deck until you draw a {guild_science} card. Take it into your hand and shuffle the rest back into the deck.",
-			"amount": 3,
+			"title": "Altar",
+			"background": "Building",
+			"type": "building",			
+			"guilds": ["celestial"],
+			"description": "Return a commoner you own from Limbo to your village.",
 			"cost": 
 			[
 				{
 					"type": "gold",
-					"amount": 3
+					"amount": 2
 				},
 				{
 					"type": "food",
-					"amount": 3
+					"amount": 1
 				},
 				{
 					"type": "sheep",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Statue",
-			"backgroundUrl": "assets/cards/background/construction.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "construct",
-			"faction": ["Celestial"],
-			"description": "Draw and reveal cards from the guild deck until you draw a {guild_celestial} card. Take it into your hand and shuffle the rest back into the deck.",
-			"amount": 3,
-			"cost": 
-			[
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "wool",
-					"amount": 2
-				}
+					"amount": 1
+				}				
 			]
 		},
 		{
 			"title": "City hall",
-			"backgroundUrl": "assets/cards/background/construction.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "construct",
-			"faction": ["Battle", "Barter"],
-			"description": "Place 3 citizens on the city hall. Target province renounces allegiance to all players and then pledges allegiance to you.",
-			"amount": 3,
+			"background": "Building",
+			"type": "building",			
+			"guilds": ["barter", "shadow"],
+			"description": "Choose a town hall; it renounces all other players. Then, you may gain allegiance from that town hall by placing a commoner from prison there.",
 			"cost": 
 			[
 				{
 					"type": "gold",
-					"amount": 4
-				},
-				{
-					"type": "food",
 					"amount": 2
 				},
 				{
-					"type": "sheep",
+					"type": "gems",
 					"amount": 1
 				}
 			]
 		},
 		{
 			"title": "Theater",
-			"backgroundUrl": "assets/cards/background/construction.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "construct",
-			"faction": ["Science", "Celestial"],
-			"description": "Gain 1 {gold} for every commoner on the theater. They return to your nation before the season ends.",
-			"amount": 3,
+			"background": "Building",
+			"type": "building",			
+			"guilds": ["barter", "celestial"],
+			"description": "Gain 1 <sprite=0> for every commoner you own on the theater.",
 			"cost": 
 			[
-				{
-					"type": "food",
-					"amount": 2
-				},
 				{
 					"type": "wool",
 					"amount": 2
+				},
+				{
+					"type": "food",
+					"amount": 1
 				}
 			]
 		},
 		{
 			"title": "Lay siege",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"background": "Battle",
 			"type": "action_immediate",
-			"faction": ["Battle"],
-			"description" : "Citizens of target player cannot leave their nation this season.",
-			"amount": 3,
+			"guilds": ["battle"],
+			"description": "Citizens of a chosen player cannot leave their village this season.",
 			"tier": 1,
 			"cost": 
 			[
-				{
-					"type": "food",
-					"amount": 3
-				}
-			]
-		},
-		{
-			"title": "Lay siege",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Battle"],
-			"description" : "Citizens of target player cannot leave their nation this season and cannot perform the gain {food} action at the end of the year.",
-			"amount": 3,
-			"tier": 2,
-			"cost": 
-			[
-				{
-					"type": "food",
-					"amount": 3
-				},
-				{
-					"type": "sheep",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Lay siege",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Battle"],
-			"description" : "Citizens of target player cannot leave their nation this season and cannot perform the gain {food}, gain {gold} or convert {sheep} to {wool} action at the end of the year.",
-			"amount": 3,
-			"tier": 3,
-			"cost": 
-			[
-				{
-					"type": "food",
-					"amount": 3
-				},
-				{
-					"type": "sheep",
-					"amount": 1
-				},
-				{
-					"type": "wool",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Brutish fervor",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Battle"],
-			"description": "Destroy 1 commoner of another player.",
-			"amount": 3,
-			"tier": 1,
-			"cost": 
-			[
-				{
-					"type": "gold",
-					"amount": 2
-				},
 				{
 					"type": "food",
 					"amount": 2
@@ -414,131 +287,50 @@
 		},
 		{
 			"title": "Brutish fervor",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"background": "Battle",
 			"type": "action_immediate",
-			"faction": ["Battle"],
-			"description": "Choose one:<br/> <ul><li/>Destroy up to 2 commoners divided over up to two players.<li/>Destroy 1 tier 1 guild member.</ul>",
-			"amount": 3,
-			"tier": 2,
-			"cost": 
-			[
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Brutish fervor",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Battle"],
-			"description": "Choose one:<br/> <ul><li/>Destroy up to 3 commoners divided over up to 3 players.<li/>Destroy 1 tier 3 or lower guild member.</ul>",
-			"amount": 3,
-			"tier": 3,
-			"cost": 
-			[
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
-					"amount": 2
-				},
-				{
-					"type": "wool",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Demolish",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Battle"],
-			"description": "Destroy 1 structure or invention.",
-			"amount":3,
+			"guilds": ["battle"],
+			"description": "Eliminate 1 commoner and place another in jail.",
 			"tier": 1,
 			"cost": 
 			[
 				{
 					"type": "gold",
-					"amount": 4
+					"amount": 3
 				}
 			]
 		},
 		{
 			"title": "Demolish",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"background": "Battle",
 			"type": "action_immediate",
-			"faction": ["Battle"],
-			"description": "Destroy 1 structure or invention. Its owner pays you 2 {any}.",
-			"amount":3,
-			"tier": 2,
+			"guilds": ["battle"],
+			"description": "Choose one:\n<indent=25px>\u2022 Destroy 1 chosen building.\n<indent=25px>\u2022 Send two commoners to prison.\n<indent=25px>\u2022 Chosen town hall denounces all players.",
+			"tier": 1,
 			"cost": 
 			[
 				{
 					"type": "gold",
-					"amount": 4
+					"amount": 2
 				},
 				{
-					"type": "sheep",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Demolish",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Battle"],
-			"description": "Destroy 1 structure or invention. Any citizens on the same tile are also destroyed.<br/>Its owner pays you 2 {any}.",
-			"amount":3,
-			"tier": 3,
-			"cost": 
-			[
-				{
-					"type": "gold",
-					"amount": 4
-				},
-				{
-					"type": "sheep",
+					"type": "food",
 					"amount": 1
 				}
 			]
 		},
 		{
 			"title": "Occupy",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"background": "Battle",
 			"type": "action_immediate",
-			"faction": ["Battle"],			
-			"description": "Choose a province. It cannot be used by other players this season. You may use it during this season.",
-			"amount":3,
+			"guilds": ["battle"],
+			"description": "Choose a province. Other players may not visit that province this season.",
 			"tier": 1,
 			"cost": 
 			[
 				{
 					"type": "food",
-					"amount": 3
+					"amount": 1
 				},
 				{
 					"type": "sheep",
@@ -547,67 +339,17 @@
 			]
 		},
 		{
-			"title": "Occupy",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"title": "Murder",
+			"background": "Battle",
 			"type": "action_immediate",
-			"faction": ["Battle"],			
-			"description": "Choose a province. It cannot be used by other players this season. You may use it during this season. Players that have one or more citizens on said province discard 1 {card}.",
-			"amount":3,
-			"tier": 2,
-			"cost": 
-			[
-				{
-					"type": "sheep",
-					"amount": 3
-				}
-			]
-		},
-		{
-			"title": "Occupy",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Battle"],			
-			"description": "Choose a province. It denounces all players and pledge allegiance to you. Players that have one or more citizens on said province destroy 1 commoner and discard<br/>1 {card}.",
-			"amount":3,
-			"tier": 3,
-			"cost": 
-			[
-				{
-					"type": "sheep",
-					"amount": 3
-				},
-				{
-					"type": "wool",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Wage war",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Battle"],
-			"description":"Sacrifice <i>X</i> commoners and destroy <i>X</i> commoners divided among up to two players.",
-			"amount": 3,
-			"tier" : 1
-		},
-		{
-			"title": "Wage war",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Battle"],
-			"description":"Sacrifice <i>X</i> (at least 1) commoners. Then choose one or both:<br/><ul><li/>For every commoner sacrificed this way, destroy 1 commoner divided among up to three players.<li/>For every 2 commoners sacrificed this way, destroy 1 tier 1 guild member of target player.</ul>",
-			"amount": 3,
-			"tier" : 2,
+			"guilds": ["battle"],
+			"description": "Send <i>X</i> commoners to prison. Then eliminate <i>X</i> commoners divided among up to two chosen players.",
+			"tier": 1,
 			"cost": 
 			[
 				{
 					"type": "gold",
-					"amount": 2
+					"amount": 3
 				},
 				{
 					"type": "food",
@@ -616,34 +358,26 @@
 			]
 		},
 		{
-			"title": "Wage war",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Battle"],
-			"description":"Sacrifice <i>X</i> (at least 1) commoners. Then choose one or both:<br/><ul><li/>Destroy <i>X + 1</i> commoners divided among up to three players.<li/>Destroy one tier 3 or lower guild member of target player.</ul>",
-			"amount": 3,
-			"tier" : 3,
+			"title": "Battlecry",
+			"background": "Battle",
+			"type": "action_trigger",
+			"guilds": ["battle"],
+			"description": "<b>You may play this card in another player's turn.</b>\n\nIncrease the <sprite=12> of your citizens by 1 until the end of turn.",
+			"tier": 1,
 			"cost": 
-			[
+			[				
 				{
 					"type": "gold",
-					"amount": 4
-				},
-				{
-					"type": "food",
-					"amount": 3
+					"amount": 2
 				}
 			]
 		},
 		{
 			"title": "Riot",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"background": "Battle",
 			"type": "action_immediate",
-			"faction": ["Battle"],
-			"description": "Choose one:<br/> <ul><li/>Destroy a commoner.<li/>Destroy a tier 1 invention.</ul>",
-			"amount": 3,
+			"guilds": ["battle"],
+			"description": "Choose one:\n<indent=25px>\u2022 Eliminate a commoner.</indent>\n<indent=25px>\u2022 Destroy a tier 1 invention.</indent>\n<indent=25px>\u2022 Destroy a building.</indent>",
 			"tier": 1,
 			"cost": 
 			[
@@ -652,134 +386,19 @@
 					"amount": 2
 				},
 				{
-					"type": "food",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Riot",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Battle"],
-			"description": "Choose one:<br/> <ul><li/>Destroy 2 commoners.<li/>Destroy a tier 2 invention.<li/>Destroy a structure.</ul>",
-			"amount": 3,
-			"tier": 2,
-			"cost": 
-			[
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
 					"type": "sheep",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Riot",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Battle"],
-			"description": "Choose two:<br/> <ul><li/>Destroy a tier 3 or lower guild member.<li/>Destroy a tier 3 invention.<li/>Destroy 3 commoners divided among up to 3 players.<li/>Destroy a structure.</ul>",
-			"amount": 3,
-			"tier": 3,
-			"cost": 
-			[
-				{
-					"type": "sheep",
-					"amount": 2
-				},
-				{
-					"type": "wool",
-					"amount": 1
-				},
-				{
-					"type": "gems",
 					"amount": 1
 				}
 			]
 		},
 		{
 			"title": "Pillage",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"background": "Battle",
 			"type": "action_immediate",
-			"faction": ["Battle"],
-			"description": "Whenever you gain {gold} this season from a tile other than your nation, take that much {gold} from another player instead of from the general supply. You may name different players each time you place a citizen on such tile.",
-			"amount": 3,
+			"guilds": ["battle"],
+			"description": "Whenever you gain <sprite=4> from a basic <sprite=4> tile, you may take it from a chosen player instead of the general supply. You may choose different players each time you resolve a tile like this.",
 			"tier": 1,
-			"cost":
-			[
-				{
-					"type": "gold",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Pillage",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Battle"],
-			"description": "Whenever you gain {gold} or {food} this season from a tile other than your nation, take that much {gold} or {food} from another player instead of the general supply. You may name a different player each time you place a citizen on such tile.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "wool",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Pillage",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Battle"],
-			"description": "Whenever you gain {any} this season from a tile other than your nation, take that much {any} from another player instead of from the general supply. Whenever you move to a {card} tile, take 1 {card} from another player at random. You may name a different player each time you place a citizen on such tile.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "wool",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Rampage",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/spy.png",
-			"type": "action_immediate",
-			"faction": ["Battle"],
-			"description": "Appoint a province. Destroy an enemy commoner in every tile of that province that was placed there this season.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
+			"cost": 
 			[
 				{
 					"type": "gold",
@@ -789,138 +408,28 @@
 		},
 		{
 			"title": "Rampage",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/spy.png",
+			"background": "Battle",
 			"type": "action_immediate",
-			"faction": ["Battle"],
-			"description": "Appoint a province. Destroy every enemy commoner in that province that was placed there this season.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Rampage",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/spy.png",
-			"type": "action_immediate",
-			"faction": ["Battle"],
-			"description": "Appoint a province. Destroy every enemy citizen in that province.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[
-				{
-					"type": "gold",
-					"amount": 4
-				},
-				{
-					"type": "sheep",
-					"amount": 2
-				},
-				{
-					"type": "gems",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Ambush",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_concealed",
-			"faction": ["Battle"],
-			"description": "When another player moves any of their citizens to a tile you are on, destroy one of their commoners committed to that tile before the move action resolves.",
-			"amount": 3, 
-			"tier": 1			
-		},
-		{
-			"title": "Ambush",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_concealed",
-			"faction": ["Battle"],
-			"description": "When another player moves any of their citizens to a tile you are on, destroy up to two of their commoners committed to that tile before the move action resolves.",
-			"amount": 3, 
-			"tier": 2,
-			"cost":
-			[
-				{
-					"type": "food",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Ambush",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_concealed",
-			"faction": ["Battle"],
-			"description": "When another player moves any of their citizens to a tile you are on, destroy all those citizens before the move action resolves.",
-			"amount": 3, 
-			"tier": 3,
-			"cost":
-			[
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "wool",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Overthrow",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_counter",
-			"faction": ["Battle"],
-			"description": "When target player promotes a commoner, immediately destroy it.",
-			"amount": 3,
+			"guilds": ["battle"],
+			"description": "Eliminate 1 commoner in all tiles of a province.",
 			"tier": 1,
-			"cost":
+			"cost": 
 			[
 				{
-					"type": "gold",
+					"type": "sheep",
 					"amount": 2
-				},
-				{
-					"type": "food",
-					"amount": 1
 				}
 			]
 		},
 		{
-			"title": "Overthrow",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_counter",
-			"faction": ["Battle"],
-			"description": "When target player promotes a tier 1 guild member to a tier 2 guild member, immediately destroy it.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
+			"title": "Ambush",
+			"background": "Battle",
+			"type": "action_trigger",
+			"guilds": ["battle"],
+			"description": "<b>Play this card only when a player declares a placement action on a basic tile you occupy.</b>\n\nEliminate one of their commoners before the move action resolves.",
+			"tier": 1,
+			"cost": 
 			[
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "food",
-					"amount": 3
-				},
 				{
 					"type": "sheep",
 					"amount": 1
@@ -929,1022 +438,275 @@
 		},
 		{
 			"title": "Overthrow",
-			"backgroundUrl": "assets/cards/background/battle.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_counter",
-			"faction": ["Battle"],
-			"description": "When a player promotes a tier 2 guild member to a tier 3 guild member, immediately destroy that guild member. You may then destroy another guild member of that type.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
+			"background": "Battle",
+			"type": "action_trigger",
+			"guilds": ["battle"],
+			"description": "<b>Play this card only when a player promotes a commoner.</b>\n\nThat commoner does not promote and is send to prison.",
+			"tier": 2,
+			"cost": 
 			[
 				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
 					"type": "gold",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Total destruction",
+			"background": "Battle",
+			"type": "action_immediate",
+			"guilds": ["battle"],
+			"description": "Choose two:\n<indent=25px>\u2022 Eliminate two commoners.</indent>\n<indent=25px>\u2022 Eliminate a tier 1 guild member.</indent>\n<indent=25px>\u2022 Destroy a building.</indent>",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 3
+				},
+				{
+					"type": "gems",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Ruthless tactics",
+			"background": "Battle",
+			"type": "action_trigger",
+			"guilds": ["battle"],
+			"description": "<b>Play this card only after you bumped another player from a basic tile.</b>\n\nSend the citizens on that tile to Limbo instead of prison.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Capitulate",
+			"background": "Battle",
+			"type": "action_immediate",
+			"guilds": ["battle"],
+			"description": "Return a commoner from a chosen province to its owner's stockpile. Then replace it with a commoner from your own stockpile.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "sheep",
+					"amount": 1
+				},
+				{
+					"type": "gold",
+					"amount": 3
+				}
+			]
+		},
+		{
+			"title": "Insult the fallen",
+			"background": "Battle",
+			"type": "action_trigger",
+			"guilds": ["battle"],
+			"description": "<b>You may play this card in another player's turn.</b>\n\nReturn up to two commoners from prison and/or Limbo to their owner's stockpile.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				},
+				{
+					"type": "gems",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Uproar",
+			"background": "Battle",
+			"type": "action_immediate",
+			"guilds": ["battle"],
+			"description": "Choose two:\n<indent=25px>\u2022 Eliminate a tier 2 or lower guild member.</indent>\n<indent=25px>\u2022 Eliminate two commoners.</indent>\n<indent=25px>\u2022 Send two citizens to prison.</indent>\n<indent=25px>\u2022 Destroy a building.</indent>",
+			"tier": 3,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
 					"amount": 2
 				},
 				{
 					"type": "food",
-					"amount": 4
-				},
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Obliteration",
+			"background": "Battle",
+			"type": "action_immediate",
+			"guilds": ["battle"],
+			"description": "Choose a province. Eliminate all commoners in that province and send all guild members to prison from that province.",
+			"tier": 3,
+			"cost": 
+			[
 				{
-					"type": "sheep",
+					"type": "wool",
 					"amount": 2
 				},
 				{
-					"type": "gems",
-					"amount": 1
+					"type": "gold",
+					"amount": 3
 				}
 			]
 		},
 		{
-			"title": "Raid",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"title": "Rally the meek",
+			"background": "Battle",
 			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "Another player discards 1 {card}.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
+			"guilds": ["battle"],
+			"description": "Send two commoners from your stockpile to prison. Then promote one to a soldier.",
+			"tier": 3,
+			"cost": 
 			[
 				{
-					"type": "sheep",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Raid",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "Steal 1 {card} from another player at random. Then they discard 1 {card}.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "sheep",
-					"amount": 1
-				},
-				{
 					"type": "wool",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Raid",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "Look at another player's hand. Then choose two: <ul><li/>Choose 2 {card} to discard.<li/>Steal 1 {card}.<li/>Destroy any tier 2 or lower guild member of that player.</ul>",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[				
+					"amount": 2
+				},
 				{
 					"type": "sheep",
-					"amount": 1
-				},
-				{
-					"type": "wool",
-					"amount": 1
-				},
-				{
-					"type": "gems",
 					"amount": 1
 				}
 			]
 		},
 		{
 			"title": "Spy",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"background": "shadow",
 			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "Look at another player's hand.",
-			"amount": 3,
-			"tier": 1			
-		},
-		{
-			"title": "Spy",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "Look at another player's hand. Choose 1 {card} and discard it.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "food",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Spy",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "Look at another player's hand. Choose up to 3 {card} and discard them.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Infiltrate",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "Another player’s move actions do not resolve this season.",
-			"amount": 3,
+			"guilds": ["shadow"],
+			"description": "Look at another player's hand. Choose a <sprite=2> and discard it.",
 			"tier": 1,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Infiltrate",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "Another player's move actions and cards played don't resolve this season.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Infiltrate",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "Another player's move actions don't resolve this season. Then look at their hand and choose one: <ul><li/>Steal 1 {card}.<li/>Discard 2 {card}.</ul>",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 3
-				},
-				{
-					"type": "sheep",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Abduct",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "Target player’s move action doesn’t resolve unless they pay you 2 {gold} for each commoner they wish to move.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
+			"cost": 
 			[
-				{
-					"type": "gold",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Abduct",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "Take 2 commoners from target player. At the end of the year, they either pay you 6 {gold} or you gain control of those commoners.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "food",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Abduct",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "Take a tier 3 or lower guild member from target player. At the end of the year, either they pay you 10 {gold}, or you gain control of that guild member.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[
-				{
-					"type": "gold",
-					"amount": 4
-				},
-				{
-					"type": "gems",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Secret meeting",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "Look at another player's hand.",
-			"amount": 3,
-			"tier": 1			
-		},
-		{
-			"title": "Secret meeting",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "Look at target player’s hand. Steal 1 {card}.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Secret meeting",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "Look at two player's hands. Steal up to 2 {card} divided among them.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Former glory",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "Take 1 {card} from the guild discard pile.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 1
-				},
-				{
-					"type": "food",
-					"amount": 3
-				}
-			]
-		},
-		{
-			"title": "Former glory",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "Take 2 {card} from the guild discard pile.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "wool",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Former glory",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "Take 2 {card} from the guild discard pile. Play one of them without paying its cost.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "wool",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Assassinate",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "Destroy a tier 1 guild member",
-			"amount": 3,
-			"tier": 1,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 1
-				},
-				{
-					"type": "sheep",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Assassinate",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "Destroy guild members of another player. In higher tiers, destroy more and higher guild members.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 3
-				},
-				{
-					"type": "sheep",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Assassinate",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "Destroy up to 2 tier 3 or lower guild members divided among up to two other players.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 3
-				},
-				{
-					"type": "sheep",
-					"amount": 1
-				},
-				{
-					"type": "wool",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "True intent",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "You may have 1 commoner perform 2 moves and gain both benefits.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
-			[
-				{
-					"type": "gold",
-					"amount": 1
-				},
-				{
-					"type": "food",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "True intent",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "You may have 1 commoner perform 2 moves and gain both benefits. Then you may draw 1 {card} from the guild deck. If you do, discard 1 {card}.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "food",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "True intent",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "You may have 1 commoner perform 3 moves and gain all benefits. Then you may draw 2 {card} divided as you wish from both decks. If you do, discard 1 {card}.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 3
-				},
-				{
-					"type": "food",
-					"amount": 31
-				},
-				{
-					"type": "wool",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Dark brotherhood",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_counter",
-			"faction": ["Espionage"],
-			"description": "When another player promotes a commoner to a member of any guild, promote one of your commoners to a tier 1 member of the {guild_espionage} guild.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 1
-				},
-				{
-					"type": "food",
-					"amount": 1
-				},
-				{
-					"type": "sheep",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Dark brotherhood",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_counter",
-			"faction": ["Espionage"],
-			"description": "When another player promotes a guild member, promote one of your commoners to a tier 2 member of the {guild_espionage} guild.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 1
-				},
-				{
-					"type": "food",
-					"amount": 1
-				},
-				{
-					"type": "sheep",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Dark brotherhood",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_counter",
-			"faction": ["Espionage"],
-			"description": "When another player promotes a guild member, prevent that promotion and then promote one of your commoners to a tier 3 member of the {guild_espionage} guild.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "food",
-					"amount": 1
-				},
-				{
-					"type": "sheep",
-					"amount": 2
-				},
-				{
-					"type": "wool",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Perception",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_counter",
-			"faction": ["Espionage"],
-			"description": "Prevent a tier 1 guild {card} from resolving.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
-			[				
-				{
-					"type": "wool",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Perception",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_counter",
-			"faction": ["Espionage"],
-			"description": "Prevent a tier 2 or lower guild {card} from resolving.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "wool",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Perception",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_counter",
-			"faction": ["Espionage"],
-			"description": "Prevent a tier 3 or lower {card} from resolving. Then take that card into your hand.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 3
-				},
-				{
-					"type": "wool",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Double agent",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "Look at another player's {promote} card.",
-			"amount": 3,
-			"tier": 1
-		},
-		{
-			"title": "Double agent",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "Look at another player's {promote} card. Gain a copy of that card.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Double agent",
-			"backgroundUrl": "assets/cards/background/espionage.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Espionage"],
-			"description": "Look at another player's {promote} card. Steal that card and create a copy of it. Keep the copy as well.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[				
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
-					"amount": 1
-				},
-				{
-					"type": "gems",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Monopoly",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "Name a {any}. Another player pays you up to two of that {any}.",
-			"amount": 3,
-			"tier": 1			
-		},
-		{
-			"title": "Monopoly",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "Name 2 {any}. Each player pays you 1 of those {any}.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Monopoly",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "Name 2 {any}. Each player pays you up to 2 of those {any}. Then, draw and reveal cards from the guild deck until you draw a {guild_barter} card. Take it into your hand and shuffle the rest back into the deck.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[
-				{
-					"type": "gold",
-					"amount": 3
-				},
-				{
-					"type": "sheep",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Trade",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "Give this {card} to another player. Then choose one:<br/><ul><li/>They choose 2 {card} and give them to you.<li/>Name a {any}. They pay you up to 3 of that {any}.</ul>",
-			"amount": 3,
-			"tier": 1,
-			"cost":
-			[				
-				{
-					"type": "food",
-					"amount": 2
-				}
-			]	
-		},
-		{
-			"title": "Trade",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "Give this {card} to another player. Then choose two:<br/><ul><li/>They choose 2 {card} and give them to you.<li/>Name a {any}. They pay you up to 3 of that {any}. <li/>Gain control of one of their commoners.</ul>",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[
-				{
-					"type": "gold",
-					"amount": 1
-				},			
-				{
-					"type": "food",
-					"amount": 2
-				}
-			]	
-		},
-		{
-			"title": "Trade",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "Give this {card} to another player. Then choose two:<br/><ul><li/>Look at their hand and take 2 {card}.<li/>Name a {any}. They pay you up to 5 of that {any}. <li/>Gain control of 2 of their commoners.</ul>",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[
-				{
-					"type": "gold",
-					"amount": 2
-				},			
-				{
-					"type": "food",
-					"amount": 3
-				},
-				{
-					"type": "sheep",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Taxes",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "This season, if another player plays a guild {card}, they must pay you 1 {gold}.",
-			"amount": 3,
-			"tier": 1			
-		},
-		{
-			"title": "Taxes",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "This season, if another player plays a guild {card} or activates a non-basic tile, they must pay you 1 {gold}",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "sheep",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Taxes",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "For the remainder of this year, if another player plays a guild {card} or activates any tile, they must pay you 2 {gold}.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[				
-				{
-					"type": "sheep",
-					"amount": 3
-				},
-				{
-					"type": "gems",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Bribery",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "You may repeat this action up to two times (and choose different players).<br/>Pay another player 4 {gold} to gain control of a commoner.",
-			"amount": 3,
-			"tier": 1			
-		},
-		{
-			"title": "Bribery",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "You may repeat this action up to three times (and choose different players).<br/>Choose one:<br/><ul><li/>Pay another player 4 {gold} to gain control of a commoner.<li/> Pay another player 8 {gold} to gain control of a tier 1 citizen.</ul>",
-			"amount": 3,
-			"tier": 2
-		},
-		{
-			"title": "Bribery",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "You may repeat this action up to five times (and choose different players).<br/>Choose one:<br/><ul><li/>Pay another player 3 {gold} to gain control of a commoner.<li/> Pay another player 6 {gold} to gain control of a tier 1 citizen.<li/> Pay another player 9 {gold} to gain control of a tier 2 citizen.</ul>",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[				
-				{
-					"type": "food",
-					"amount": 3
-				}
-			]
-		},
-		{
-			"title": "Time is money",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "You may move any number of commoners from one tile to another tile. Normal movement rules apply.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 1
-				},
-				{
-					"type": "food",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Time is money",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "You may move any number of commoners from two tiles to two other tiles. Normal movement rules apply.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "food",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Time is money",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "You may move any number of commoners from two tiles to two other tiles. Normal movement rules apply. Then draw a card from the promote deck.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "An offer you can't refuse",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "Another player draws and reveals a {card} from the guild deck and pays you 3 {any}.",
-			"amount": 3,
-			"tier": 1			
-		},
-		{
-			"title": "An offer you can't refuse",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "Another player draws and reveals a {card} from the guild deck and pays you 5 {any}. Then you draw a {card} from the guild deck.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
 				
 			]
 		},
 		{
-			"title": "An offer you can't refuse",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"title": "Infiltrate",
+			"background": "shadow",
 			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "Target player draws and reveals a {card} from the guild deck and pays you 7 {any}. Then you draw a {card} from the promote deck.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
+			"guilds": ["shadow"],
+			"description": "Up to two chosen placement actions of a chosen player do not resolve this season.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Corruption",
+			"background": "shadow",
+			"type": "action_trigger",
+			"guilds": ["shadow"],
+			"description": "<b>You may play this card in addition to a placement action or in another player's turn.</b>\n\nPut two commoners from another player in prison.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "food",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Anticipation",
+			"background": "shadow",
+			"type": "action_trigger",
+			"guilds": ["shadow"],
+			"description": "<b>Play this card only when another player plays a tier 1 guild card.</b>\n\nPrevent that card from resolving.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "food",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Insult to injury",
+			"background": "shadow",
+			"type": "action_trigger",
+			"guilds": ["shadow"],
+			"description": "<b>Play this card only when a commoner is send to prison.</b>\n\nSend that commoner to Limbo instead.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "food",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Elaborate ruse",
+			"background": "shadow",
+			"type": "action_immediate",
+			"guilds": ["shadow"],
+			"description": "Place a commoner you own into Limbo. Take up to three <sprite=0> from among up to 3 players.",
+			"tier": 1,
+			"cost": 
+			[				
+				{
+					"type": "food",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Breakout",
+			"background": "shadow",
+			"type": "action_immediate",
+			"guilds": ["shadow"],
+			"description": "Return up to three commoners from prison to your village.",
+			"tier": 1,
+			"cost": 
 			[				
 				{
 					"type": "gold",
@@ -1953,30 +715,125 @@
 			]
 		},
 		{
-			"title": "Loan",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"title": "Feign death",
+			"background": "shadow",
 			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "You give target player 5 {gold}. At the end of the next 3 seasons, they pay you back 3 {gold}.",
-			"amount": 3,
+			"guilds": ["shadow"],
+			"description": "Return up to two commoners from Limbo to your village.",
 			"tier": 1,
-			"cost":
+			"cost": 
 			[				
+				{
+					"type": "sheep",
+					"amount": 2
+				},
+				{
+					"type": "gold",
+					"amount": 2
+				}
+			]
+		},		
+		{
+			"title": "Stealth",
+			"background": "shadow",
+			"type": "action_trigger",
+			"guilds": ["shadow"],
+			"description": "<b>Play this card only when your citizens are bumped from a basic tile.</b>\n\nSend the bumped citizens to your village instead of prison.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "sheep",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Like wildfire",
+			"background": "shadow",
+			"type": "action_trigger",
+			"guilds": ["shadow"],
+			"description": "<b>You may play this card in addition to a placement action.</b>\n\nForce another player to pass for this season.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "food",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Intercept directives",
+			"background": "shadow",
+			"type": "action_trigger",
+			"guilds": ["shadow"],
+			"description": "<b>Play this card only after another player declares a placement action.</b>\n\nForce that player to place their citizens on a different valid basic tile.",
+			"tier": 1,
+			"cost": 
+			[
 				
 			]
 		},
 		{
-			"title": "Loan",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "You give target player 6 {food}. At the end of the next 3 seasons, they pay you back<br/>4 {food}. Choose one per season they can't pay:<ul><li/>Take any 3 {any} from them.<li/>Gain control of 1 of their commoners.<li/>A province denounces that player.<li/>Randomly take 1 {card} from them.</ul>",
-			"amount": 3,
+			"title": "Conspiracy",
+			"background": "shadow",
+			"type": "action_trigger",
+			"guilds": ["shadow"],
+			"description": "<b>Play this card only when another player plays a tier 1 or tier 2 guild card.</b>\n\nPrevent that card from resolving. Then send two of their commoners to prison.",
 			"tier": 2,
-			"cost":
-			[				
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Dark brotherhood",
+			"background": "shadow",
+			"type": "action_trigger",
+			"guilds": ["shadow"],
+			"description": "<b>Play this card only when another player promotes a commoner.</b>\n\nPrevent that promotion from resolving. Then promote a commoner to an agent.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Indulge the silence",
+			"background": "shadow",
+			"type": "action_immediate",
+			"guilds": ["shadow"],
+			"description": "Look at another player's hand. Choose 1 guild <sprite=2> and discard it.\nThen choose another guild <sprite=2> and take it into your hand.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
 				{
 					"type": "gold",
 					"amount": 3
@@ -1984,33 +841,18 @@
 			]
 		},
 		{
-			"title": "Loan",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"title": "Former glory",
+			"background": "shadow",
 			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "Give another player this {card}. At the end of the next 3 seasons, they pay you back<br/>1 {card}. Choose two per season they can't pay:<ul><li/>Take any 3 {any} from them.<li/>Gain control of 1 of their commoners.<li/>Gain control of 1 of their tier 1 guild members.<li/>A province denounces that player.</ul>",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[				
+			"guilds": ["shadow"],
+			"description": "Search the guild discard pile for up to 2 <sprite=2> cards and take them in your hand.",
+			"tier": 2,
+			"cost": 
+			[
 				{
-					"type": "gold",
-					"amount": 3
-				}
-			]
-		},
-		{
-			"title": "Prosperity",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "Gain 2 {gold} and draw 1 {card} from the guild deck.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
-			[				
+					"type": "sheep",
+					"amount": 2
+				},
 				{
 					"type": "food",
 					"amount": 2
@@ -2018,180 +860,109 @@
 			]
 		},
 		{
-			"title": "Prosperity",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"title": "Vengeance is ours",
+			"background": "shadow",
 			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "Gain 4 {gold}, 2 {sheep} and draw a {card} from the guild deck.",
-			"amount": 3,
+			"guilds": ["shadow"],
+			"description": "For each citizen in Limbo you own, eliminate a commoner.",
 			"tier": 2,
-			"cost":
-			[				
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
 				{
 					"type": "food",
-					"amount": 3
+					"amount": 2
 				}
 			]
 		},
 		{
-			"title": "Prosperity",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"title": "Suicide attack",
+			"background": "shadow",
 			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "Gain 5 {gold}, 4 {sheep}, 2 {gems} and draw a {card} from the guild deck.",
-			"amount": 3,
+			"guilds": ["shadow"],
+			"description": "Sacrifice up to three commoners. Eliminate all citizens on a basic tile for each commoner sacrificed this way.",
 			"tier": 3,
-			"cost":
-			[				
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
 				{
 					"type": "food",
-					"amount": 3
-				},
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Assassinate",
+			"background": "shadow",
+			"type": "action_trigger",
+			"guilds": ["shadow"],
+			"description": "<b>You may play this card in another player's turn.</b>\n\nELiminate a tier 3 or lower guild member.",
+			"tier": 3,
+			"cost": 
+			[
 				{
 					"type": "wool",
 					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "First come, first serve",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "This season, moving any of your citizens to a {any} or {card} tile triggers that tile twice.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 3
-				},
-				{
-					"type": "food",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "First come, first serve",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "This season, moving any of your citizens to a {any}, structure or {card} tile triggers that tile twice.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 3
-				},
-				{
-					"type": "food",
-					"amount": 3
-				}
-			]
-		},
-		{
-			"title": "First come, first serve",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "For the rest of the year, moving any of your citizens to a {any}, structure or {card} tile triggers that tile twice.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 3
-				},
-				{
-					"type": "food",
-					"amount": 3
-				},
-				{
-					"type": "sheep",
-					"amount": 1
-				},
-				{
-					"type": "wool",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Investment",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "This season, all your {gold} income is increased by +1.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 3
-				}
-			]
-		},
-		{
-			"title": "Investment",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "This season and the next, all your {gold} income is increased by + 1.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 4
-				}
-			]
-		},
-		{
-			"title": "Investment",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "For the remainder of this year, all your {gold} income is increased by + 2 and {gems} is increased by +1.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 6
 				},
 				{
 					"type": "gems",
 					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 2
 				}
 			]
 		},
 		{
-			"title": "Real-estate investor",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"title": "Buried alive",
+			"background": "shadow",
 			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "For the remainder of the year, gain control of target player’s structure or invention.",
-			"amount": 3,
+			"guilds": ["shadow"],
+			"description": "Sacrifice a commoner. Eliminate two tier 2 or lower guild members.",
+			"tier": 3,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 3
+				},
+				{
+					"type": "sheep",
+					"amount": 2
+				}
+			]
+		},
+
+
+		{
+			"title": "Monopoly",
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "Name a <sprite=0>. Chosen player pays you up to 2 of that <sprite=0>.",
 			"tier": 1,
-			"cost":
-			[				
+			"cost": 
+			[
+				
+			]
+		},
+		{
+			"title": "Trade",
+			"descriptionFontSize": 21,
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "Give another player up to 6 <sprite=0>. Then choose any combination:\n<indent=25px>\u2022 For every <sprite=0> given this way, gain your choice of <sprite=0> from them.\n<indent=25px>\u2022 For every 2 <sprite=0> given this way, they give you a random <sprite=2>.",
+			"tier": 1,
+			"cost": 
+			[
 				{
 					"type": "gold",
 					"amount": 2
@@ -2199,16 +970,101 @@
 			]
 		},
 		{
-			"title": "Real-estate investor",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"title": "Taxes",
+			"background": "barter",
 			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "Take control of target player’s structure or invention.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
+			"guilds": ["barter"],
+			"description": "If another player plays a <sprite=2> this season, they must pay you 1 <sprite=4> in addition to that card's normal cost.",
+			"tier": 1,
+			"cost": 
 			[				
+			]
+		},
+		{
+			"title": "First come first serve",
+			"background": "barter",
+			"type": "action_trigger",
+			"guilds": ["barter"],
+			"description": "<b>Play this card only before you declare a placement action on a basic tile.</b>\n\nImmediately gain the benefits of that tile in addition to the end of season benefits.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Prosperity",
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "Gain 2 <sprite=1>, 1 <sprite=5> and draw a <sprite=2> from the guild deck.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Subornation",
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "Pay another player any number of <sprite=4>. For each 2 <sprite=4> paid this way, move a commoner they own from a basic tile they occupy to a valid basic tile of your chosing.",
+			"tier": 1,
+			"cost": 
+			[
+				
+			]
+		},
+		{
+			"title": "Investment",
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "This season, all your <sprite=0> income from basic tiles is increased by 1.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "food",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Real-estate investor",
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "Pay another player 2 <sprite=4>. Take control of a building they own.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Banking",
+			"background": "barter",
+			"type": "action_trigger",
+			"guilds": ["barter"],
+			"description": "<b>Play this card only when another player plays a guild card.</b>\n\nInstead of paying the cost of that card to the general supply, they pay them to you instead.",
+			"tier": 1,
+			"cost": 
+			[
 				{
 					"type": "food",
 					"amount": 2
@@ -2216,37 +1072,14 @@
 			]
 		},
 		{
-			"title": "Real-estate investor",
-			"backgroundUrl": "assets/cards/background/barter.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"title": "Economic advantage",
+			"background": "barter",
 			"type": "action_immediate",
-			"faction": ["Barter"],
-			"description": "Take control of two structures or inventions (you may choose different players). Then keep drawing and revealing {card} from the guild deck until you find a {construct} card, take it into your hand and shuffle the rest of the cards back into the deck.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[				
-				{
-					"type": "sheep",
-					"amount": 2
-				},
-				{
-					"type": "wool",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Feed the poor",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Celestial"],
-			"description": "Choose one:<br/> <ul><li/>Gain 3 {food}.<li/>Gain 2 {food}. Another player who owns at least 1 {guild_celestial} member gains 1 {food}. This tier is free to play.</ul>",
-			"amount": 3,
+			"guilds": ["barter"],
+			"description": "Discard any number of guild <sprite=2>. Then draw that many <sprite=2> cards + 1 from the guild deck.",
 			"tier": 1,
-			"cost":
-			[				
+			"cost": 
+			[
 				{
 					"type": "gold",
 					"amount": 2
@@ -2254,41 +1087,463 @@
 			]
 		},
 		{
-			"title": "Feed the poor",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Celestial"],
-			"description": "Choose one:<br/> <ul><li/>Gain 4 {food} and 2 {sheep}.<li/>Gain 2 {food} and 2 {sheep}. Another player who owns at least 1 {guild_celestial} member gains 2 {food}. This card costs 2 {gold} to play.</ul>",
-			"amount": 3,
+			"title": "Loan",
+			"background": "barter",
+			"type": "action_trigger",
+			"guilds": ["barter"],
+			"description": "Pay another player 3 <sprite=0>. The next three seasons, they must pay you back any 2 <sprite=0>. If they cannot, you may randomly take a guild <sprite=2> from them instead.",
 			"tier": 2,
-			"cost":
-			[				
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "food",
+					"amount": 1
+				}
+			]
+		},		
+		{
+			"title": "Time is money",
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "When placing citizens on a tile this season, you immediately gain the benefits in addition to the end of season benefits.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Bribery",
+			"descriptionFontSize": 19,
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "You may repeat this action up to three times. Choose one:\n<indent=25px>\u2022 Pay another player 3 <sprite=4> and gain control of one of their commoners.</indent>\n<indent=25px>\u2022 Pay another player 5 <sprite=4> and gain control of one of their tier 1 guild members.</indent>",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Welfare",
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "Discard any number of guild <sprite=2>. Then draw that many <sprite=2> + 1 from the guild deck and/or the promote deck.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Mercenaries",
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "Pay up to 6 <sprite=4>. For each 2 <sprite=4> paid this way, place a commoner from your stockpile into prison and draw a promote card.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "food",
+					"amount": 2
+				}
+			]
+		},
+
+		{
+			"title": "Fortune",
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "Gain 3 <sprite=1>, 3 <sprite=5> and 2 <sprite=3>. Then draw a <sprite=2> from the promote deck and one from the guild deck.",
+			"tier": 3,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
 				{
 					"type": "gold",
 					"amount": 3
-				},
-				{
-					"type": "wool",
-					"amount": 1
 				}
 			]
 		},
 		{
-			"title": "Feed the poor",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"title": "National debt",
+			"background": "barter",
 			"type": "action_immediate",
-			"faction": ["Celestial"],
-			"description": "Choose one:<br/> <ul><li/>Gain 4 {food}, 3 {sheep} and 1 {wool}.<li/>Gain 2 {food}, 2 {sheep} and 1 {wool}. Another player who owns at least 1 {guild_celestial} member gains 2 {food} and 1 {sheep}. This card costs 3 {gold} to play.</ul>",
-			"amount": 3,
+			"guilds": ["barter"],
+			"description": "Until the end of the season, gain control of all commoners of a chosen player. When the season ends, return those commoners to that player's village.",
 			"tier": 3,
-			"cost":
-			[				
+			"cost": 
+			[
 				{
 					"type": "gold",
 					"amount": 5
-				},				
+				}, 
+				{
+					"type": "sheep",
+					"amount": 2
+				},
+				{
+					"type": "wool",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Motherload",
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "This season, you can play cards without paying their cost. Other restrictions still apply.",
+			"tier": 3,
+			"cost": 
+			[
+				{
+					"type": "gems",
+					"amount": 2
+				},
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "gold",
+					"amount": 3
+				}
+			]
+		},
+
+
+
+
+		{
+			"title": "Feed the poor",
+			"descriptionFontSize": 20,
+			"background": "celestial",
+			"type": "action_immediate",
+			"guilds": ["celestial"],
+			"description": "Choose one:\n<indent=25px>\u2022 Gain 4 <sprite=1> and 2 <sprite=5>.\n<indent=25px>\u2022 This card costs 2 <sprite=4> to play. Gain 3 <sprite=1> and 2 <sprite=5>. Another player who owns at least 1 <sprite=9> member gains 1 <sprite=1>.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 4
+				}
+			]
+		},
+		{
+			"title": "Go forth and multiply",			
+			"background": "celestial",
+			"type": "action_immediate",
+			"guilds": ["celestial"],
+			"description": "Place a commoner from your stockpile on your village.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "food",
+					"amount": 1
+				},
+				{
+					"type": "gold",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Resurrection",			
+			"background": "celestial",
+			"type": "action_trigger",
+			"guilds": ["celestial"],
+			"description": "<b>You may play this card in addition to a placement action.</b>\n\nReturn up to two commoners you own from Limbo to your village.",
+			"flavor": "Eat sleep reanimate the dead repeat.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "food",
+					"amount": 2
+				},
+				{
+					"type": "gold",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Divine intervention",			
+			"background": "celestial",
+			"type": "action_trigger",
+			"guilds": ["celestial"],
+			"description": "<b>Play this card only when one or more commoners are eliminated.</b>\n\nPrevent up to three commoners from being eliminated this way.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "food",
+					"amount": 2
+				},
+				{
+					"type": "gold",
+					"amount": 3
+				}
+			]
+		},
+		{
+			"title": "God's will",			
+			"background": "celestial",
+			"type": "action_immediate",
+			"guilds": ["celestial"],
+			"description": "Place a commoner from you stockpile on your village. Then draw a promote <sprite=2>.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Tolerance",			
+			"background": "celestial",
+			"type": "action_trigger",
+			"guilds": ["celestial"],
+			"description": "<b>Play this card only when another player bumps you from a basic tile.</b>\n\nInstead of bumping your citizens to prison, share that tile.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "sheep",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Blessed harvest",			
+			"background": "celestial",
+			"type": "action_trigger",
+			"guilds": ["celestial"],
+			"description": "<b>You may play this card in another player's turn.</b>\n\nReturn the citizens on a basic tile to your village and immediately gain its benefits.",
+			"tier": 1,
+			"cost": 
+			[				
+				{
+					"type": "gold",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Blind faith",			
+			"background": "celestial",
+			"type": "action_trigger",
+			"guilds": ["celestial"],
+			"description": "gain 2 <sprite=2> from the promote deck.",
+			"tier": 1,
+			"cost": 
+			[				
+				{
+					"type": "gold",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Indoctrinate",			
+			"background": "celestial",
+			"type": "action_trigger",
+			"guilds": ["celestial"],
+			"description": "<b>You may play this card in another player's turn.</b>\n\nChoose a tier 1 guild member. That guild member becomes a monk. It's owner doesn't change. Then draw a <sprite=2> from the guild deck.",
+			"tier": 1,
+			"cost": 
+			[				
+				{
+					"type": "sheep",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Forgiveness",			
+			"background": "celestial",
+			"type": "action_trigger",
+			"guilds": ["celestial"],
+			"description": "<b>You may play this card in another player's turn.</b>\n\nReturn a tier 1 guild member from Limbo to your village.",
+			"tier": 1,
+			"cost": 
+			[				
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "wool",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Devotion",
+			"background": "celestial",
+			"type": "action_immediate",
+			"guilds": ["celestial"],
+			"description": "Draw two <sprite=2> from the guild deck and reveal one. Play it immediately. You do not need to pay it's cost or own the appropriate guild member. Discard the other card.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "See the light",			
+			"background": "celestial",
+			"type": "action_immediate",
+			"guilds": ["celestial"],
+			"description": "Place up to 2 commoners you own from prison to your village. Then promote one to a monk.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Sunday prayer",			
+			"background": "celestial",
+			"type": "action_trigger",
+			"guilds": ["celestial"],
+			"description": "<b>You may play this card in another player's turn.</b>\n\nReturn your commoners from up to two basic tiles to your village. Immediately gain the benefits of those tiles.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Mercy",			
+			"background": "celestial",
+			"type": "action_trigger",
+			"guilds": ["celestial"],
+			"description": "<b>You may play this card in another player's turn.</b>\n\nReturn a tier 1 guild member and 2 commoners from Limbo to your village; they may be other player's citizens.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Love thy neighbor",
+			"descriptionFontSize": 20,
+			"background": "celestial",
+			"type": "action_trigger",
+			"guilds": ["celestial"],
+			"description": "<b>Play this card only after declaring a placement action on a basic tile.</b>\n\nPlace a commoner from your stockpile on all basic tiles of that province. If there already are citizens of other players there, share those tiles.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 2
+				}
+			]
+		},
+
+
+		{
+			"title": "The word of God",
+			"descriptionFontSize": 20,
+			"background": "celestial",
+			"type": "action_trigger",
+			"guilds": ["celestial"],
+			"description": "<b>Play this card only when placing a citizen on the town hall of a province.</b>\n\nPlace a commoner from your stockpile on all basic tiles of that province. If there already are citizens of other players there, share those tiles.",
+			"tier": 3,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 2
+				},
 				{
 					"type": "gems",
 					"amount": 1
@@ -2296,173 +1551,17 @@
 			]
 		},
 		{
-			"title": "Indoctrinate",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"title": "Burn the witch!",
+			"background": "celestial",
 			"type": "action_immediate",
-			"faction": ["Celestial"],
-			"description": "<i>You may have another player who owns at least 1 {guild_celestial} member gain control of one commoner you own. If you do, this card costs 1 {gold} to play.</i><br/> Name a province. At the end of the next season, you gain control of 1 commoner in every tile of that province.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "food",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Indoctrinate",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Celestial"],
-			"description": "<i>You may have another player who owns at least 1 {guild_celestial} member gain control of one commoner you own. If you do, this card costs 3 {gold} to play.</i><br/> Name a province. At the end of the next season, you gain control of all commoners in every tile of that province.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 3
-				},
-				{
-					"type": "food",
-					"amount": 1
-				},
-				{
-					"type": "sheep",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Indoctrinate",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Celestial"],
-			"description": "<i>You may have another player who owns at least 1 {guild_celestial} member gain control of one commoner you own. If you do, this card costs 2 {sheep} to play.</i><br/> Name a province. At the end of the next season, you gain control of all commoners in every tile and citizens in up to two tiles of that province.",
-			"amount": 3,
+			"guilds": ["celestial"],
+			"description": "Choose a tier 3 or lower guild member and a tier 1 guild member who are in prison. Eliminate those guild members.",
+			"flavor": "We have found a witch! May we burn her?",
 			"tier": 3,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
-					"amount": 2
-				},
-				{
-					"type": "wool",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Go forth and multiply",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Celestial"],
-			"description": "Create 1 commoner.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
+			"cost": 
 			[
 				{
-					"type": "food",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Go forth and multiply",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Celestial"],
-			"description": "<i>You may appoint another player who owns at least 1 {guild_celestial} member. That player gains 1 commoner. If you do, this card costs 3 {food} to play.</i><br/>Create 1 commoner for every two commoners under your control.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[
-				{
-					"type": "food",
-					"amount": 3
-				},
-				{
-					"type": "sheep",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Go forth and multiply",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Celestial"],
-			"description": "<i>You may appoint another player who owns at least 1 {guild_celestial} member. That player gains 1 commoner. If you do, this card costs 3 {food} to play.</i><br/>Choose one or both:<br/><ul><li/>Create 1 commoner for every two commoners under your control.<li/>Promote a commoner to any tier 1 guild member.</ul>",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[
-				{
-					"type": "food",
-					"amount": 3
-				},
-				{
-					"type": "sheep",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Resurrection",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Celestial"],
-			"description": "Return up to two commoners under your control that were destroyed this season to your nation.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 1
-				},
-				{
-					"type": "food",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Resurrection",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Celestial"],
-			"description": "<i>You may appoint another player who owns at least 1 {guild_celestial} member. That player gains 1 commoner. If you do, this card costs (1 {gold}, 2 {food}) to play.</i><br/>Return up to three commoners under your control that were destroyed this season to your nation.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "gold",
+					"type": "gems",
 					"amount": 1
 				},
 				{
@@ -2476,187 +1575,26 @@
 			]
 		},
 		{
-			"title": "Resurrection",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"title": "Crusade",
+			"background": "celestial",
 			"type": "action_immediate",
-			"faction": ["Celestial"],
-			"description": "<i>You may appoint another player who owns at least 1 {guild_celestial} member. That player takes control of 1 commoner you own. If you do, this card costs (1 {gold}, 2 {food}, 1 {wool}) to play.</i><br/>Return up to 2 tier 2 or lower guild members and up to three commoners under your control that were destroyed this season to your nation.",
-			"amount": 3,
+			"guilds": ["celestial"],
+			"description": "Place all guild members who are not of the <sprite=9> guild into prison. Then eliminate a tier 1 and a tier 2 or lower guild member.",
 			"tier": 3,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 1
-				},
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "wool",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Divine intervention",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_counter",
-			"faction": ["Celestial"],
-			"description": "<i>You may appoint another player who owns at least 1 {guild_celestial} member. That player takes control of 1 commoner you own. If you do, this card costs 2 {food} to play.</i><br/>Prevent up to three commoners from being destroyed.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 3
-				},
-				{
-					"type": "food",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Divine intervention",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_counter",
-			"faction": ["Celestial"],
-			"description": "<i>You may appoint another player who owns at least 1 {guild_celestial} member. That player takes control of 1 commoner you own. If you do, this card costs (2 {gold}, 2 {food}) to play.</i><br/>Prevent up to three citizens from being destroyed. Then promote a commoner to a tier 1 {guild_celestial} member.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
+			"cost": 
 			[
 				{
 					"type": "gold",
 					"amount": 3
 				},
 				{
-					"type": "food",
-					"amount": 2
-				},			
-				{
-					"type": "sheep",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Divine intervention",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_counter",
-			"faction": ["Celestial"],
-			"description": "<i>You may appoint another player who owns at least 1 {guild_celestial} member. That player takes control of 1 commoner you own. If you do, this card costs (2 {food}, 2 {sheep}) to play.</i><br/>Prevent up to three citizens from being destroyed. Then promote a commoner to a tier 2 {guild_celestial} member.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 4
-				},
-				{
-					"type": "food",
-					"amount": 3
-				},			
-				{
-					"type": "sheep",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "God's will",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Celestial"],
-			"description": "Choose a guild {card} from your hand and create a copy of it.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 1
-				},
-				{
-					"type": "sheep",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "God's will",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Celestial"],
-			"description": "Choose a guild {card} from your hand and create two copies of it.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 1
-				},
-				{
-					"type": "food",
-					"amount": 1
-				},
-				{
-					"type": "sheep",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "God's will",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Celestial"],
-			"description": "Choose two:<br/><ul><li/>Choose a guild {card} from your hand and create two copies of it.<li/>Choose a promote {card} and create a copy of it.<li/>Create 2 commoners.</ul>",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
 					"type": "sheep",
 					"amount": 2
 				},
 				{
 					"type": "wool",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Devotion",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Celestial"],
-			"description": "Sacrifice a commoner. Destroy 2 commoners of another player.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
-			[				
+					"amount": 2
+				},
 				{
 					"type": "food",
 					"amount": 2
@@ -2664,323 +1602,17 @@
 			]
 		},
 		{
-			"title": "Devotion",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"title": "Annihilation",
+			"background": "Battle",
 			"type": "action_immediate",
-			"faction": ["Celestial"],
-			"description": "Sacrifice a commoner. Destroy 2 commoners of another player. Then draw a {card} from the guild deck.",
-			"amount": 3,
+			"guilds": ["battle", "shadow"],
+			"description": "Choose one:\n<indent=25px>\u2022 Eliminate two commoners.</indent>\n<indent=25px>\u2022 Eliminate a tier 1 guild member.</indent>\n<indent=25px>\u2022 Eliminate two tier 1 guild members who are in prison.</indent>",
 			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "wool",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Devotion",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Celestial"],
-			"description": "Sacrifice a commoner. Destroy 2 commoners of a player. Destroy one tier 2 or lower guild member of another player. Draw a {card} from any deck.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[				
-				{
-					"type": "food",
-					"amount": 3
-				},
-				{
-					"type": "wool",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Tolerance",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_concealed",
-			"faction": ["Celestial"],
-			"description": "When any of your citizens would be returned to your nation from any 1 basic tile, move them to another valid tile instead and immediately gain its benefits.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Tolerance",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_concealed",
-			"faction": ["Celestial"],
-			"description": "When any of your citizens would be returned to your nation from any 1 basic tile, move them to two separate valid tiles instead and immediately gain their benefits.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 3
-				},
-				{
-					"type": "food",
-					"amount": 1
-				},
-				{
-					"type": "sheep",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Tolerance",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_concealed",
-			"faction": ["Celestial"],
-			"description": "When any of your citizens would be returned to your nation from any 1 basic tile, reactivate  that tile and then move them to two separate valid tiles and immediately gain their benefits.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 3
-				},
-				{
-					"type": "food",
-					"amount": 1
-				},
-				{
-					"type": "sheep",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Sunday prayer",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Celestial"],
-			"description": "Return all commoners in one province to your nation",
-			"amount": 3,
-			"tier": 1,
-			"cost":
-			[				
-				{
-					"type": "sheep",
-					"amount": 1
-				},
-				{
-					"type": "food",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Sunday prayer",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Celestial"],
-			"description": "<i>You may appoint another player who owns at least 1 {guild_celestial} member. They return commoners from a single tile to their nation. If you do, this card costs (2 {gold}, 2 {food}).</i><br/> Return all commoners to your nation. Each generates 1 {gold}.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 3
-				},
-				{
-					"type": "food",
-					"amount": 3
-				}
-			]
-		},
-		{
-			"title": "Sunday prayer",
-			"backgroundUrl": "assets/cards/background/celestial.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Celestial"],
-			"description": "<i>You may appoint another player who owns at least 1 {guild_celestial} member. They gain 1 commoner. If you do, this card costs (2 {gold}, 2 {food}).</i><br/> Return all commoners to your nation. For each commoner returned this way, choose one:<br/><ul><li/>Generate 2 {gold}.<li/>Generate 1 {food}.<li/>Turn 1 {sheep} into 1 {wool}.</ul>",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Construct",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Science"],
-			"description": "The next invention or structure costs 2 {any} less.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
-			[
-				
-			]
-		},
-		{
-			"title": "Construct",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Science"],
-			"description": "The next invention or structure card you play is free.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
+			"cost": 
 			[
 				{
-					"type": "gold",
-					"amount": 3
-				}
-			]
-		},
-		{
-			"title": "Construct",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Science"],
-			"description": "The next invention or structure card you play is free. Then play a tier 2 invention for free.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[
-				{
-					"type": "gold",
-					"amount": 3
-				}
-			]
-		},
-		{
-			"title": "Fort",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Science"],
-			"description": "Create a strength 1 invention on a tile. Other players who wish to visit that tile, must commit at least 2 strength. If they do, destroy the invention.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
-			[				
-				{
-					"type": "food",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Fort",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Science"],
-			"description": "Create a strength 2 invention on two basic tiles within a single province. Other players who wish to visit those tiles must commit at least strength 3. If they do, destroy the invention.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[
-				{
-					"type": "gold",
-					"amount": 3
-				},
-				{
-					"type": "food",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Fort",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Science"],
-			"description": "Create a strength 2 invention on all basic tiles of a single province. Other players who wish to visit those tiles must commit at least strength 3. If they do, destroy the invention.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[
-				{
-					"type": "gold",
-					"amount": 3
-				},
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
 					"type": "wool",
 					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Grindstone",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Science"],
-			"description": "Create a strength 1 invention on a {any} tile. At the end of each season that the invention is on that tile, you gain 1 {any} listed on that tile. Other players can still visit the tile, but to remove the invention, they must commit at least strength 2 there.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 3
-				}
-			]
-		},
-		{
-			"title": "Grindstone",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Science"],
-			"description": "Create a strength 1 invention on two {any} tiles within a single province. At the end of each season, you gain 1 {any} listed on those tiles. Other players can still visit the tile, but to remove the invention, they must commit at least strength 2 there.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 3
 				},
 				{
 					"type": "sheep",
@@ -2989,448 +1621,192 @@
 			]
 		},
 		{
-			"title": "Grindstone",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"title": "Raid",
+			"background": "Shadow",
 			"type": "action_immediate",
-			"faction": ["Science"],
-			"description": "Create a strength 1 construction on all basic tiles within a single province. At the end of each season, you gain the benefits listed on the tile. Other players can still visit the tile, but to remove the invention, they must commit at least strength 2 there.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
+			"guilds": ["battle", "shadow"],
+			"description": "Choose a player. That player discards 1 <sprite=2>.",
+			"tier": 1,
+			"cost": 
 			[				
 				{
-					"type": "gold",
-					"amount": 3
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Recourse",
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter", "celestial"],
+			"description": "Draw 2 <sprite=2> from the guild deck and/or the promote deck.",
+			"tier": 1,
+			"cost": 
+			[				
+				{
+					"type": "sheep",
+					"amount": 1
 				},
+				{
+					"type": "gold",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Donations",
+			"background": "celestial",
+			"type": "action_immediate",
+			"guilds": ["barter", "celestial"],
+			"description": "Gain 3 <sprite=0> from the general supply and take 3 <sprite=4> divided as you choose from other players.",
+			"tier": 2,
+			"cost": 
+			[				
 				{
 					"type": "sheep",
 					"amount": 1
 				},
 				{
 					"type": "wool",
-					"amount": 1
+					"amount": 2
 				}
 			]
 		},
 		{
-			"title": "Wagon",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"title": "Favorable harvest",
+			"background": "favorable_harvest",
+			"guilds": [],
 			"type": "action_immediate",
-			"faction": ["Science"],
-			"description": "Create a strength 1 invention on a {gold} or {food} tile. Whenever you visit this tile, increase the tile production by +2. Other players can still visit the tile, but to destroy the invention, they must commit at least strength 2 there.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
-			[				
-				{
-					"type": "food",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Wagon",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Science"],
-			"description": "Create a strength 2 invention on a {gold}, {food} or {sheep} tile. Whenever you visit this tile, increase the tile production by +3. Other players can still visit the tile, but to destroy the invention, they must commit at least strength 3 there.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "wool",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Wagon",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Science"],
-			"description": "Create a strength 2 invention on two {gold}, {food}, {sheep} or {gems} tiles. Whenever you visit these tiles, increase the tile production by +4. Other players can still visit the tile, but to destroy the invention, they must commit at least strength 3 there.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[
-				{
-					"type": "gold",
-					"amount": 4
-				},
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "wool",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Siege machine",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Science"],
-			"description": "Create a strength 1 invention on another player’s nation. As long as the invention is active on their nation, citizens cannot leave. That player must spend at least strength 2 to remove the invention. Citizens occupied with removing the invention are removed from the game until the start of next year.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 1
-				},
-				{
-					"type": "food",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Siege machine",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Science"],
-			"description": "Create a strength 2 invention on another player’s nation. As long as the invention is active on their nation, citizens cannot leave. At the end of every season that the invention remains on their nation, they lose 1 {food}. That player must spend at least strength 3 to remove the invention. Citizens occupied with removing the invention are removed from the game until the start of next year.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 3
-				},
-				{
-					"type": "food",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Siege machine",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Science"],
-			"description": "Create a strength 3 invention on another player’s nation. As long as the invention is active on their nation, citizens cannot leave. At the end of every season that the invention remains on their nation, they lose 1 {food} and 1 {sheep}. That player must spend at least strength 4 to remove the invention. Citizens occupied with removing the invention are removed from the game until the start of next year.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[
-				{
-					"type": "gold",
-					"amount": 3
-				},
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
-					"amount": 1
-				},
-				{
-					"type": "wool",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Horseback",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Science"],
-			"description": "Create a strength 1 invention on your nation and place two commoners in it. During each season, the invention can move to an adjacent tile in a province that pledged allegiance to you to gain their benefits. Other players can destroy the invention by committing at least strength 2 on its current location.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 3
-				},
-				{
-					"type": "food",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Horseback",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Science"],
-			"description": "Create a strength 2 invention on your nation and place a commoner in it. During each season, the invention can move to an adjacent tile to gain its benefits. Other players can destroy the invention by committing at least strength 3 on its current location.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 3
-				},
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Horseback",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Science"],
-			"description": "Create a strength 3 invention on your nation and place a commoner in it. During each season, the construction can move to an adjacent tile - even in provinces that have not pledged allegiance to you - to gain its benefits. Other players can destroy the invention by committing at least strength 4 to its current location.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 3
-				},
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Booby-trap",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_concealed",
-			"faction": ["Science"],
-			"description": "When a player visits a structure you control, destroy a commoner before the move action is resolved.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Booby-trap",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_concealed",
-			"faction": ["Science"],
-			"description": "When a player visits a structure you control, destroy 2 commoners before the move action is resolved. Gain the   cost they had to pay to visit it.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "food",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Booby-trap",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_concealed",
-			"faction": ["Science"],
-			"description": "When another player visits a structure you control, destroy all citizens committed before the move action resolves. Draw a {card} from the guild deck and play a tier 1 invention for free.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 3
-				},
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
-					"amount": 1
-				}
-			]
-		},
-		{
-			"title": "Built to last",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_counter",
-			"faction": ["Science"],
-			"description": "Counter a card that targets a structure or invention unless its owner pays you 3 {gold}.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
+			"description": "All other players gain 1 <sprite=0>.\nYou gain 2 <sprite=0>.",
+			"cost": 
 			[				
 				
 			]
 		},
 		{
-			"title": "Built to last",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_counter",
-			"faction": ["Science"],
-			"description": "Counter a card that targets a structure or invention unless that player pays you 4 {gold}. Then play a tier 1 invention for free.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
+			"title": "Turn the tide",
+			"background": "turn_the_tide",
+			"type": "action_trigger",
+			"guilds": [],
+			"description": "<b>Play this card only when another player declares a placement action on a basic tile you occupy.</b>\n\nIncrease your <sprite=12> on that tile by 1 until the end of turn.",
+			"cost": 
 			[				
-				{
-					"type": "gold",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"title": "Built to last",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_counter",
-			"faction": ["Science"],
-			"description": "Counter a card that targets a structure or invention unless that player pays you 5 {gold}. Then play a tier 2 invention for free.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 2
-				},
 				{
 					"type": "sheep",
-					"amount": 1
+					"amount": 1 
 				}
 			]
 		},
 		{
-			"title": "Age of enlightening",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Science"],
-			"description": "Draw and reveal five {card} from the guild deck. If there is one or more {guild_science} cards among them, keep 1. Otherwise play a tier 1 invention for free. Then shuffle the rest of the cards back into the guild deck.",
-			"amount": 3,
-			"tier": 1,
-			"cost":
+			"title": "Unfair advantage",
+			"background": "unfair_advantage",
+			"guilds": [],
+			"type": "action_trigger",
+			"description": "<b>Play this card only after you declared a placement action on an occupied basic tile.</b>\n\nIncrease your <sprite=12> on that tile by 1 until the end of turn.",
+			"cost": 
 			[				
-				{
-					"type": "gold",
-					"amount": 4
-				}
-			]
-		},
-		{
-			"title": "Age of enlightening",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Science"],
-			"description": "Draw and reveal seven {card} from the guild deck. If there is one or more {guild_science} cards among them, keep them. Otherwise play a tier 1 invention for free. Then shuffle the rest of the cards back into the guild deck.",
-			"amount": 3,
-			"tier": 2,
-			"cost":
-			[				
-				{
-					"type": "gold",
-					"amount": 4
-				},
 				{
 					"type": "sheep",
-					"amount": 2
+					"amount": 1 
 				}
 			]
 		},
 		{
-			"title": "Age of enlightening",
-			"backgroundUrl": "assets/cards/background/science.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
-			"type": "action_immediate",
-			"faction": ["Science"],
-			"description": "Play 2 random tier 2 inventions for free. Then draw and reveal {card} froom the guild deck until you find a {guild_science} card and put it into your hand. Shuffle the rest of the cards back into the deck.",
-			"amount": 3,
-			"tier": 3,
-			"cost":
+			"title": "Political attendance",
+			"descriptionFontSize": 17,
+			"background": "promote",
+			"type": "promote",
+			"guilds": [],
+			"description": "<indent=25px>\u2022<b> Tier 1:</b> You must occupy a basic tile with at least 2 citizens.\n\n<indent=25px>\u2022<b> Tier 2:</b> You must occupy a basic tile with at least 3 citizens.\n\n<indent=25px>\u2022<b> Tier 3:</b> You must occupy a basic tile with at least 5 citizens.",
+			"cost": 
 			[				
-				{
-					"type": "gold",
-					"amount": 4
-				},
-				{
-					"type": "sheep",
-					"amount": 1
-				},
-				{
-					"type": "wool",
-					"amount": 1
-				}
+				
 			]
 		},
 		{
-			"title": "Promote",
-			"backgroundUrl": "assets/cards/background/promote.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"title": "Authority",
+			"descriptionFontSize": 17,
+			"background": "promote",
 			"type": "promote",
-			"faction": [],
-			"description": "<ul><li/><b>Commoner -> Tier 1:</b> At least 3 provinces must have pledged allegiance to you.<br/><br/><li/><b>Tier 1 -> Tier 2:</b> At least 4 provinces must have pledged allegiance to you.<br/><br/><li/><b>Tier 2 -> Tier 3:</b> At least 6 provinces must have pledged allegiance to you.</ul>",
-			"amount":3
+			"guilds": [],
+			"description": "<indent=25px>\u2022<b> Tier 1:</b> At least 2 provinces must have pledged allegiance to you.\n\n<indent=25px>\u2022<b> Tier 2:</b> At least 3 provinces must have pledged allegiance to you.\n\n<indent=25px>\u2022<b> Tier 3:</b> At least 4 provinces must have pledged allegiance to you.",			
+			"cost": 
+			[				
+				
+			]
 		},
 		{
-			"title": "Promote",
-			"backgroundUrl": "assets/cards/background/promote.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"title": "Population growth",
+			"descriptionFontSize": 17,
+			"background": "promote",
 			"type": "promote",
-			"faction": [],
-			"description": "<ul><li/><b>Commoner -> Tier 1:</b> At least 3 of your citizens must be on the same province.<br/><br/><li/><b>Tier 1 -> Tier 2:</b> At least 5 of your citizens must be on the same province.<br/><br/><li/><b>Tier 2 -> Tier 3:</b> At least 8 of your citizens must be on the same province</ul>",
-			"amount":3
+			"guilds": [],
+			"description": "<indent=25px>\u2022<b> Tier 1:</b> You must have at least 6 commoners under your control.\n\n<indent=25px>\u2022<b> Tier 2:</b> You must have at least 8 commoners under your control.\n\n<indent=25px>\u2022<b> Tier 3:</b> You must have at least 10 commoners under your control.",			
+			"cost": 
+			[				
+				
+			]
 		},
 		{
-			"title": "Promote",
-			"backgroundUrl": "assets/cards/background/promote.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"title": "Stranglehold",
+			"descriptionFontSize": 17,
+			"background": "promote",
 			"type": "promote",
-			"faction": [],
-			"description": "<ul><li/><b>Commoner -> Tier 1:</b> At least 2 of your citizens must be on the same basic tile.<br/><br/><li/><b>Tier 1 -> Tier 2:</b> At least 4 of your citizens must be on the same basic tile.<br/><br/><li/><b>Tier 2 -> Tier 3:</b> At least 6 of your citizens must be on the same basic tile</ul>",
-			"amount":3
+			"guilds": [],
+			"description": "<indent=25px>\u2022<b> Tier 1:</b> At least 3 of your commoners must be on the same province.\n\n<indent=25px>\u2022<b> Tier 2:</b> At least 5 of your commoners must be on the same province.\n\n<indent=25px>\u2022<b> Tier 3:</b> At least 7 of your commoners must be on the same province.",			
+			"cost": 
+			[				
+				
+			]
 		},
 		{
-			"title": "Promote",
-			"backgroundUrl": "assets/cards/background/promote.png",
-			"foregroundUrl": "assets/cards/abilities/lay-siege.png",
+			"title": "Abundance",
+			"descriptionFontSize": 17,
+			"background": "promote",
 			"type": "promote",
-			"faction": [],
-			"description": "<ul><li/><b>Commoner -> Tier 1:</b> You must have at least 5 commoners under your control.<br/><br/><li/><b>Tier 1 -> Tier 2:</b> You must have at least 8 commoners under your control.<br/><br/><li/><b>Tier 2 -> Tier 3:</b> You must have at least 11 commoners under your control.</ul>",
-			"amount":3
-		}
-	]
+			"guilds": [],
+			"description": "<indent=25px>\u2022<b> Tier 1:</b> You must have at least 6 <sprite=4>\n\n<indent=25px>\u2022<b> Tier 2:</b> You must have at least 6 <sprite=4> and 2 <sprite=6>.\n\n<indent=25px>\u2022<b> Tier 3:</b> You must have at least 6 <sprite=4>, 2 <sprite=6> and 2 <sprite=3>.",			
+			"cost": 
+			[				
+				
+			]
+		},
+		{
+			"title": "Course of action",
+			"descriptionFontSize": 17,
+			"background": "promote",
+			"type": "promote",
+			"guilds": [],
+			"description": "<indent=25px>\u2022<b> Tier 1:</b> You must have at least\n6 guild <sprite=2> in hand.\n\n<indent=25px>\u2022<b> Tier 2:</b> You must have at least\n7 guild <sprite=2> in hand.\n\n<indent=25px>\u2022<b> Tier 3:</b> You must have at least\n9 guild <sprite=2> in hand.",			
+			"cost": 
+			[				
+				
+			]
+		},
+		{
+			"title": "Prepare for winter",
+			"descriptionFontSize": 17,
+			"background": "promote",
+			"type": "promote",
+			"guilds": [],
+			"description": "<indent=25px>\u2022<b> Tier 1:</b> You must have at least 5 <sprite=1>.\n\n<indent=25px>\u2022<b> Tier 1:</b> You must have at least 7 <sprite=1> and 4 <sprite=5>.\n\n<indent=25px>\u2022<b> Tier 3:</b> You must have at least 7 <sprite=1>, 5 <sprite=5> and 2 <sprite=6>.",
+			"cost": 
+			[				
+				
+			]
+		},
+		{
+			"title": "Seasonal gruntwork",
+			"descriptionFontSize": 17,
+			"background": "promote",
+			"type": "promote",
+			"guilds": [],
+			"description": "<indent=25px>\u2022<b> Tier 1:</b> You must occupy at least 3 basic tiles.\n\n<indent=25px>\u2022<b> Tier 2:</b> You must occupy at least 5 basic tiles.\n\n<indent=25px>\u2022<b> Tier 3:</b> You must occupy at least 7 basic tiles",
+			"cost": 
+			[				
+				
+			]
+		}		
+	]	
 }

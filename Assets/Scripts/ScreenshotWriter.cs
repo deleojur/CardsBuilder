@@ -2,6 +2,7 @@ using System.IO;
 using System;
 using System.Collections;
 using UnityEngine;
+using Json;
 
 public class ScreenshotWriter : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class ScreenshotWriter : MonoBehaviour
         }
     }
 
-    private IEnumerator YieldAndTakeScreenshot(string name)
+    private IEnumerator YieldAndTakeScreenshot(Card card)
     {
         yield return new WaitForEndOfFrame(); // it must be a coroutine 
 
@@ -35,11 +36,30 @@ public class ScreenshotWriter : MonoBehaviour
         var bytes = tex.EncodeToPNG();
         Destroy(tex);
 
-        File.WriteAllBytes(string.Format("{0}/Screenshots/{1}.png", Application.dataPath, name), bytes);
-    }
+        string cardSpecs = "";
+        if (card.tier > 0)
+        {
+            if (card.guilds.Length == 1)
+            {
+                cardSpecs = string.Format("{0}_tier_{1}", card.guilds[0], card.tier);
+            }
+        }
+        else if (card.type.ToLower() == "building")
+        {
+            cardSpecs = "building";
+        }
+        else if (card.type.ToLower() == "promote")
+        {
+            cardSpecs = "promote";
+        }
+        else cardSpecs = "other";
 
-    public void MakeScreenshot(string name)
+
+        File.WriteAllBytes(string.Format("C:/Users/Jur/OneDrive - HvA/Monarchy/Cards/NewCards/Screenshots/{0}_{1}.png", cardSpecs, card.title), bytes);
+    }   
+
+    public void MakeScreenshot(Card card)
     {        
-        StartCoroutine(YieldAndTakeScreenshot(name));        
+        StartCoroutine(YieldAndTakeScreenshot(card));        
     }
 }

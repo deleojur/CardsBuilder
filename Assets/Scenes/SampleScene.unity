@@ -123,18 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &285627089 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5200606725359667741, guid: cbde3e7118ef0144390968ea851b1c38,
-    type: 3}
-  m_PrefabInstance: {fileID: 887907591}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &445849755 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8449403491063753184, guid: cbde3e7118ef0144390968ea851b1c38,
@@ -272,13 +260,14 @@ MonoBehaviour:
   JSONCards: {fileID: 4900000, guid: f573bcab4c92de6499697e9d8b64bee1, type: 3}
   background: {fileID: 1583763846}
   title: {fileID: 1733592986}
-  factionPanel_1: {fileID: 1817937122}
-  factionPanel_2: {fileID: 1589801037}
-  faction_1: {fileID: 1369762788}
-  faction_2:
+  guildPanel_1: {fileID: 1817937122}
+  guildPanel_2: {fileID: 1589801037}
+  guild_1: {fileID: 1369762788}
+  guild_2:
   - {fileID: 621556430}
   - {fileID: 882798791}
   description: {fileID: 1523211861}
+  flavor: {fileID: 1161788490}
   resourcesPanel: {fileID: 1844454851}
   type: {fileID: 1679727569}
   tierBackground: {fileID: 650924086}
@@ -344,45 +333,71 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1516678714}
     m_Modifications:
-    - target: {fileID: 476078340216320560, guid: cbde3e7118ef0144390968ea851b1c38,
-        type: 3}
+    - target: {fileID: 664127945, guid: cbde3e7118ef0144390968ea851b1c38, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 664127946, guid: cbde3e7118ef0144390968ea851b1c38, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -80
+      value: 197.3
       objectReference: {fileID: 0}
-    - target: {fileID: 732726846794624930, guid: cbde3e7118ef0144390968ea851b1c38,
-        type: 3}
-      propertyPath: m_Name
-      value: Resource_3
+    - target: {fileID: 664127947, guid: cbde3e7118ef0144390968ea851b1c38, type: 3}
+      propertyPath: m_text
+      value: <indent=25px>\u2022<b> Tier 1:</b> 3 commoners under your control must
+        be on the same province.\n\n<indent=25px>\u2022<b> Tier 2:</b> 5 commoners
+        under your control must be on the same province.\n\n<indent=25px>\u2022<b>
+        Tier 3:</b> 7 commoners under your control must be on the same province.
       objectReference: {fileID: 0}
-    - target: {fileID: 768963466805924495, guid: cbde3e7118ef0144390968ea851b1c38,
-        type: 3}
-      propertyPath: resourceImage
-      value: 
-      objectReference: {fileID: 2029861423}
-    - target: {fileID: 768963466805924495, guid: cbde3e7118ef0144390968ea851b1c38,
-        type: 3}
-      propertyPath: resourceAmount
-      value: 
-      objectReference: {fileID: 285627089}
-    - target: {fileID: 1153846426470159490, guid: cbde3e7118ef0144390968ea851b1c38,
-        type: 3}
-      propertyPath: m_Name
-      value: Resource_1
+    - target: {fileID: 664127947, guid: cbde3e7118ef0144390968ea851b1c38, type: 3}
+      propertyPath: m_fontSize
+      value: 17
       objectReference: {fileID: 0}
-    - target: {fileID: 1673989697390312642, guid: cbde3e7118ef0144390968ea851b1c38,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 100
+    - target: {fileID: 664127947, guid: cbde3e7118ef0144390968ea851b1c38, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 17
       objectReference: {fileID: 0}
-    - target: {fileID: 2267434926029115955, guid: cbde3e7118ef0144390968ea851b1c38,
-        type: 3}
+    - target: {fileID: 1161788488, guid: cbde3e7118ef0144390968ea851b1c38, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1161788489, guid: cbde3e7118ef0144390968ea851b1c38, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 80
+      value: 197.3
       objectReference: {fileID: 0}
-    - target: {fileID: 2935943794740807050, guid: cbde3e7118ef0144390968ea851b1c38,
+    - target: {fileID: 1161788489, guid: cbde3e7118ef0144390968ea851b1c38, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -216.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 1161788490, guid: cbde3e7118ef0144390968ea851b1c38, type: 3}
+      propertyPath: m_text
+      value: We have found a witch! May we burn her?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1161788490, guid: cbde3e7118ef0144390968ea851b1c38, type: 3}
+      propertyPath: m_fontSize
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1161788490, guid: cbde3e7118ef0144390968ea851b1c38, type: 3}
+      propertyPath: m_margin.x
+      value: -14.59143
+      objectReference: {fileID: 0}
+    - target: {fileID: 1161788490, guid: cbde3e7118ef0144390968ea851b1c38, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 742138666326057787, guid: cbde3e7118ef0144390968ea851b1c38,
         type: 3}
       propertyPath: m_Name
-      value: Resource_2
+      value: GuildPanel_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479132157005136337, guid: cbde3e7118ef0144390968ea851b1c38,
+        type: 3}
+      propertyPath: m_Name
+      value: GuildPanel_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3710191446358242656, guid: cbde3e7118ef0144390968ea851b1c38,
+        type: 3}
+      propertyPath: m_Name
+      value: GuildImage
       objectReference: {fileID: 0}
     - target: {fileID: 4924760162983389162, guid: cbde3e7118ef0144390968ea851b1c38,
         type: 3}
@@ -422,7 +437,7 @@ PrefabInstance:
     - target: {fileID: 4924760162983389162, guid: cbde3e7118ef0144390968ea851b1c38,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 411
+      value: 384.5848
       objectReference: {fileID: 0}
     - target: {fileID: 4924760162983389162, guid: cbde3e7118ef0144390968ea851b1c38,
         type: 3}
@@ -467,7 +482,7 @@ PrefabInstance:
     - target: {fileID: 4924760162983389162, guid: cbde3e7118ef0144390968ea851b1c38,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -13.207581
       objectReference: {fileID: 0}
     - target: {fileID: 4924760162983389162, guid: cbde3e7118ef0144390968ea851b1c38,
         type: 3}
@@ -494,20 +509,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Card
       objectReference: {fileID: 0}
-    - target: {fileID: 6366867902673846765, guid: cbde3e7118ef0144390968ea851b1c38,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 6366867902673846765, guid: cbde3e7118ef0144390968ea851b1c38,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 8511674383964101331, guid: cbde3e7118ef0144390968ea851b1c38,
+    - target: {fileID: 6106048355752904646, guid: cbde3e7118ef0144390968ea851b1c38,
         type: 3}
       propertyPath: m_Name
-      value: Resource_4
+      value: GuildImage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8642884206257932863, guid: cbde3e7118ef0144390968ea851b1c38,
+        type: 3}
+      propertyPath: m_Name
+      value: GuildImage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbde3e7118ef0144390968ea851b1c38, type: 3}
@@ -589,6 +599,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1161788490 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1161788490, guid: cbde3e7118ef0144390968ea851b1c38,
+    type: 3}
+  m_PrefabInstance: {fileID: 887907591}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1369762788 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8585490351292225516, guid: cbde3e7118ef0144390968ea851b1c38,
@@ -870,18 +892,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &2029861423 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9100252800586302085, guid: cbde3e7118ef0144390968ea851b1c38,
-    type: 3}
-  m_PrefabInstance: {fileID: 887907591}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2036439729 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3609125304777966471, guid: cbde3e7118ef0144390968ea851b1c38,

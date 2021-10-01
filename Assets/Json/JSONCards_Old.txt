@@ -1,0 +1,1812 @@
+{
+	"cards":
+	[
+		{
+			"title": "Warehouse",
+			"background": "building",
+			"type": "building",
+			"guilds": ["shadow", "Barter"],
+			"description": "While you occupy the Warehouse, whenever you resolve a basic <sprite=1> or <sprite=5> tile, you gain 1 <sprite=0>.",			
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Bastion",
+			"background": "building",
+			"type": "building",
+			"guilds": ["battle"],
+			"description": "You may make an additional placement action from one basic tile you occupy to two other basic tiles. Other placement rules still apply",
+			"cost": 
+			[				
+				{
+					"type": "food",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Tailor",
+			"background": "Building",
+			"type": "building",			
+			"guilds": ["Barter"],
+			"description": "Choose one:\n<indent=25px>\u2022 Gain 1 <sprite=6>.\n<indent=25px>\u2022 Pay 2 <sprite=4> to gain 2 <sprite=6>.",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "food",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Jeweler",
+			"background": "Building",
+			"type": "building",			
+			"guilds": ["Barter"],
+			"description": "Pay 3 <sprite=4> to gain 2 <sprite=3>.",
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "gold",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Tavern",
+			"background": "Building",
+			"type": "building",			
+			"guilds": ["shadow"],
+			"description": "Take a guild <sprite=2> from another player at random and put it into your hand.",
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "gold",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Docks",
+			"background": "Building",
+			"type": "building",			
+			"guilds": ["shadow"],
+			"description": "Return a commoner from Limbo to your village.",
+			"cost": 
+			[
+				{
+					"type": "food",
+					"amount": 2
+					
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Armory",
+			"background": "Building",
+			"type": "building",			
+			"guilds": ["battle"],
+			"description": "While you occupy the Armory, your commoners gain 1 <sprite=12>.",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Barracks",
+			"background": "Building",
+			"type": "building",			
+			"guilds": ["battle"],
+			"description": "Eliminate a commoner of another player.",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 2
+				},
+				{
+					"type": "wool",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Church",
+			"background": "Building",
+			"type": "building",			
+			"guilds": ["celestial"],
+			"description": "While you occupy the Church, when citizens under your control are bumped from a basic tile, they share that tile instead.",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Cemetery",
+			"background": "Building",
+			"type": "building",			
+			"guilds": ["shadow", "celestial"],
+			"description": "While you occupy the Cemetery, whenever you place one or more citizens on a basic tile, gain 1 <sprite=4>.",
+			"cost": 
+			[
+				{
+					"type": "food",
+					"amount": 1
+				},
+				{
+					"type": "wool",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Barbican",
+			"background": "Building",
+			"type": "building",			
+			"guilds": ["battle", "shadow"],
+			"description": "While you occupy the Barbican, whenever you bump another player from a basic tile, eliminate one of their commoners.",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 3
+				},
+				{
+					"type": "wool",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Altar",
+			"background": "Building",
+			"type": "building",			
+			"guilds": ["celestial"],
+			"description": "Return a commoner you own from Limbo to your village.",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "food",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}				
+			]
+		},
+		{
+			"title": "City hall",
+			"background": "Building",
+			"type": "building",			
+			"guilds": ["barter", "shadow"],
+			"description": "Choose a town hall; it renounces all other players. Then, you may gain allegiance from that town hall by placing a commoner from prison there.",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "gems",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Theater",
+			"background": "Building",
+			"type": "building",			
+			"guilds": ["barter", "celestial"],
+			"description": "Gain 1 <sprite=0> for every commoner you own on the theater.",
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 2
+				},
+				{
+					"type": "food",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Lay siege",
+			"background": "Battle",
+			"type": "action_immediate",
+			"guilds": ["battle"],
+			"description": "Citizens of a chosen player cannot leave their village this season.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "food",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Brutish fervor",
+			"background": "Battle",
+			"type": "action_immediate",
+			"guilds": ["battle"],
+			"description": "Eliminate 1 commoner and place another in jail.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 3
+				}
+			]
+		},
+		{
+			"title": "Demolish",
+			"background": "Battle",
+			"type": "action_immediate",
+			"guilds": ["battle"],
+			"description": "Choose one:\n<indent=25px>\u2022 Destroy 1 chosen building.\n<indent=25px>\u2022 Send two commoners to prison.\n<indent=25px>\u2022 Chosen town hall denounces all players.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "food",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Occupy",
+			"background": "Battle",
+			"type": "action_immediate",
+			"guilds": ["battle"],
+			"description": "Choose a province. Other players may not visit that province this season.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "food",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Murder",
+			"background": "Battle",
+			"type": "action_immediate",
+			"guilds": ["battle"],
+			"description": "Send <i>X</i> commoners to prison. Then eliminate <i>X</i> commoners divided among up to two chosen players.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 3
+				},
+				{
+					"type": "food",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Battlecry",
+			"background": "Battle",
+			"type": "action_trigger",
+			"guilds": ["battle"],
+			"description": "<b>You may play this card in another player's turn.</b>\n\nIncrease the <sprite=12> of your citizens by 1 until the end of turn.",
+			"tier": 1,
+			"cost": 
+			[				
+				{
+					"type": "gold",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Riot",
+			"background": "Battle",
+			"type": "action_immediate",
+			"guilds": ["battle"],
+			"description": "Choose one:\n<indent=25px>\u2022 Eliminate a commoner.</indent>\n<indent=25px>\u2022 Destroy a tier 1 invention.</indent>\n<indent=25px>\u2022 Destroy a building.</indent>",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Pillage",
+			"background": "Battle",
+			"type": "action_immediate",
+			"guilds": ["battle"],
+			"description": "Whenever you gain <sprite=4> from a basic <sprite=4> tile, you may take it from a chosen player instead of the general supply. You may choose different players each time you resolve a tile like this.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Rampage",
+			"background": "Battle",
+			"type": "action_immediate",
+			"guilds": ["battle"],
+			"description": "Eliminate 1 commoner in all tiles of a province.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "sheep",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Ambush",
+			"background": "Battle",
+			"type": "action_trigger",
+			"guilds": ["battle"],
+			"description": "<b>Play this card only when a player declares a placement action on a basic tile you occupy.</b>\n\nEliminate one of their commoners before the move action resolves.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Overthrow",
+			"background": "Battle",
+			"type": "action_trigger",
+			"guilds": ["battle"],
+			"description": "<b>Play this card only when a player promotes a commoner.</b>\n\nThat commoner does not promote and is send to prison.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "gold",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Total destruction",
+			"background": "Battle",
+			"type": "action_immediate",
+			"guilds": ["battle"],
+			"description": "Choose two:\n<indent=25px>\u2022 Eliminate two commoners.</indent>\n<indent=25px>\u2022 Eliminate a tier 1 guild member.</indent>\n<indent=25px>\u2022 Destroy a building.</indent>",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 3
+				},
+				{
+					"type": "gems",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Ruthless tactics",
+			"background": "Battle",
+			"type": "action_trigger",
+			"guilds": ["battle"],
+			"description": "<b>Play this card only after you bumped another player from a basic tile.</b>\n\nSend the citizens on that tile to Limbo instead of prison.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Capitulate",
+			"background": "Battle",
+			"type": "action_immediate",
+			"guilds": ["battle"],
+			"description": "Return a commoner from a chosen province to its owner's stockpile. Then replace it with a commoner from your own stockpile.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "sheep",
+					"amount": 1
+				},
+				{
+					"type": "gold",
+					"amount": 3
+				}
+			]
+		},
+		{
+			"title": "Insult the fallen",
+			"background": "Battle",
+			"type": "action_trigger",
+			"guilds": ["battle"],
+			"description": "<b>You may play this card in another player's turn.</b>\n\nReturn up to two commoners from prison and/or Limbo to their owner's stockpile.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				},
+				{
+					"type": "gems",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Uproar",
+			"background": "Battle",
+			"type": "action_immediate",
+			"guilds": ["battle"],
+			"description": "Choose two:\n<indent=25px>\u2022 Eliminate a tier 2 or lower guild member.</indent>\n<indent=25px>\u2022 Eliminate two commoners.</indent>\n<indent=25px>\u2022 Send two citizens to prison.</indent>\n<indent=25px>\u2022 Destroy a building.</indent>",
+			"tier": 3,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 2
+				},
+				{
+					"type": "food",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Obliteration",
+			"background": "Battle",
+			"type": "action_immediate",
+			"guilds": ["battle"],
+			"description": "Choose a province. Eliminate all commoners in that province and send all guild members to prison from that province.",
+			"tier": 3,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 2
+				},
+				{
+					"type": "gold",
+					"amount": 3
+				}
+			]
+		},
+		{
+			"title": "Rally the meek",
+			"background": "Battle",
+			"type": "action_immediate",
+			"guilds": ["battle"],
+			"description": "Send two commoners from your stockpile to prison. Then promote one to a soldier.",
+			"tier": 3,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Spy",
+			"background": "shadow",
+			"type": "action_immediate",
+			"guilds": ["shadow"],
+			"description": "Look at another player's hand. Choose a <sprite=2> and discard it.",
+			"tier": 1,
+			"cost": 
+			[
+				
+			]
+		},
+		{
+			"title": "Infiltrate",
+			"background": "shadow",
+			"type": "action_immediate",
+			"guilds": ["shadow"],
+			"description": "Up to two chosen placement actions of a chosen player do not resolve this season.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Corruption",
+			"background": "shadow",
+			"type": "action_trigger",
+			"guilds": ["shadow"],
+			"description": "<b>You may play this card in addition to a placement action or in another player's turn.</b>\n\nPut two commoners from another player in prison.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "food",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Anticipation",
+			"background": "shadow",
+			"type": "action_trigger",
+			"guilds": ["shadow"],
+			"description": "<b>Play this card only when another player plays a tier 1 guild card.</b>\n\nPrevent that card from resolving.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "food",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Insult to injury",
+			"background": "shadow",
+			"type": "action_trigger",
+			"guilds": ["shadow"],
+			"description": "<b>Play this card only when a commoner is send to prison.</b>\n\nSend that commoner to Limbo instead.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "food",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Elaborate ruse",
+			"background": "shadow",
+			"type": "action_immediate",
+			"guilds": ["shadow"],
+			"description": "Place a commoner you own into Limbo. Take up to three <sprite=0> from among up to 3 players.",
+			"tier": 1,
+			"cost": 
+			[				
+				{
+					"type": "food",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Breakout",
+			"background": "shadow",
+			"type": "action_immediate",
+			"guilds": ["shadow"],
+			"description": "Return up to three commoners from prison to your village.",
+			"tier": 1,
+			"cost": 
+			[				
+				{
+					"type": "gold",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Feign death",
+			"background": "shadow",
+			"type": "action_immediate",
+			"guilds": ["shadow"],
+			"description": "Return up to two commoners from Limbo to your village.",
+			"tier": 1,
+			"cost": 
+			[				
+				{
+					"type": "sheep",
+					"amount": 2
+				},
+				{
+					"type": "gold",
+					"amount": 2
+				}
+			]
+		},		
+		{
+			"title": "Stealth",
+			"background": "shadow",
+			"type": "action_trigger",
+			"guilds": ["shadow"],
+			"description": "<b>Play this card only when your citizens are bumped from a basic tile.</b>\n\nSend the bumped citizens to your village instead of prison.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "sheep",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Like wildfire",
+			"background": "shadow",
+			"type": "action_trigger",
+			"guilds": ["shadow"],
+			"description": "<b>You may play this card in addition to a placement action.</b>\n\nForce another player to pass for this season.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "food",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Intercept directives",
+			"background": "shadow",
+			"type": "action_trigger",
+			"guilds": ["shadow"],
+			"description": "<b>Play this card only after another player declares a placement action.</b>\n\nForce that player to place their citizens on a different valid basic tile.",
+			"tier": 1,
+			"cost": 
+			[
+				
+			]
+		},
+		{
+			"title": "Conspiracy",
+			"background": "shadow",
+			"type": "action_trigger",
+			"guilds": ["shadow"],
+			"description": "<b>Play this card only when another player plays a tier 1 or tier 2 guild card.</b>\n\nPrevent that card from resolving. Then send two of their commoners to prison.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Dark brotherhood",
+			"background": "shadow",
+			"type": "action_trigger",
+			"guilds": ["shadow"],
+			"description": "<b>Play this card only when another player promotes a commoner.</b>\n\nPrevent that promotion from resolving. Then promote a commoner to an agent.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Indulge the silence",
+			"background": "shadow",
+			"type": "action_immediate",
+			"guilds": ["shadow"],
+			"description": "Look at another player's hand. Choose 1 guild <sprite=2> and discard it.\nThen choose another guild <sprite=2> and take it into your hand.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "gold",
+					"amount": 3
+				}
+			]
+		},
+		{
+			"title": "Former glory",
+			"background": "shadow",
+			"type": "action_immediate",
+			"guilds": ["shadow"],
+			"description": "Search the guild discard pile for up to 2 <sprite=2> cards and take them in your hand.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "sheep",
+					"amount": 2
+				},
+				{
+					"type": "food",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Vengeance is ours",
+			"background": "shadow",
+			"type": "action_immediate",
+			"guilds": ["shadow"],
+			"description": "For each citizen in Limbo you own, eliminate a commoner.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "food",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Suicide attack",
+			"background": "shadow",
+			"type": "action_immediate",
+			"guilds": ["shadow"],
+			"description": "Sacrifice up to three commoners. Eliminate all citizens on a basic tile for each commoner sacrificed this way.",
+			"tier": 3,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "food",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Assassinate",
+			"background": "shadow",
+			"type": "action_trigger",
+			"guilds": ["shadow"],
+			"description": "<b>You may play this card in another player's turn.</b>\n\nELiminate a tier 3 or lower guild member.",
+			"tier": 3,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "gems",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Buried alive",
+			"background": "shadow",
+			"type": "action_immediate",
+			"guilds": ["shadow"],
+			"description": "Sacrifice a commoner. Eliminate two tier 2 or lower guild members.",
+			"tier": 3,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 3
+				},
+				{
+					"type": "sheep",
+					"amount": 2
+				}
+			]
+		},
+
+
+		{
+			"title": "Monopoly",
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "Name a <sprite=0>. Chosen player pays you up to 2 of that <sprite=0>.",
+			"tier": 1,
+			"cost": 
+			[
+				
+			]
+		},
+		{
+			"title": "Trade",
+			"descriptionFontSize": 21,
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "Give another player up to 6 <sprite=0>. Then choose any combination:\n<indent=25px>\u2022 For every <sprite=0> given this way, gain your choice of <sprite=0> from them.\n<indent=25px>\u2022 For every 2 <sprite=0> given this way, they give you a random <sprite=2>.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Taxes",
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "If another player plays a <sprite=2> this season, they must pay you 1 <sprite=4> in addition to that card's normal cost.",
+			"tier": 1,
+			"cost": 
+			[				
+			]
+		},
+		{
+			"title": "First come first serve",
+			"background": "barter",
+			"type": "action_trigger",
+			"guilds": ["barter"],
+			"description": "<b>Play this card only before you declare a placement action on a basic tile.</b>\n\nImmediately gain the benefits of that tile in addition to the end of season benefits.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Prosperity",
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "Gain 2 <sprite=1>, 1 <sprite=5> and draw a <sprite=2> from the guild deck.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Subornation",
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "Pay another player any number of <sprite=4>. For each 2 <sprite=4> paid this way, move a commoner they own from a basic tile they occupy to a valid basic tile of your chosing.",
+			"tier": 1,
+			"cost": 
+			[
+				
+			]
+		},
+		{
+			"title": "Investment",
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "This season, all your <sprite=0> income from basic tiles is increased by 1.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "food",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Real-estate investor",
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "Pay another player 2 <sprite=4>. Take control of a building they own.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Banking",
+			"background": "barter",
+			"type": "action_trigger",
+			"guilds": ["barter"],
+			"description": "<b>Play this card only when another player plays a guild card.</b>\n\nInstead of paying the cost of that card to the general supply, they pay them to you instead.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "food",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Economic advantage",
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "Discard any number of guild <sprite=2>. Then draw that many <sprite=2> cards + 1 from the guild deck.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Loan",
+			"background": "barter",
+			"type": "action_trigger",
+			"guilds": ["barter"],
+			"description": "Pay another player 3 <sprite=0>. The next three seasons, they must pay you back any 2 <sprite=0>. If they cannot, you may randomly take a guild <sprite=2> from them instead.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "food",
+					"amount": 1
+				}
+			]
+		},		
+		{
+			"title": "Time is money",
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "When placing citizens on a tile this season, you immediately gain the benefits in addition to the end of season benefits.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Bribery",
+			"descriptionFontSize": 19,
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "You may repeat this action up to three times. Choose one:\n<indent=25px>\u2022 Pay another player 3 <sprite=4> and gain control of one of their commoners.</indent>\n<indent=25px>\u2022 Pay another player 5 <sprite=4> and gain control of one of their tier 1 guild members.</indent>",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Welfare",
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "Discard any number of guild <sprite=2>. Then draw that many <sprite=2> + 1 from the guild deck and/or the promote deck.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Mercenaries",
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "Pay up to 6 <sprite=4>. For each 2 <sprite=4> paid this way, place a commoner from your stockpile into prison and draw a promote card.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "food",
+					"amount": 2
+				}
+			]
+		},
+
+		{
+			"title": "Fortune",
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "Gain 3 <sprite=1>, 3 <sprite=5> and 2 <sprite=3>. Then draw a <sprite=2> from the promote deck and one from the guild deck.",
+			"tier": 3,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "gold",
+					"amount": 3
+				}
+			]
+		},
+		{
+			"title": "National debt",
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "Until the end of the season, gain control of all commoners of a chosen player. When the season ends, return those commoners to that player's village.",
+			"tier": 3,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 5
+				}, 
+				{
+					"type": "sheep",
+					"amount": 2
+				},
+				{
+					"type": "wool",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Motherload",
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter"],
+			"description": "This season, you can play cards without paying their cost. Other restrictions still apply.",
+			"tier": 3,
+			"cost": 
+			[
+				{
+					"type": "gems",
+					"amount": 2
+				},
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "gold",
+					"amount": 3
+				}
+			]
+		},
+
+
+
+
+		{
+			"title": "Feed the poor",
+			"descriptionFontSize": 20,
+			"background": "celestial",
+			"type": "action_immediate",
+			"guilds": ["celestial"],
+			"description": "Choose one:\n<indent=25px>\u2022 Gain 4 <sprite=1> and 2 <sprite=5>.\n<indent=25px>\u2022 This card costs 2 <sprite=4> to play. Gain 3 <sprite=1> and 2 <sprite=5>. Another player who owns at least 1 <sprite=9> member gains 1 <sprite=1>.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 4
+				}
+			]
+		},
+		{
+			"title": "Go forth and multiply",			
+			"background": "celestial",
+			"type": "action_immediate",
+			"guilds": ["celestial"],
+			"description": "Place a commoner from your stockpile on your village.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "food",
+					"amount": 1
+				},
+				{
+					"type": "gold",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Resurrection",			
+			"background": "celestial",
+			"type": "action_trigger",
+			"guilds": ["celestial"],
+			"description": "<b>You may play this card in addition to a placement action.</b>\n\nReturn up to two commoners you own from Limbo to your village.",
+			"flavor": "Eat sleep reanimate the dead repeat.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "food",
+					"amount": 2
+				},
+				{
+					"type": "gold",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Divine intervention",			
+			"background": "celestial",
+			"type": "action_trigger",
+			"guilds": ["celestial"],
+			"description": "<b>Play this card only when one or more commoners are eliminated.</b>\n\nPrevent up to three commoners from being eliminated this way.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "food",
+					"amount": 2
+				},
+				{
+					"type": "gold",
+					"amount": 3
+				}
+			]
+		},
+		{
+			"title": "God's will",			
+			"background": "celestial",
+			"type": "action_immediate",
+			"guilds": ["celestial"],
+			"description": "Place a commoner from you stockpile on your village. Then draw a promote <sprite=2>.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Tolerance",			
+			"background": "celestial",
+			"type": "action_trigger",
+			"guilds": ["celestial"],
+			"description": "<b>Play this card only when another player bumps you from a basic tile.</b>\n\nInstead of bumping your citizens to prison, share that tile.",
+			"tier": 1,
+			"cost": 
+			[
+				{
+					"type": "sheep",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Blessed harvest",			
+			"background": "celestial",
+			"type": "action_trigger",
+			"guilds": ["celestial"],
+			"description": "<b>You may play this card in another player's turn.</b>\n\nReturn the citizens on a basic tile to your village and immediately gain its benefits.",
+			"tier": 1,
+			"cost": 
+			[				
+				{
+					"type": "gold",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Blind faith",			
+			"background": "celestial",
+			"type": "action_trigger",
+			"guilds": ["celestial"],
+			"description": "gain 2 <sprite=2> from the promote deck.",
+			"tier": 1,
+			"cost": 
+			[				
+				{
+					"type": "gold",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Indoctrinate",			
+			"background": "celestial",
+			"type": "action_trigger",
+			"guilds": ["celestial"],
+			"description": "<b>You may play this card in another player's turn.</b>\n\nChoose a tier 1 guild member. That guild member becomes a monk. It's owner doesn't change. Then draw a <sprite=2> from the guild deck.",
+			"tier": 1,
+			"cost": 
+			[				
+				{
+					"type": "sheep",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Forgiveness",			
+			"background": "celestial",
+			"type": "action_trigger",
+			"guilds": ["celestial"],
+			"description": "<b>You may play this card in another player's turn.</b>\n\nReturn a tier 1 guild member from Limbo to your village.",
+			"tier": 1,
+			"cost": 
+			[				
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "wool",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Devotion",
+			"background": "celestial",
+			"type": "action_immediate",
+			"guilds": ["celestial"],
+			"description": "Draw two <sprite=2> from the guild deck and reveal one. Play it immediately. You do not need to pay it's cost or own the appropriate guild member. Discard the other card.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "See the light",			
+			"background": "celestial",
+			"type": "action_immediate",
+			"guilds": ["celestial"],
+			"description": "Place up to 2 commoners you own from prison to your village. Then promote one to a monk.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Sunday prayer",			
+			"background": "celestial",
+			"type": "action_trigger",
+			"guilds": ["celestial"],
+			"description": "<b>You may play this card in another player's turn.</b>\n\nReturn your commoners from up to two basic tiles to your village. Immediately gain the benefits of those tiles.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Mercy",			
+			"background": "celestial",
+			"type": "action_trigger",
+			"guilds": ["celestial"],
+			"description": "<b>You may play this card in another player's turn.</b>\n\nReturn a tier 1 guild member and 2 commoners from Limbo to your village; they may be other player's citizens.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Love thy neighbor",
+			"descriptionFontSize": 20,
+			"background": "celestial",
+			"type": "action_trigger",
+			"guilds": ["celestial"],
+			"description": "<b>Play this card only after declaring a placement action on a basic tile.</b>\n\nPlace a commoner from your stockpile on all basic tiles of that province. If there already are citizens of other players there, share those tiles.",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 2
+				}
+			]
+		},
+
+
+		{
+			"title": "The word of God",
+			"descriptionFontSize": 20,
+			"background": "celestial",
+			"type": "action_trigger",
+			"guilds": ["celestial"],
+			"description": "<b>Play this card only when placing a citizen on the town hall of a province.</b>\n\nPlace a commoner from your stockpile on all basic tiles of that province. If there already are citizens of other players there, share those tiles.",
+			"tier": 3,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 2
+				},
+				{
+					"type": "gems",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Burn the witch!",
+			"background": "celestial",
+			"type": "action_immediate",
+			"guilds": ["celestial"],
+			"description": "Choose a tier 3 or lower guild member and a tier 1 guild member who are in prison. Eliminate those guild members.",
+			"flavor": "We have found a witch! May we burn her?",
+			"tier": 3,
+			"cost": 
+			[
+				{
+					"type": "gems",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 2
+				},
+				{
+					"type": "wool",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Crusade",
+			"background": "celestial",
+			"type": "action_immediate",
+			"guilds": ["celestial"],
+			"description": "Place all guild members who are not of the <sprite=9> guild into prison. Then eliminate a tier 1 and a tier 2 or lower guild member.",
+			"tier": 3,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 3
+				},
+				{
+					"type": "sheep",
+					"amount": 2
+				},
+				{
+					"type": "wool",
+					"amount": 2
+				},
+				{
+					"type": "food",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Annihilation",
+			"background": "Battle",
+			"type": "action_immediate",
+			"guilds": ["battle", "shadow"],
+			"description": "Choose one:\n<indent=25px>\u2022 Eliminate two commoners.</indent>\n<indent=25px>\u2022 Eliminate a tier 1 guild member.</indent>\n<indent=25px>\u2022 Eliminate two tier 1 guild members who are in prison.</indent>",
+			"tier": 2,
+			"cost": 
+			[
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Raid",
+			"background": "Shadow",
+			"type": "action_immediate",
+			"guilds": ["battle", "shadow"],
+			"description": "Choose a player. That player discards 1 <sprite=2>.",
+			"tier": 1,
+			"cost": 
+			[				
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Recourse",
+			"background": "barter",
+			"type": "action_immediate",
+			"guilds": ["barter", "celestial"],
+			"description": "Draw 2 <sprite=2> from the guild deck and/or the promote deck.",
+			"tier": 1,
+			"cost": 
+			[				
+				{
+					"type": "sheep",
+					"amount": 1
+				},
+				{
+					"type": "gold",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Donations",
+			"background": "celestial",
+			"type": "action_immediate",
+			"guilds": ["barter", "celestial"],
+			"description": "Gain 3 <sprite=0> from the general supply and take 3 <sprite=4> divided as you choose from other players.",
+			"tier": 2,
+			"cost": 
+			[				
+				{
+					"type": "sheep",
+					"amount": 1
+				},
+				{
+					"type": "wool",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Favorable harvest",
+			"background": "favorable_harvest",
+			"guilds": [],
+			"type": "action_immediate",
+			"description": "All other players gain 1 <sprite=0>.\nYou gain 2 <sprite=0>.",
+			"cost": 
+			[				
+				
+			]
+		},
+		{
+			"title": "Turn the tide",
+			"background": "turn_the_tide",
+			"type": "action_trigger",
+			"guilds": [],
+			"description": "<b>Play this card only when another player declares a placement action on a basic tile you occupy.</b>\n\nIncrease your <sprite=12> on that tile by 1 until the end of turn.",
+			"cost": 
+			[				
+				{
+					"type": "sheep",
+					"amount": 1 
+				}
+			]
+		},
+		{
+			"title": "Unfair advantage",
+			"background": "unfair_advantage",
+			"guilds": [],
+			"type": "action_trigger",
+			"description": "<b>Play this card only after you declared a placement action on an occupied basic tile.</b>\n\nIncrease your <sprite=12> on that tile by 1 until the end of turn.",
+			"cost": 
+			[				
+				{
+					"type": "sheep",
+					"amount": 1 
+				}
+			]
+		},
+		{
+			"title": "Political attendance",
+			"descriptionFontSize": 17,
+			"background": "promote",
+			"type": "promote",
+			"guilds": [],
+			"description": "<indent=25px>\u2022<b> Tier 1:</b> You must occupy a basic tile with at least 2 citizens.\n\n<indent=25px>\u2022<b> Tier 2:</b> You must occupy a basic tile with at least 3 citizens.\n\n<indent=25px>\u2022<b> Tier 3:</b> You must occupy a basic tile with at least 5 citizens.",
+			"cost": 
+			[				
+				
+			]
+		},
+		{
+			"title": "Authority",
+			"descriptionFontSize": 17,
+			"background": "promote",
+			"type": "promote",
+			"guilds": [],
+			"description": "<indent=25px>\u2022<b> Tier 1:</b> At least 2 provinces must have pledged allegiance to you.\n\n<indent=25px>\u2022<b> Tier 2:</b> At least 3 provinces must have pledged allegiance to you.\n\n<indent=25px>\u2022<b> Tier 3:</b> At least 4 provinces must have pledged allegiance to you.",			
+			"cost": 
+			[				
+				
+			]
+		},
+		{
+			"title": "Population growth",
+			"descriptionFontSize": 17,
+			"background": "promote",
+			"type": "promote",
+			"guilds": [],
+			"description": "<indent=25px>\u2022<b> Tier 1:</b> You must have at least 6 commoners under your control.\n\n<indent=25px>\u2022<b> Tier 2:</b> You must have at least 8 commoners under your control.\n\n<indent=25px>\u2022<b> Tier 3:</b> You must have at least 10 commoners under your control.",			
+			"cost": 
+			[				
+				
+			]
+		},
+		{
+			"title": "Stranglehold",
+			"descriptionFontSize": 17,
+			"background": "promote",
+			"type": "promote",
+			"guilds": [],
+			"description": "<indent=25px>\u2022<b> Tier 1:</b> At least 3 of your commoners must be on the same province.\n\n<indent=25px>\u2022<b> Tier 2:</b> At least 5 of your commoners must be on the same province.\n\n<indent=25px>\u2022<b> Tier 3:</b> At least 7 of your commoners must be on the same province.",			
+			"cost": 
+			[				
+				
+			]
+		},
+		{
+			"title": "Abundance",
+			"descriptionFontSize": 17,
+			"background": "promote",
+			"type": "promote",
+			"guilds": [],
+			"description": "<indent=25px>\u2022<b> Tier 1:</b> You must have at least 6 <sprite=4>\n\n<indent=25px>\u2022<b> Tier 2:</b> You must have at least 6 <sprite=4> and 2 <sprite=6>.\n\n<indent=25px>\u2022<b> Tier 3:</b> You must have at least 6 <sprite=4>, 2 <sprite=6> and 2 <sprite=3>.",			
+			"cost": 
+			[				
+				
+			]
+		},
+		{
+			"title": "Course of action",
+			"descriptionFontSize": 17,
+			"background": "promote",
+			"type": "promote",
+			"guilds": [],
+			"description": "<indent=25px>\u2022<b> Tier 1:</b> You must have at least\n6 guild <sprite=2> in hand.\n\n<indent=25px>\u2022<b> Tier 2:</b> You must have at least\n7 guild <sprite=2> in hand.\n\n<indent=25px>\u2022<b> Tier 3:</b> You must have at least\n9 guild <sprite=2> in hand.",			
+			"cost": 
+			[				
+				
+			]
+		},
+		{
+			"title": "Prepare for winter",
+			"descriptionFontSize": 17,
+			"background": "promote",
+			"type": "promote",
+			"guilds": [],
+			"description": "<indent=25px>\u2022<b> Tier 1:</b> You must have at least 5 <sprite=1>.\n\n<indent=25px>\u2022<b> Tier 1:</b> You must have at least 7 <sprite=1> and 4 <sprite=5>.\n\n<indent=25px>\u2022<b> Tier 3:</b> You must have at least 7 <sprite=1>, 5 <sprite=5> and 2 <sprite=6>.",
+			"cost": 
+			[				
+				
+			]
+		},
+		{
+			"title": "Seasonal gruntwork",
+			"descriptionFontSize": 17,
+			"background": "promote",
+			"type": "promote",
+			"guilds": [],
+			"description": "<indent=25px>\u2022<b> Tier 1:</b> You must occupy at least 3 basic tiles.\n\n<indent=25px>\u2022<b> Tier 2:</b> You must occupy at least 5 basic tiles.\n\n<indent=25px>\u2022<b> Tier 3:</b> You must occupy at least 7 basic tiles",
+			"cost": 
+			[				
+				
+			]
+		}		
+	]	
+}

@@ -12,12 +12,16 @@ namespace Json
     {
         private Cards cards;
         private ResourceSort resourceSort;
+        private PrerequisitesSort prerequisitesSort;
 
         [SerializeField]
         private TextAsset JSONCards;
 
         [SerializeField]
         private Image background;
+
+        [SerializeField]
+        private Image foreground;
 
         [SerializeField]
         private TextMeshProUGUI title;
@@ -58,9 +62,13 @@ namespace Json
         [SerializeField]
         private ResourcePrefab[] resources;
 
+        [SerializeField]
+        private Image[] prerequisites;
+
         private void Awake()
         {
             resourceSort = new ResourceSort();
+            prerequisitesSort = new PrerequisitesSort();
             cards = JsonUtility.FromJson<Cards>(JSONCards.text);
             StartCoroutine(YieldAndBuildCards());
         }
@@ -78,7 +86,8 @@ namespace Json
 
         private void CreateCard(Card card)
         {
-            background.sprite = LoadSprite(string.Format("Background/{0}.png", card.background.ToLower()));
+            background.sprite = LoadSprite(string.Format("Guilds/Backgrounds/{0}.png", card.background.ToLower()));
+            foreground.sprite = LoadSprite(string.Format("Guilds/Avatars/{0}.png", card.foreground.ToLower()));
             type.sprite = LoadSprite(string.Format("Types/{0}.png", card.type.ToLower()));
             title.text = card.title;
             description.text = card.description;
@@ -95,6 +104,7 @@ namespace Json
             CreateGuilds(card);
             CreateTier(card);
             CreateResources(card);
+            CreatePrerequisites(card);
         }
 
         private void CreateGuilds(Card card)
@@ -125,10 +135,10 @@ namespace Json
 
         private void CreateTier(Card card)
         {
-            if (card.tier > 0)
+            if (card.loyalty > 0)
             {
                 tierBackground.gameObject.SetActive(true);
-                tierNumber.text = card.tier.ToString();
+                tierNumber.text = card.loyalty.ToString();
             }
             else
             {
@@ -153,6 +163,29 @@ namespace Json
                 {
                     resources[i].gameObject.SetActive(false);   
                 }                
+            }
+        }
+
+        private void CreatePrerequisites(Card card)
+        {
+            Array.Sort(card.cost, prerequisitesSort);
+            int index = 0;
+            for (int i = 0; i < 5; i++)
+            {
+                prerequisites[i].gameObject.SetActive(false);
+            }
+
+            for (int i = 0; i < card.prerequisites.Length; i++)
+            {
+                
+                Resource prerequisite = card.prerequisites[i];
+
+                for (int j = 0; j < prerequisite.amount; j++)
+                {
+                    prerequisites[index].gameObject.SetActive(true);
+                    prerequisites[index].sprite = LoadSprite(string.Format("Guilds/{0}.png", prerequisite.type.ToLower()));
+                    index++;
+                }
             }
         }
 

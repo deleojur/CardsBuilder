@@ -37,23 +37,13 @@ public class ScreenshotWriter : MonoBehaviour
         Destroy(tex);
 
         string cardSpecs = "";
-        if (card.tier > 0)
+        if (card.loyalty > 0)
         {
             if (card.guilds.Length == 1)
             {
-                cardSpecs = string.Format("{0}_tier_{1}", card.guilds[0], card.tier);
+                cardSpecs = string.Format("{0}_{1}", card.guilds[0], card.loyalty);
             }
         }
-        else if (card.type.ToLower() == "building")
-        {
-            cardSpecs = "building";
-        }
-        else if (card.type.ToLower() == "promote")
-        {
-            cardSpecs = "promote";
-        }
-        else cardSpecs = "other";
-
 
         File.WriteAllBytes(string.Format("C:/Users/Jur/OneDrive - HvA/Monarchy/Cards/NewCards/Screenshots/{0}_{1}.png", cardSpecs, card.title), bytes);
     }   

@@ -37,12 +37,9 @@ public class ScreenshotWriter : MonoBehaviour
         Destroy(tex);
 
         string cardSpecs = "";
-        if (card.loyalty > 0)
+        if (card.guilds.Length == 1)
         {
-            if (card.guilds.Length == 1)
-            {
-                cardSpecs = string.Format("{0}_{1}", card.guilds[0], card.loyalty);
-            }
+            cardSpecs = string.Format("{0}_{1}", card.guilds[0], card.loyalty);
         }
 
         File.WriteAllBytes(string.Format("C:/Users/Jur/OneDrive - HvA/Monarchy/Cards/NewCards/Screenshots/{0}_{1}.png", cardSpecs, card.title), bytes);

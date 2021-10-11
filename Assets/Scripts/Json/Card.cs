@@ -35,7 +35,7 @@ namespace Json
 
     public class ResourceSort : IComparer
     {
-        private string[] resourceTypesSort = { "gold", "food", "sheep", "wool", "gems" };
+        private string[] resourceTypesSort = { "gold", "food", "sheep", "wool", "gems", "barter", "shadow", "battle", "science", "celestial" };
 
         public int Compare(object x, object y)
         {

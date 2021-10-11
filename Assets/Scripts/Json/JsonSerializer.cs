@@ -84,14 +84,35 @@ namespace Json
             }
         }
 
+        private int NumberOfSpaces(int numberOfPrerequisites)
+        {
+            switch (numberOfPrerequisites)
+            {
+                default:
+                    return 0;
+                case 1:
+                    return 4;
+                case 2:
+                    return 6;
+                case 3:
+                    return 8;
+                case 4:
+                    return 10;
+            }
+        }
+
         private void CreateCard(Card card)
         {
+            int numberOfPrerequisites = CreatePrerequisites(card);
+
             background.sprite = LoadSprite(string.Format("Guilds/Backgrounds/{0}.png", card.background.ToLower()));
             foreground.sprite = LoadSprite(string.Format("Guilds/Avatars/{0}.png", card.foreground.ToLower()));
             type.sprite = LoadSprite(string.Format("Types/{0}.png", card.type.ToLower()));
             title.text = card.title;
-            description.text = card.description;
+
+            description.text = card.description.PadLeft(card.description.Length + NumberOfSpaces(numberOfPrerequisites), ' ');
             description.fontSize = card.descriptionFontSize > 0 ? card.descriptionFontSize : 22;
+
 
             if (card.flavor != null)
             {
@@ -103,8 +124,7 @@ namespace Json
 
             CreateGuilds(card);
             CreateTier(card);
-            CreateResources(card);
-            CreatePrerequisites(card);
+            CreateResources(card);            
         }
 
         private void CreateGuilds(Card card)
@@ -166,27 +186,27 @@ namespace Json
             }
         }
 
-        private void CreatePrerequisites(Card card)
+        private int CreatePrerequisites(Card card)
         {
             Array.Sort(card.cost, prerequisitesSort);
-            int index = 0;
+            int numberOfPrerequisites = 0;
             for (int i = 0; i < 5; i++)
             {
                 prerequisites[i].gameObject.SetActive(false);
             }
 
             for (int i = 0; i < card.prerequisites.Length; i++)
-            {
-                
+            {                
                 Resource prerequisite = card.prerequisites[i];
 
                 for (int j = 0; j < prerequisite.amount; j++)
                 {
-                    prerequisites[index].gameObject.SetActive(true);
-                    prerequisites[index].sprite = LoadSprite(string.Format("Guilds/{0}.png", prerequisite.type.ToLower()));
-                    index++;
+                    prerequisites[numberOfPrerequisites].gameObject.SetActive(true);
+                    prerequisites[numberOfPrerequisites].sprite = LoadSprite(string.Format("Guilds/{0}.png", prerequisite.type.ToLower()));
+                    numberOfPrerequisites++;
                 }
             }
+            return numberOfPrerequisites;
         }
 
         private Sprite LoadSprite(string filePath)

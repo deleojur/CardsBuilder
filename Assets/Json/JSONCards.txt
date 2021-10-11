@@ -2,16 +2,53 @@
 	"cards":
 	[
 		{
-			"title": "Assassin",
-			"background": "background_red",
-			"foreground": "assassin",
-			"type": "building",
-			"guilds": ["shadow"],
-			"description": "<sprite=13>, Kill a guild member with a loyalty of 1 or lower.",
+			"title": "Peasant",
+			"background": "background_neutral",
+			"foreground": "peasant",
+			"type": "contract",
+			"guilds": [],
+			"description": "Two peasants can be depleted together for 1 devotion of any guild.",
+			"loyalty": 1,
+			"flavor": "",
 			"cost": 
 			[
 				{
 					"type": "gold",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			],
+			"prerequisites":
+			[
+				
+			]
+		},
+		{
+			"title": "Zaphreal's successor",
+			"background": "background_neutral",
+			"foreground": "king",
+			"type": "contract",
+			"guilds": [],
+			"description": "<b>Can only be bought if you have at least 25 loyalty.</b><br><br>The player who first buys this card wins the game.",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 6
+				},
+				{
+					"type": "wool",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
 					"amount": 4
 				},
 				{
@@ -19,28 +56,45 @@
 					"amount": 2
 				}
 			],
+			"prerequisites": []			
+		},
+		{
+			"title": "Assassin",
+			"background": "background_shadow",
+			"foreground": "shadow/assassin",
+			"type": "action",
+			"guilds": ["shadow"],
+			"loyalty": 1,
+			"description": "<sprite=4><sprite=13>, Deplete a guild member and place a fatique token on it. The next time it is resupplied, remove the fatique token instead.",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 4
+				},
+				{
+					"type": "food",
+					"amount": 3
+				}
+			],
 			"prerequisites":
 			[
 				{ 
 					"type": "shadow",
-					"amount": 3
+					"amount": 2
 				}
 			]
 		},
 		{
 			"title": "Tavern",
-			"background": "background_red",
-			"foreground": "tavern",
-			"type": "contract",
+			"background": "background_shadow",
+			"foreground": "shadow/tavern",
+			"type": "action",
 			"guilds": ["shadow"],			
 			"loyalty": 1,
-			"description": "<sprite=13>, Resupply another guild member.",
+			"description": "<sprite=13>, Resupply a guild member of the <sprite=10> guild.",
 			"cost": 
-			[
-				{
-					"type": "gold",
-					"amount": 1
-				},
+			[				
 				{
 					"type": "food",
 					"amount": 2
@@ -57,68 +111,12 @@
 		},
 		{
 			"title": "Docks",
-			"background": "background_red",
-			"foreground": "docks",
-			"type": "contract",
+			"background": "background_shadow",
+			"foreground": "shadow/docks",
+			"type": "action",
 			"guilds": ["shadow"],			
 			"loyalty": 1,
-			"description": "<sprite=13>, Resupply another guild member.",
-			"cost": 
-			[
-				{
-					"type": "gold",
-					"amount": 1
-				},
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
-					"amount": 1
-				}
-			],
-			"prerequisites":
-			[
-				
-			]
-		},
-		{
-			"title": "Headquarters",
-			"background": "background_red",
-			"foreground": "headquarters",
-			"type": "contract",
-			"guilds": ["shadow"],
-			"description": "<sprite=13>, you may place a worker on a tile in a non-allegiant province.",
-			"loyalty": 1,
-			"cost": 
-			[
-				{
-					"type": "gold",
-					"amount": 1
-				},
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
-					"amount": 1
-				}
-			],
-			"prerequisites":
-			[
-				
-			]
-		},
-		{
-			"title": "Thief",
-			"background": "background_red",
-			"foreground": "thief",
-			"type": "contract",
-			"guilds": ["shadow"],
-			"description": "<sprite=13>, steal 1 <sprite=4> or 1 <sprite=1> from another player.",
-			"loyalty": 1,
+			"description": "<sprite=13>, Take a guild member from the contract row and replace it with one of your guild members with the same loyalty.",
 			"cost": 
 			[
 				{
@@ -143,13 +141,40 @@
 			]
 		},
 		{
-			"title": "Spy",
-			"background": "background_red",
-			"foreground": "spy",
-			"type": "contract",
+			"title": "Headquarters",
+			"background": "background_shadow",
+			"foreground": "shadow/headquarters",
+			"type": "action",
 			"guilds": ["shadow"],
-			"description": "<sprite=13>, tap another guild member that isn't in the <sprite=10> guild.",
-			"loyalty": 2,
+			"description": "<sprite=13>, you may perform a placement action on a basic tile in a non-allegiant, non-adjacent province.",
+			"loyalty": 1,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 3
+				},
+				{
+					"type": "food",
+					"amount": 2
+				}
+			],
+			"prerequisites":
+			[
+				{ 
+					"type": "shadow",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Sacrificial pit",
+			"background": "background_shadow",
+			"foreground": "shadow/sacrificial pit",
+			"type": "action",
+			"guilds": ["shadow"],
+			"description": "<sprite=13>, Place one of your commoners in prison, then gain 1 <sprite=4>.",
+			"loyalty": 1,
 			"cost": 
 			[
 				{
@@ -159,9 +184,57 @@
 				{
 					"type": "food",
 					"amount": 2
+				}
+			],
+			"prerequisites":
+			[
+				
+			]
+		},
+		{
+			"title": "Thief",
+			"background": "background_shadow",
+			"foreground": "shadow/thief",
+			"type": "action",
+			"guilds": ["shadow"],
+			"description": "<sprite=13>, steal 1 <sprite=4> or 1 <sprite=1> from another player.",
+			"loyalty": 1,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 3
 				},
 				{
-					"type": "sheep",
+					"type": "food",
+					"amount": 1
+				}
+			],
+			"prerequisites":
+			[
+				
+			]
+		},
+		{
+			"title": "Spy",
+			"background": "background_shadow",
+			"foreground": "shadow/spy",
+			"type": "action",
+			"guilds": ["shadow"],
+			"description": "<sprite=13>, Deplete two guild members that aren't in the <sprite=10> guild.",
+			"loyalty": 2,
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "food",
+					"amount": 2
+				},
+				{
+					"type": "wool",
 					"amount": 1
 				}
 			],
@@ -175,12 +248,12 @@
 		},
 		{
 			"title": "Agent",
-			"background": "background_red",
-			"foreground": "agent",
+			"background": "background_shadow",
+			"foreground": "shadow/agent",
 			"type": "contract",
 			"guilds": ["shadow"],
 			"description": "",
-			"loyalty": 3,
+			"loyalty": 2,
 			"flavor": "\"What is a guild without its grunts, its laborers?<br>We see to the cause of the guild and its future. In that sense, we live forever.\"<br>- unknown agent.",
 			"cost": 
 			[
@@ -190,42 +263,31 @@
 				},
 				{
 					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
-					"amount": 1
+					"amount": 3
 				}
 			],
 			"prerequisites":
 			[
-				{ 
-					"type": "shadow",
-					"amount": 1
-				}
+				
 			]
 		},
 		{
 			"title": "Double agent",
-			"background": "background_red",
-			"foreground": "double agent",
-			"type": "contract",
+			"background": "background_shadow",
+			"foreground": "shadow/double agent",
+			"type": "action",
 			"guilds": ["shadow"],
-			"description": "<sprite=13>, place all commoners of another player from one basic tile to another unoccupied tile.",
-			"loyalty": 3,
+			"description": "<sprite=13>, place all commoners of another player from one basic tile to another unoccupied basic tile.",
+			"loyalty": 1,
 			"flavor": "",
 			"cost": 
 			[
 				{
 					"type": "gold",
-					"amount": 1
-				},
+					"amount": 4
+				},				
 				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
+					"type": "wool",
 					"amount": 1
 				}
 			],
@@ -233,18 +295,18 @@
 			[
 				{ 
 					"type": "shadow",
-					"amount": 1
+					"amount": 2
 				}
 			]
-		},
+		},		
 		{
 			"title": "Infiltrator",
-			"background": "background_red",
-			"foreground": "infiltrator",
-			"type": "contract",
+			"background": "background_shadow",
+			"foreground": "shadow/infiltrator",
+			"type": "reaction",
 			"guilds": ["shadow"],
-			"description": "<sprite=13>, place all commoners of another player from one basic tile to another unoccupied tile.",
-			"loyalty": 3,
+			"description": "<sprite=13>, <b>When another player activates a guild member</b>, counter that action.",
+			"loyalty": 2,
 			"flavor": "",
 			"cost": 
 			[
@@ -253,11 +315,11 @@
 					"amount": 1
 				},
 				{
-					"type": "food",
+					"type": "wool",
 					"amount": 2
 				},
 				{
-					"type": "sheep",
+					"type": "gems",
 					"amount": 1
 				}
 			],
@@ -265,17 +327,41 @@
 			[
 				{ 
 					"type": "shadow",
-					"amount": 1
+					"amount": 3
 				}
 			]
 		},
 		{
 			"title": "Secret entrance",
-			"background": "background_red",
-			"foreground": "secret entrance",
+			"background": "background_shadow",
+			"foreground": "shadow/secret entrance",
 			"type": "contract",
 			"guilds": ["shadow"],
-			"description": "",
+			"description": "Peasants can be depleted for 1 <sprite=10> devotion each.",
+			"loyalty": 1,
+			"flavor": "",
+			"cost": 
+			[
+				{
+					"type": "food",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			],
+			"prerequisites":
+			[
+			]
+		},
+		{
+			"title": "Rogue agent",
+			"background": "background_shadow",
+			"foreground": "shadow/rogue agent",
+			"type": "action",
+			"guilds": ["shadow"],
+			"description": "<sprite=13>, Look at the top three cards of the deck. You may put them on top or on the bottom of the deck in any order.",
 			"loyalty": 3,
 			"flavor": "",
 			"cost": 
@@ -286,10 +372,14 @@
 				},
 				{
 					"type": "food",
-					"amount": 2
+					"amount": 1
 				},
 				{
 					"type": "sheep",
+					"amount": 2
+				},
+				{
+					"type": "wool",
 					"amount": 1
 				}
 			],
@@ -303,12 +393,12 @@
 		},
 		{
 			"title": "Corrupt warden",
-			"background": "background_red",
-			"foreground": "warden",
-			"type": "contract",
+			"background": "background_shadow",
+			"foreground": "shadow/warden",
+			"type": "action",
 			"guilds": ["shadow"],
 			"description": "<sprite=13>, Move all your commoners from prison to any unoccupied basic tile.",
-			"loyalty": 3,
+			"loyalty": 2,
 			"flavor": "",
 			"cost": 
 			[
@@ -322,7 +412,7 @@
 				},
 				{
 					"type": "sheep",
-					"amount": 1
+					"amount": 2
 				}
 			],
 			"prerequisites":
@@ -335,26 +425,18 @@
 		},
 		{
 			"title": "Barracks",
-			"background": "background_red",
-			"foreground": "barracks",
-			"type": "contract",
+			"background": "background_battle",
+			"foreground": "battle/barracks",
+			"type": "action",
 			"guilds": ["battle"],
-			"description": "<sprite=13>, Move all your commoners from prison to any unoccupied basic tile.",
-			"loyalty": 3,
+			"description": "<sprite=13>, Resupply a guild member from the <sprite=8> guild.",
+			"loyalty": 1,
 			"flavor": "",
 			"cost": 
 			[
 				{
 					"type": "gold",
-					"amount": 1
-				},
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
-					"amount": 1
+					"amount": 3
 				}
 			],
 			"prerequisites":
@@ -364,108 +446,102 @@
 		},
 		{
 			"title": "Bastion",
-			"background": "background_red",
-			"foreground": "bastion",
-			"type": "contract",
+			"background": "background_battle",
+			"foreground": "battle/bastion",
+			"type": "reaction",
 			"guilds": ["battle"],
-			"description": "<sprite=13>, Move all your commoners from prison to any unoccupied basic tile.",
-			"loyalty": 3,
+			"description": "<sprite=13>, <b>When a player moves to a tile you occupy</b>, you may reinforce it from another tile you occupy.",
+			"loyalty": 1,
 			"flavor": "",
 			"cost": 
 			[
 				{
 					"type": "gold",
-					"amount": 1
-				},
-				{
-					"type": "food",
 					"amount": 2
 				},
 				{
-					"type": "sheep",
-					"amount": 1
+					"type": "food",
+					"amount": 3
 				}
 			],
 			"prerequisites":
 			[
-				
-			]
-		},
-		{
-			"title": "Armory",
-			"background": "background_red",
-			"foreground": "armory",
-			"type": "contract",
-			"guilds": ["battle"],
-			"description": "<sprite=13>, Move all your commoners from prison to any unoccupied basic tile.",
-			"loyalty": 3,
-			"flavor": "",
-			"cost": 
-			[
-				{
-					"type": "gold",
-					"amount": 1
-				},
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
+				{ 
+					"type": "battle",
 					"amount": 1
 				}
-			],
-			"prerequisites":
-			[
 			]
-		},
+		},		
 		{
 			"title": "Watchtower",
-			"background": "background_red",
-			"foreground": "watchtower",
+			"background": "background_battle",
+			"foreground": "battle/watchtower",
 			"type": "contract",
 			"guilds": ["battle"],
-			"description": "<sprite=13>, Move all your commoners from prison to any unoccupied basic tile.",
-			"loyalty": 3,
+			"description": "Peasants can be depleted for 1 <sprite=8> devotion each.",
+			"loyalty": 1,
 			"flavor": "",
 			"cost": 
 			[
 				{
 					"type": "gold",
-					"amount": 1
+					"amount": 2
 				},
 				{
 					"type": "food",
 					"amount": 2
-				},
-				{
-					"type": "sheep",
-					"amount": 1
 				}
 			],
 			"prerequisites":
 			[
 				
+			]
+		},
+		{
+			"title": "Executioner",
+			"background": "background_battle",
+			"foreground": "battle/executioner",
+			"type": "action",
+			"loyalty": 1,
+			"guilds": ["battle"],
+			"description": "<sprite=13>, Place a fatique token on a depleted guild member. The next time it is resupplied, remove the fatique token instead.",
+			"cost": 
+			[
+				{
+					"type": "food",
+					"amount": 4
+				},
+				{
+					"type": "wool",
+					"amount": 1
+				}
+			],
+			"prerequisites":
+			[
+				{ 
+					"type": "battle",
+					"amount": 2
+				}
 			]
 		},
 		{
 			"title": "Grunt",
-			"background": "background_red",
-			"foreground": "grunt",
-			"type": "contract",
+			"background": "background_battle",
+			"foreground": "battle/grunt",
+			"type": "reaction",
 			"guilds": ["battle"],
-			"description": "<sprite=13>, Move all your commoners from prison to any unoccupied basic tile.",
-			"loyalty": 3,
+			"description": "<sprite=13>, <b>When another player moves to a basic tile occupied by you</b>, increase your commoner's <sprite=12> on that tile by 1 until end of move action.",
+			"loyalty": 1,
 			"flavor": "",
 			"cost": 
 			[
 				{
 					"type": "gold",
-					"amount": 1
+					"amount": 2
 				},
 				{
 					"type": "food",
-					"amount": 2
+					"amount": 1
 				},
 				{
 					"type": "sheep",
@@ -479,55 +555,54 @@
 		},
 		{
 			"title": "Lieutenant",
-			"background": "background_red",
-			"foreground": "lieutenant",
-			"type": "contract",
+			"background": "background_battle",
+			"foreground": "battle/lieutenant",
+			"type": "reaction",
 			"guilds": ["battle"],
-			"description": "<sprite=13>, Move all your commoners from prison to any unoccupied basic tile.",
-			"loyalty": 3,
+			"description": "<sprite=13>, <b>When placing your commoners on an occupied basic tile</b>, the commoners who were sent to prison from that tile, do not leave prison at the end of season.",
+			"loyalty": 2,
 			"flavor": "",
 			"cost": 
 			[
 				{
 					"type": "gold",
+					"amount": 3
+				},
+				{
+					"type": "wool",
 					"amount": 1
 				},
 				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
+					"type": "gems",
 					"amount": 1
 				}
 			],
 			"prerequisites":
 			[
-				
+				{
+					"type": "battle",
+					"amount": 2
+				}
 			]
 		},
 		{
 			"title": "Colonel",
-			"background": "background_red",
-			"foreground": "colonel",
-			"type": "contract",
+			"background": "background_battle",
+			"foreground": "battle/colonel",
+			"type": "reaction",
 			"guilds": ["battle"],
-			"description": "<sprite=13>, Move all your commoners from prison to any unoccupied basic tile.",
-			"loyalty": 3,
+			"description": "<sprite=13>, <b>When another player moves to an occupied basic tile</b>, increase any commoner's <sprite=12> for each additional <sprite=8> you activate until end of move action.",
+			"loyalty": 2,
 			"flavor": "",
 			"cost": 
-			[
-				{
-					"type": "gold",
-					"amount": 1
-				},
+			[				
 				{
 					"type": "food",
 					"amount": 2
 				},
 				{
 					"type": "sheep",
-					"amount": 1
+					"amount": 2
 				}
 			],
 			"prerequisites":
@@ -537,108 +612,113 @@
 		},
 		{
 			"title": "Captain",
-			"background": "background_red",
-			"foreground": "captain",
-			"type": "contract",
+			"background": "background_battle",
+			"foreground": "battle/captain",
+			"type": "reaction",
 			"guilds": ["battle"],
-			"description": "<sprite=13>, Move all your commoners from prison to any unoccupied basic tile.",
-			"loyalty": 3,
+			"description": "<sprite=13>, <b>You may activate this card at any time.</b><br>Choose one:\n<indent=25px>\u2022 Increase a commoner's <sprite=12> by 1 on any basic tile until end of move action.\n<indent=25px>\u2022 Send any commoner to prison.",
+			"loyalty": 2,
 			"flavor": "",
 			"cost": 
 			[
 				{
 					"type": "gold",
-					"amount": 1
-				},
-				{
-					"type": "food",
 					"amount": 2
 				},
 				{
-					"type": "sheep",
+					"type": "food",
+					"amount": 3
+				},
+				{
+					"type": "wool",
 					"amount": 1
-				}
+				}				
 			],
 			"prerequisites":
 			[
-				
+				{
+					"type": "battle",
+					"amount": 1
+				}
 			]
 		},
 		{
 			"title": "General",
-			"background": "background_red",
-			"foreground": "general",
-			"type": "contract",
+			"background": "background_battle",
+			"foreground": "battle/general",
+			"type": "action",
 			"guilds": ["battle"],
-			"description": "<sprite=13>, Move all your commoners from prison to any unoccupied basic tile.",
+			"description": "<sprite=13>, Choose a province. Other players may not use any of the tiles in that province this season.",			
 			"loyalty": 3,
 			"flavor": "",
 			"cost": 
 			[
 				{
-					"type": "gold",
-					"amount": 1
-				},
-				{
 					"type": "food",
 					"amount": 2
 				},
 				{
+					"type": "wool",
+					"amount": 2
+				},
+				{
 					"type": "sheep",
-					"amount": 1
+					"amount": 3
 				}
 			],
 			"prerequisites":
 			[
-				
+				{
+					"type": "battle",
+					"amount": 2
+				}
 			]
 		},
 		{
 			"title": "Special operative",
-			"background": "background_red",
-			"foreground": "special operative",
-			"type": "contract",
+			"background": "background_battle",
+			"foreground": "battle/special operative",
+			"type": "reaction",
 			"guilds": ["battle"],
-			"description": "<sprite=13>, Move all your commoners from prison to any unoccupied basic tile.",
-			"loyalty": 3,
+			"description": "<sprite=13>, <b>When you gain <sprite=0> from a basic tile</b>, take that amount of <sprite=0> from another player instead.",
+			"loyalty": 2,
 			"flavor": "",
 			"cost": 
 			[
 				{
 					"type": "gold",
-					"amount": 1
+					"amount": 2
 				},
 				{
 					"type": "food",
 					"amount": 2
 				},
 				{
-					"type": "sheep",
-					"amount": 1
+					"type": "wool",
+					"amount": 2
 				}
 			],
 			"prerequisites":
 			[
-				
+				{
+					"type": "battle",
+					"amount": 2
+				}
 			]
 		},
 		{
 			"title": "Veteran",
-			"background": "background_red",
-			"foreground": "veteran",
+			"background": "background_battle",
+			"foreground": "battle/veteran",
 			"type": "contract",
 			"guilds": ["battle"],
-			"description": "<sprite=13>, Move all your commoners from prison to any unoccupied basic tile.",
-			"loyalty": 3,
-			"flavor": "",
+			"description": "",
+			"loyalty": 2,
+			"flavor": "\"War never changes. It is inevitable that we must continue our cause until the day of rapture and we might finally lay down ouur swords and rest eternal.\"<br>Veteran of the Bloody Scourge.",
 			"cost": 
 			[
 				{
 					"type": "gold",
-					"amount": 1
-				},
-				{
-					"type": "food",
 					"amount": 2
 				},
 				{
@@ -653,12 +733,12 @@
 		},
 		{
 			"title": "Archer",
-			"background": "background_red",
-			"foreground": "archer",
-			"type": "contract",
+			"background": "background_battle",
+			"foreground": "battle/archer",
+			"type": "reaction",
 			"guilds": ["battle"],
-			"description": "<sprite=13>, Move all your commoners from prison to any unoccupied basic tile.",
-			"loyalty": 3,
+			"description": "<sprite=13>, <b>When another player places their commoners on a basic tile you occupy</b>, you may add the <sprite=12> from your commoners on an adjacent tile to your <sprite=12>.",
+			"loyalty": 1,
 			"flavor": "",
 			"cost": 
 			[
@@ -677,46 +757,646 @@
 			],
 			"prerequisites":
 			[
-				
-			]
-		},
-		{
-			"title": "Arbalist",
-			"background": "background_red",
-			"foreground": "arbalist",
-			"type": "contract",
-			"guilds": ["battle"],
-			"description": "<sprite=13>, Move all your commoners from prison to any unoccupied basic tile.",
-			"loyalty": 3,
-			"flavor": "",
-			"cost": 
-			[
 				{
-					"type": "gold",
-					"amount": 1
-				},
-				{
-					"type": "food",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
+					"type": "battle",
 					"amount": 1
 				}
-			],
-			"prerequisites":
-			[
-				
 			]
-		},
+		},		
 		{
 			"title": "Lancer",
-			"background": "background_red",
-			"foreground": "lancer",
-			"type": "contract",
+			"background": "background_battle",
+			"foreground": "battle/lancer",
+			"type": "action",
 			"guilds": ["battle"],
-			"description": "<sprite=13>, Move all your commoners from prison to any unoccupied basic tile.",
+			"description": "<sprite=13>, Move (a section of) your commoners from a basic tile to an adjacent <b>occupied</b> tile. All move rules still apply",
+			"loyalty": 1,
+			"flavor": "",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			],
+			"prerequisites":
+			[
+				{
+					"type": "battle",
+					"amount": 1
+				}
+			]
+		},		
+		{
+			"title": "Goldmine",
+			"background": "background_barter",
+			"foreground": "barter/goldmine",
+			"type": "action",
+			"guilds": ["barter"],
+			"description": "<sprite=13>, Take 1 <sprite=4> from the supply.",
+			"loyalty": 1,
+			"flavor": "",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "food",
+					"amount": 2
+				}
+			],
+			"prerequisites":
+			[
+				
+			]
+		},
+		{
+			"title": "Marketplace",
+			"background": "background_barter",
+			"foreground": "barter/marketplace",
+			"type": "action",
+			"guilds": ["barter"],
+			"description": "<sprite=13>, You may trade 1 <sprite=0> with 1 <sprite=0> from the supply.",
+			"loyalty": 1,
+			"flavor": "",
+			"cost": 
+			[				
+				{
+					"type": "sheep",
+					"amount": 2
+				}
+			],
+			"prerequisites":
+			[
+				
+			]
+		},
+		{
+			"title": "Tradeship",
+			"background": "background_barter",
+			"foreground": "barter/tradeship",
+			"type": "action",
+			"guilds": ["barter"],
+			"description": "<sprite=13>, Gain 1 <sprite=0> for each other tradeship you own.",
+			"loyalty": 1,
+			"flavor": "",
+			"cost": 
+			[
+				{
+					"type": "food",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			],
+			"prerequisites":
+			[
+				
+			]
+		},		
+		{
+			"title": "Windmill",
+			"background": "background_barter",
+			"foreground": "barter/windmill",
+			"type": "action",
+			"guilds": ["barter"],
+			"description": "<sprite=13>, Take 1 <sprite=1> from the supply.",
+			"loyalty": 1,
+			"flavor": "",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			],
+			"prerequisites":
+			[
+				
+			]
+		},
+		{
+			"title": "Solicitor",
+			"background": "background_barter",
+			"foreground": "barter/solicitor",
+			"type": "action",
+			"guilds": ["barter"],
+			"description": "<sprite=13>, Pay another player 2 <sprite=4>. Deplete one of their guild members and use its ability. You must still fulfill its devotion requirement, for which you may use your own <sprite=7> devotion.",
+			"loyalty": 1,
+			"flavor": "",
+			"cost": 
+			[
+				{
+					"type": "food",
+					"amount": 3
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			],
+			"prerequisites":
+			[
+				{
+					"type": "barter",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Trader",
+			"background": "background_barter",
+			"foreground": "barter/trader",
+			"type": "action",
+			"guilds": ["barter"],
+			"description": "<sprite=13>, Remove up to three cards from the contract row and replace them with new cards from the deck.",
+			"loyalty": 1,
+			"flavor": "",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "food",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 2
+				}
+			],
+			"prerequisites":
+			[
+				{
+					"type": "barter",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Tax collector",
+			"background": "background_barter",
+			"foreground": "barter/tax collector",
+			"type": "action",
+			"guilds": ["barter"],
+			"description": "<sprite=13>, Place a tax token on a guild member. The next time it is activated, that player must pay you 2 <sprite=4>. Then remove the token.",
+			"loyalty": 1,
+			"flavor": "",
+			"cost": 
+			[
+				{
+					"type": "food",
+					"amount": 2
+				},
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			],
+			"prerequisites":
+			[
+				{
+					"type": "barter",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Duke",
+			"background": "background_barter",
+			"foreground": "barter/duke",
+			"type": "action",
+			"guilds": ["barter"],
+			"description": "<sprite=1><sprite=13>, Place a commoner from your stockpile on any valid tile. Return that commoner to the stockpile at the end of the season.<br><br>Worth 1 additional loyalty when played together with a duchess.",
+			"loyalty": 2,
+			"flavor": "",
+			"cost": 
+			[				
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 2
+				}
+			],
+			"prerequisites":
+			[
+				{
+					"type": "barter",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Duchess",
+			"background": "background_barter",
+			"foreground": "barter/duchess",
+			"type": "reaction",
+			"guilds": ["barter"],
+			"description": "<sprite=13>, <b>When buying a guild member from the contract row</b>, decrease the cost by 3 <sprite=0>.<br><br>Worth 1 additional loyalty when played together with a duke.",
+			"loyalty": 2,
+			"flavor": "",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 3
+				},
+				{
+					"type": "wool",
+					"amount": 1
+				},
+				{
+					"type": "gems",
+					"amount": 1
+				}
+			],
+			"prerequisites":
+			[
+				{
+					"type": "barter",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Baroness",
+			"background": "background_barter",
+			"foreground": "barter/baroness",
+			"type": "action",
+			"guilds": ["barter"],
+			"description": "<sprite=13>, Gain 1 <sprite=5>.<br>Worth 2 additional loyalty when played together with a Baron.",
+			"loyalty": 2,
+			"flavor": "",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "food",
+					"amount": 2
+				},
+				{
+					"type": "gems",
+					"amount": 1
+				}
+			],
+			"prerequisites":
+			[
+				{
+					"type": "barter",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Baron",
+			"background": "background_barter",
+			"foreground": "barter/baron",
+			"type": "contract",
+			"guilds": ["barter"],
+			"description": "Depletes for <sprite=7><sprite=7>.<br>Worth 1 additional loyalty when played together with a baroness.",
 			"loyalty": 3,
+			"flavor": "",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				},
+				{
+					"type": "wool",
+					"amount": 1
+				}
+			],
+			"prerequisites":
+			[
+				
+			]
+		},
+		{
+			"title": "Carrier",
+			"background": "background_barter",
+			"foreground": "barter/carrier",
+			"type": "action",
+			"guilds": ["barter"],
+			"description": "<sprite=13>, <b>When you place a commoner on a basic tile</b>, immediately gain the benefits in addition to the end of season benefits.",
+			"loyalty": 2,
+			"flavor": "",
+			"cost": 
+			[
+				{
+					"type": "sheep",
+					"amount": 1
+				},
+				{
+					"type": "gems",
+					"amount": 1
+				},
+				{
+					"type": "wool",
+					"amount": 1
+				}
+			],
+			"prerequisites":
+			[
+				{
+					"type": "barter",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Jeweler",
+			"background": "background_barter",
+			"foreground": "barter/jeweler",
+			"type": "action",
+			"guilds": ["barter"],
+			"description": "<sprite=13>, Gain 1 <sprite=3>.",
+			"loyalty": 2,
+			"flavor": "",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "food",
+					"amount": 3
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			],
+			"prerequisites":
+			[
+				{
+					"type": "barter",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Merchant",
+			"background": "background_barter",
+			"foreground": "barter/merchant",
+			"type": "reaction",
+			"guilds": ["barter"],
+			"description": "<sprite=13>, <b>When another player buys a guild member from the contract row</b>, they must pay the <sprite=1> and <sprite=4> cost to you.",
+			"loyalty": 1,
+			"flavor": "",
+			"cost": 
+			[	
+				{
+					"type": "gold",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				},
+				{
+					"type": "wool",
+					"amount": 1
+				}
+			],
+			"prerequisites":
+			[				
+				{
+					"type": "barter",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Salesman",
+			"background": "background_barter",
+			"foreground": "barter/salesman",
+			"type": "action",
+			"guilds": ["barter"],
+			"description": "<sprite=13>, Gain 1 <sprite=0>.",
+			"loyalty": 2,
+			"flavor": "",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			],
+			"prerequisites":
+			[
+			]
+		},
+		{
+			"title": "Sanctum",
+			"background": "background_celestial",
+			"foreground": "celestial/sanctum",
+			"type": "reaction",
+			"guilds": ["celestial"],
+			"description": "<sprite=13>, <b>When any of your commoners are send to prison for any reason</b>, return one to your village instead.",
+			"loyalty": 2,
+			"flavor": "",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "food",
+					"amount": 3
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			],
+			"prerequisites":
+			[
+				{
+					"type": "celestial",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Altar",
+			"background": "background_celestial",
+			"foreground": "celestial/altar",
+			"type": "contract",
+			"guilds": ["celestial"],
+			"description": "Worth 1 loyalty when played together with an altar boy.",
+			"loyalty": 0,
+			"flavor": "",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 3
+				}				
+			],
+			"prerequisites":
+			[
+				
+			]
+		},
+		{
+			"title": "Church",
+			"background": "background_celestial",
+			"foreground": "celestial/church",
+			"type": "action",
+			"guilds": ["celestial"],
+			"description": "<sprite=13>, Gain 1 <sprite=0>. Other players gain 1 <sprite=4>.",
+			"loyalty": 2,
+			"flavor": "",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "food",
+					"amount": 2
+				},
+				{
+					"type": "wool",
+					"amount": 1
+				}
+			],
+			"prerequisites":
+			[
+				{
+					"type": "celestial",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Monastery",
+			"background": "background_celestial",
+			"foreground": "celestial/monastery",
+			"type": "action",
+			"guilds": ["celestial"],
+			"description": "<sprite=13>, Resupply another guild member.",
+			"loyalty": 2,
+			"flavor": "",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
+					"amount": 1
+				}
+			],
+			"prerequisites":
+			[
+				{
+					"type": "celestial",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Templar",
+			"background": "background_celestial",
+			"foreground": "celestial/templar",
+			"type": "action",
+			"guilds": ["celestial"],
+			"description": "<sprite=13>, <br>Choose one:\n<indent=25px>\u2022 Place two commoners in prison<br><indent=25px>\u2022 Deplete two guild members that aren't in the <sprite=9> guild.",
+			"loyalty": 2,
+			"flavor": "",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 2
+				},
+				{
+					"type": "wool",
+					"amount": 2
+				}
+			],
+			"prerequisites":
+			[
+				{
+					"type": "celestial",
+					"amount": 2
+				}
+			]
+		},
+		{
+			"title": "Altar boy",
+			"background": "background_celestial",
+			"foreground": "celestial/altar boy",
+			"type": "contract",
+			"guilds": ["celestial"],
+			"description": "Worth 2 additional loyalty when played together with an altar.",
+			"loyalty": 1,
 			"flavor": "",
 			"cost": 
 			[
@@ -739,13 +1419,187 @@
 			]
 		},
 		{
-			"title": "Warhorse",
-			"background": "background_red",
-			"foreground": "warhorse",
+			"title": "Believer",
+			"background": "background_celestial",
+			"foreground": "celestial/believer",
 			"type": "contract",
-			"guilds": ["battle"],
-			"description": "<sprite=13>, Move all your commoners from prison to any unoccupied basic tile.",
-			"loyalty": 3,
+			"guilds": ["celestial"],
+			"description": "",
+			"loyalty": 2,
+			"flavor": "I like Jesus Christ. Go ahead, judge me. You won't be the first.",
+			"cost": 
+			[
+				{
+					"type": "sheep",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 2
+				}
+			],
+			"prerequisites":
+			[
+				
+			]
+		},
+		{
+			"title": "Brewer",
+			"background": "background_celestial",
+			"foreground": "celestial/brewer",
+			"type": "action",
+			"guilds": ["celestial"],
+			"description": "<sprite=13>, Gain 2 <sprite=0>.<br>Worth 1 additional loyalty when played together with a monastery.",
+			"loyalty": 1,
+			"flavor": "",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 3
+				},
+				{
+					"type": "food",
+					"amount": 3
+				}
+			],
+			"prerequisites":
+			[
+				{
+					"type": "celestial",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Bishop",
+			"background": "background_celestial",
+			"foreground": "celestial/bishop",
+			"type": "action",
+			"guilds": ["celestial"],
+			"description": "<sprite=13>, Return the citizens from a basic land to your village and gain its benefits.",
+			"loyalty": 2,
+			"flavor": "",
+			"cost": 
+			[
+				{
+					"type": "food",
+					"amount": 1
+				},
+				{
+					"type": "wool",
+					"amount": 2
+				},
+				{
+					"type": "gems",
+					"amount": 1
+				}
+			],
+			"prerequisites":
+			[
+				{
+					"type": "celestial",
+					"amount": 3
+				}
+			]
+		},
+		{
+			"title": "Monk",
+			"background": "background_celestial",
+			"foreground": "celestial/monk",
+			"type": "reaction",
+			"guilds": ["celestial"],
+			"description": "<sprite=13>, <b>When another player bumps your commoners from a basic tile</b>, share that tile instead.",
+			"loyalty": 1,
+			"flavor": "",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 1
+				},
+				{
+					"type": "food",
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 2
+				}
+			],
+			"prerequisites":
+			[
+				{
+					"type": "celestial",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Priestess",
+			"background": "background_celestial",
+			"foreground": "celestial/priestess",
+			"type": "contract",
+			"guilds": ["celestial"],
+			"description": "Depletes for devotion for any guild.",
+			"loyalty": 2,
+			"flavor": "",
+			"cost": 
+			[
+				{
+					"type": "sheep",
+					"amount": 1
+				},
+				{
+					"type": "wool",
+					"amount": 1
+				}
+			],
+			"prerequisites":
+			[
+				
+			]
+		},
+		{
+			"title": "Devout follower",
+			"background": "background_celestial",
+			"foreground": "celestial/devout follower",
+			"type": "reaction",
+			"guilds": ["celestial"],
+			"description": "<sprite=13>, <b>When you place commoners on a basic tile occupied by another player</b>, that player must deplete 1 <sprite=9> devotion or suffer -2 <sprite=12>.",
+			"loyalty": 2,
+			"flavor": "",
+			"cost": 
+			[
+				{
+					"type": "food",
+					"amount": 1
+				},
+				{
+					"type": "gems",
+					"amount": 1
+				},
+				{
+					"type": "wool",
+					"amount": 1
+				}
+			],
+			"prerequisites":
+			[
+				{
+					"type": "celestial",
+					"amount": 1
+				}
+			]
+		},		
+		{
+			"title": "Plague doctor",
+			"background": "background_celestial",
+			"foreground": "celestial/plague doctor",
+			"type": "action",
+			"guilds": ["celestial"],
+			"description": "<sprite=13>, Deplete a guild member and resupply another guild member.",
+			"loyalty": 2,
 			"flavor": "",
 			"cost": 
 			[
@@ -759,12 +1613,47 @@
 				},
 				{
 					"type": "sheep",
+					"amount": 2
+				}
+			],
+			"prerequisites":
+			[
+				{
+					"type": "celestial",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"title": "Witch hunter",
+			"background": "background_celestial",
+			"foreground": "celestial/witch hunter",
+			"type": "reaction",
+			"guilds": ["celestial"],
+			"description": "<sprite=13>, <b>When another player buys a guild member from the contract row</b>, deplete it and place a fatique token on it. The next time it is resupplied, remove the fatique token instead.",
+			"loyalty": 2,
+			"flavor": "\"We have found a witch! May we burn her?\"",
+			"cost": 
+			[
+				{
+					"type": "gold",
+					"amount": 2
+				},
+				{
+					"type": "sheep",
+					"amount": 2
+				},
+				{
+					"type": "gems",
 					"amount": 1
 				}
 			],
 			"prerequisites":
 			[
-				
+				{
+					"type": "celestial",
+					"amount": 2
+				}
 			]
 		}
 	]

@@ -8,17 +8,13 @@
 			"type": "contract",
 			"guilds": [],
 			"description": "Two peasants can be depleted together for 1 devotion of any guild.",
-			"loyalty": 1,
+			"loyalty": 0,
 			"flavor": "",
 			"cost": 
 			[
 				{
 					"type": "gold",
 					"amount": 1
-				},
-				{
-					"type": "food",
-					"amount": 2
 				},
 				{
 					"type": "sheep",
@@ -36,7 +32,7 @@
 			"foreground": "king",
 			"type": "contract",
 			"guilds": [],
-			"description": "<b>Can only be bought if you have at least 25 loyalty.</b><br><br>The player who first buys this card wins the game.",
+			"description": "<b>Can only be bought if you have at least 15 loyalty.</b><br><br>The player who first buys this card wins the game.",
 			"cost": 
 			[
 				{
@@ -81,7 +77,7 @@
 			[
 				{ 
 					"type": "shadow",
-					"amount": 2
+					"amount": 1
 				}
 			]
 		},
@@ -295,7 +291,7 @@
 			[
 				{ 
 					"type": "shadow",
-					"amount": 2
+					"amount": 1
 				}
 			]
 		},		
@@ -327,7 +323,7 @@
 			[
 				{ 
 					"type": "shadow",
-					"amount": 3
+					"amount": 1
 				}
 			]
 		},
@@ -520,7 +516,7 @@
 			[
 				{ 
 					"type": "battle",
-					"amount": 2
+					"amount": 1
 				}
 			]
 		},
@@ -581,7 +577,7 @@
 			[
 				{
 					"type": "battle",
-					"amount": 2
+					"amount": 1
 				}
 			]
 		},
@@ -702,7 +698,7 @@
 			[
 				{
 					"type": "battle",
-					"amount": 2
+					"amount": 1
 				}
 			]
 		},
@@ -757,10 +753,7 @@
 			],
 			"prerequisites":
 			[
-				{
-					"type": "battle",
-					"amount": 1
-				}
+				
 			]
 		},		
 		{
@@ -780,7 +773,7 @@
 				},
 				{
 					"type": "food",
-					"amount": 2
+					"amount": 1
 				},
 				{
 					"type": "sheep",
@@ -899,9 +892,9 @@
 			"title": "Solicitor",
 			"background": "background_barter",
 			"foreground": "barter/solicitor",
-			"type": "action",
+			"type": "reaction",
 			"guilds": ["barter"],
-			"description": "<sprite=13>, Pay another player 2 <sprite=4>. Deplete one of their guild members and use its ability. You must still fulfill its devotion requirement, for which you may use your own <sprite=7> devotion.",
+			"description": "<sprite=13>, <b>You may activate this card at any time.</b><br> Pay another player 1 <sprite=4>. Deplete one of their guild members and use its ability. You must still fulfill its devotion requirement, for which you may use your own <sprite=7> devotion.",
 			"loyalty": 1,
 			"flavor": "",
 			"cost": 
@@ -917,10 +910,7 @@
 			],
 			"prerequisites":
 			[
-				{
-					"type": "barter",
-					"amount": 1
-				}
+				
 			]
 		},
 		{
@@ -983,7 +973,7 @@
 			[
 				{
 					"type": "barter",
-					"amount": 2
+					"amount": 1
 				}
 			]
 		},
@@ -1043,7 +1033,7 @@
 			[
 				{
 					"type": "barter",
-					"amount": 2
+					"amount": 1
 				}
 			]
 		},
@@ -1140,7 +1130,7 @@
 			[
 				{
 					"type": "barter",
-					"amount": 2
+					"amount": 1
 				}
 			]
 		},
@@ -1150,7 +1140,7 @@
 			"foreground": "barter/jeweler",
 			"type": "action",
 			"guilds": ["barter"],
-			"description": "<sprite=13>, Gain 1 <sprite=3>.",
+			"description": "<sprite=13>, Trade 1 <sprite=4> for 1 <sprite=3> with the supply.",
 			"loyalty": 2,
 			"flavor": "",
 			"cost": 
@@ -1319,10 +1309,7 @@
 			],
 			"prerequisites":
 			[
-				{
-					"type": "celestial",
-					"amount": 1
-				}
+				
 			]
 		},
 		{
@@ -1385,7 +1372,7 @@
 			[
 				{
 					"type": "celestial",
-					"amount": 2
+					"amount": 1
 				}
 			]
 		},
@@ -1499,7 +1486,7 @@
 			[
 				{
 					"type": "celestial",
-					"amount": 3
+					"amount": 2
 				}
 			]
 		},
@@ -1596,9 +1583,9 @@
 			"title": "Plague doctor",
 			"background": "background_celestial",
 			"foreground": "celestial/plague doctor",
-			"type": "action",
+			"type": "reaction",
 			"guilds": ["celestial"],
-			"description": "<sprite=13>, Deplete a guild member and resupply another guild member.",
+			"description": "<sprite=13>, <b>You may activate this card at any time.</b><br>Deplete a guild member and resupply another guild member.",
 			"loyalty": 2,
 			"flavor": "",
 			"cost": 
@@ -1652,7 +1639,7 @@
 			[
 				{
 					"type": "celestial",
-					"amount": 2
+					"amount": 1
 				}
 			]
 		}

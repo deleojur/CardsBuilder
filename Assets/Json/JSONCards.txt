@@ -27,29 +27,29 @@
 			]
 		},
 		{
-			"title": "Zaphreal's successor",
+			"title": "Theodric's successor",
 			"background": "background_neutral",
 			"foreground": "king",
 			"type": "contract",
 			"guilds": [],
-			"description": "<b>Can only be bought if you have at least 15 loyalty.</b><br><br>The player who first buys this card wins the game.",
+			"description": "<b>Can only be bought if you have at least 12 loyalty.</b><br><br>The player who first buys this card wins the game.",
 			"cost": 
 			[
 				{
 					"type": "gold",
-					"amount": 6
+					"amount": 4
 				},
 				{
-					"type": "wool",
+					"type": "mutton",
 					"amount": 2
 				},
 				{
 					"type": "sheep",
-					"amount": 4
+					"amount": 2
 				},
 				{
 					"type": "gems",
-					"amount": 2
+					"amount": 1
 				}
 			],
 			"prerequisites": []			
@@ -60,17 +60,21 @@
 			"foreground": "shadow/assassin",
 			"type": "action",
 			"guilds": ["shadow"],
-			"loyalty": 1,
-			"description": "<sprite=4><sprite=13>, Deplete a guild member and place a fatique token on it. The next time it is resupplied, remove the fatique token instead.",
+			"loyalty": 0,
+			"description": "<sprite=13>, Deplete a guild member and place a fatique token on it. The next time it is resupplied, remove the fatique token instead.",
 			"cost": 
 			[
 				{
 					"type": "gold",
-					"amount": 4
+					"amount": 3
 				},
 				{
-					"type": "food",
-					"amount": 3
+					"type": "grain",
+					"amount": 2
+				},
+				{
+					"type": "mutton",
+					"amount": 2
 				}
 			],
 			"prerequisites":
@@ -92,7 +96,7 @@
 			"cost": 
 			[				
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 2
 				},
 				{
@@ -112,7 +116,7 @@
 			"type": "action",
 			"guilds": ["shadow"],			
 			"loyalty": 1,
-			"description": "<sprite=13>, Take a guild member from the contract row and replace it with one of your guild members with the same loyalty.",
+			"description": "<sprite=13>, Take a guild member from the guild row and replace it with one of your guild members with the same loyalty.",
 			"cost": 
 			[
 				{
@@ -120,7 +124,7 @@
 					"amount": 1
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 2
 				},
 				{
@@ -151,7 +155,7 @@
 					"amount": 3
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 2
 				}
 			],
@@ -169,7 +173,7 @@
 			"foreground": "shadow/sacrificial pit",
 			"type": "action",
 			"guilds": ["shadow"],
-			"description": "<sprite=13>, Place one of your commoners in prison, then gain 1 <sprite=4>.",
+			"description": "<sprite=13>, Send one of your commoners in prison, then gain 2 <sprite=4>.",
 			"loyalty": 1,
 			"cost": 
 			[
@@ -178,7 +182,7 @@
 					"amount": 1
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 2
 				}
 			],
@@ -202,7 +206,7 @@
 					"amount": 3
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 1
 				}
 			],
@@ -226,11 +230,11 @@
 					"amount": 2
 				},
 				{
-					"type": "food",
+					"type": "sheep",
 					"amount": 2
 				},
 				{
-					"type": "wool",
+					"type": "mutton",
 					"amount": 1
 				}
 			],
@@ -258,7 +262,7 @@
 					"amount": 1
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 3
 				}
 			],
@@ -283,7 +287,7 @@
 					"amount": 4
 				},				
 				{
-					"type": "wool",
+					"type": "mutton",
 					"amount": 1
 				}
 			],
@@ -311,7 +315,7 @@
 					"amount": 1
 				},
 				{
-					"type": "wool",
+					"type": "mutton",
 					"amount": 2
 				},
 				{
@@ -339,7 +343,7 @@
 			"cost": 
 			[
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 1
 				},
 				{
@@ -357,25 +361,21 @@
 			"foreground": "shadow/rogue agent",
 			"type": "action",
 			"guilds": ["shadow"],
-			"description": "<sprite=13>, Look at the top three cards of the deck. You may put them on top or on the bottom of the deck in any order.",
-			"loyalty": 3,
+			"description": "<sprite=13>, Send a commoner to prison. Then remove a guild member from the guild row and replace it with a new card from the deck.",
+			"loyalty": 2,
 			"flavor": "",
 			"cost": 
-			[
+			[				
 				{
-					"type": "gold",
-					"amount": 1
-				},
-				{
-					"type": "food",
-					"amount": 1
+					"type": "grain",
+					"amount": 2
 				},
 				{
 					"type": "sheep",
 					"amount": 2
 				},
 				{
-					"type": "wool",
+					"type": "mutton",
 					"amount": 1
 				}
 			],
@@ -403,7 +403,7 @@
 					"amount": 1
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 2
 				},
 				{
@@ -446,7 +446,7 @@
 			"foreground": "battle/bastion",
 			"type": "reaction",
 			"guilds": ["battle"],
-			"description": "<sprite=13>, <b>When a player moves to a tile you occupy</b>, you may reinforce it from another tile you occupy.",
+			"description": "<sprite=13>, <b>When a player moves to a tile you occupy</b>, you may move any number of commoners there from another tile you occupy.",
 			"loyalty": 1,
 			"flavor": "",
 			"cost": 
@@ -456,7 +456,7 @@
 					"amount": 2
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 3
 				}
 			],
@@ -484,7 +484,7 @@
 					"amount": 2
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 2
 				}
 			],
@@ -504,12 +504,12 @@
 			"cost": 
 			[
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 4
 				},
 				{
-					"type": "wool",
-					"amount": 1
+					"type": "mutton",
+					"amount": 2
 				}
 			],
 			"prerequisites":
@@ -536,7 +536,7 @@
 					"amount": 2
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 1
 				},
 				{
@@ -555,7 +555,7 @@
 			"foreground": "battle/lieutenant",
 			"type": "reaction",
 			"guilds": ["battle"],
-			"description": "<sprite=13>, <b>When placing your commoners on an occupied basic tile</b>, the commoners who were sent to prison from that tile, do not leave prison at the end of season.",
+			"description": "<sprite=13>, <b>When sending any number of commoners to prison for any reason,</b>, one does not leave prison at the end of the season.",
 			"loyalty": 2,
 			"flavor": "",
 			"cost": 
@@ -565,12 +565,8 @@
 					"amount": 3
 				},
 				{
-					"type": "wool",
-					"amount": 1
-				},
-				{
-					"type": "gems",
-					"amount": 1
+					"type": "mutton",
+					"amount": 2
 				}
 			],
 			"prerequisites":
@@ -587,13 +583,13 @@
 			"foreground": "battle/colonel",
 			"type": "reaction",
 			"guilds": ["battle"],
-			"description": "<sprite=13>, <b>When another player moves to an occupied basic tile</b>, increase any commoner's <sprite=12> for each additional <sprite=8> you activate until end of move action.",
+			"description": "<sprite=13>, <b>When another player moves to an occupied basic tile</b>, increase any commoner's <sprite=12> for each additional <sprite=8> you deplete until end of move action.",
 			"loyalty": 2,
 			"flavor": "",
 			"cost": 
 			[				
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 2
 				},
 				{
@@ -622,11 +618,11 @@
 					"amount": 2
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 3
 				},
 				{
-					"type": "wool",
+					"type": "mutton",
 					"amount": 1
 				}				
 			],
@@ -650,11 +646,11 @@
 			"cost": 
 			[
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 2
 				},
 				{
-					"type": "wool",
+					"type": "mutton",
 					"amount": 2
 				},
 				{
@@ -686,11 +682,11 @@
 					"amount": 2
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 2
 				},
 				{
-					"type": "wool",
+					"type": "mutton",
 					"amount": 2
 				}
 			],
@@ -743,7 +739,7 @@
 					"amount": 1
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 2
 				},
 				{
@@ -772,7 +768,7 @@
 					"amount": 1
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 1
 				},
 				{
@@ -804,7 +800,7 @@
 					"amount": 2
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 2
 				}
 			],
@@ -840,13 +836,13 @@
 			"foreground": "barter/tradeship",
 			"type": "action",
 			"guilds": ["barter"],
-			"description": "<sprite=13>, Gain 1 <sprite=0> for each other tradeship you own.",
+			"description": "<sprite=13>, Gain 1 <sprite=0> for each <sprite=7> you deplete.",
 			"loyalty": 1,
 			"flavor": "",
 			"cost": 
 			[
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 1
 				},
 				{
@@ -858,7 +854,7 @@
 			[
 				
 			]
-		},		
+		},
 		{
 			"title": "Windmill",
 			"background": "background_barter",
@@ -875,7 +871,7 @@
 					"amount": 1
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 1
 				},
 				{
@@ -894,13 +890,13 @@
 			"foreground": "barter/solicitor",
 			"type": "reaction",
 			"guilds": ["barter"],
-			"description": "<sprite=13>, <b>You may activate this card at any time.</b><br> Pay another player 1 <sprite=4>. Deplete one of their guild members and use its ability. You must still fulfill its devotion requirement, for which you may use your own <sprite=7> devotion.",
+			"description": "<sprite=13>, <b>You may activate this card at any time.</b><br> Pay another player 2 <sprite=4>. Deplete one of their guild members and use its ability. You must still fulfill its devotion requirement, for which you may use <sprite=7> devotion.",
 			"loyalty": 1,
 			"flavor": "",
 			"cost": 
 			[
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 3
 				},
 				{
@@ -919,7 +915,7 @@
 			"foreground": "barter/trader",
 			"type": "action",
 			"guilds": ["barter"],
-			"description": "<sprite=13>, Remove up to three cards from the contract row and replace them with new cards from the deck.",
+			"description": "<sprite=13>, Remove up to two cards from the guild row and replace them with new cards from the deck.",
 			"loyalty": 1,
 			"flavor": "",
 			"cost": 
@@ -929,7 +925,7 @@
 					"amount": 2
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 1
 				},
 				{
@@ -957,11 +953,11 @@
 			"cost": 
 			[
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 2
 				},
 				{
-					"type": "wool",
+					"type": "mutton",
 					"amount": 1
 				},
 				{
@@ -989,7 +985,7 @@
 			"cost": 
 			[				
 				{
-					"type": "wool",
+					"type": "mutton",
 					"amount": 1
 				},
 				{
@@ -1011,7 +1007,7 @@
 			"foreground": "barter/duchess",
 			"type": "reaction",
 			"guilds": ["barter"],
-			"description": "<sprite=13>, <b>When buying a guild member from the contract row</b>, decrease the cost by 3 <sprite=0>.<br><br>Worth 1 additional loyalty when played together with a duke.",
+			"description": "<sprite=13>, <b>When buying a guild member from the guild row</b>, decrease the cost by 3 <sprite=0>.<br><br>Worth 1 additional loyalty when played together with a duke.",
 			"loyalty": 2,
 			"flavor": "",
 			"cost": 
@@ -1021,7 +1017,7 @@
 					"amount": 3
 				},
 				{
-					"type": "wool",
+					"type": "mutton",
 					"amount": 1
 				},
 				{
@@ -1053,7 +1049,7 @@
 					"amount": 2
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 2
 				},
 				{
@@ -1063,10 +1059,7 @@
 			],
 			"prerequisites":
 			[
-				{
-					"type": "barter",
-					"amount": 1
-				}
+				
 			]
 		},
 		{
@@ -1082,18 +1075,14 @@
 			[
 				{
 					"type": "gold",
-					"amount": 1
-				},
-				{
-					"type": "food",
 					"amount": 2
 				},
 				{
 					"type": "sheep",
-					"amount": 1
+					"amount": 2
 				},
 				{
-					"type": "wool",
+					"type": "mutton",
 					"amount": 1
 				}
 			],
@@ -1114,15 +1103,15 @@
 			"cost": 
 			[
 				{
+					"type": "grain",
+					"amount": 2
+				},
+				{
 					"type": "sheep",
-					"amount": 1
+					"amount": 2
 				},
 				{
-					"type": "gems",
-					"amount": 1
-				},
-				{
-					"type": "wool",
+					"type": "mutton",
 					"amount": 1
 				}
 			],
@@ -1150,7 +1139,7 @@
 					"amount": 2
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 3
 				},
 				{
@@ -1172,25 +1161,21 @@
 			"foreground": "barter/merchant",
 			"type": "reaction",
 			"guilds": ["barter"],
-			"description": "<sprite=13>, <b>When another player buys a guild member from the contract row</b>, they must pay the <sprite=1> and <sprite=4> cost to you.",
+			"description": "<sprite=13>, <b>When another player buys a guild member from the guild row</b>, they must pay the <sprite=1> and <sprite=4> cost to you.",
 			"loyalty": 1,
 			"flavor": "",
 			"cost": 
-			[	
+			[				
 				{
-					"type": "gold",
-					"amount": 1
-				},
-				{
-					"type": "food",
-					"amount": 2
+					"type": "grain",
+					"amount": 3
 				},
 				{
 					"type": "sheep",
 					"amount": 1
 				},
 				{
-					"type": "wool",
+					"type": "mutton",
 					"amount": 1
 				}
 			],
@@ -1198,7 +1183,7 @@
 			[				
 				{
 					"type": "barter",
-					"amount": 2
+					"amount": 1
 				}
 			]
 		},
@@ -1218,7 +1203,7 @@
 					"amount": 1
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 2
 				},
 				{
@@ -1246,7 +1231,7 @@
 					"amount": 2
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 3
 				},
 				{
@@ -1268,8 +1253,8 @@
 			"foreground": "celestial/altar",
 			"type": "contract",
 			"guilds": ["celestial"],
-			"description": "Worth 1 loyalty when played together with an altar boy.",
-			"loyalty": 0,
+			"description": "Depletes for <sprite=9><sprite=9>.",
+			"loyalty": 1,
 			"flavor": "",
 			"cost": 
 			[
@@ -1299,11 +1284,11 @@
 					"amount": 2
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 2
 				},
 				{
-					"type": "wool",
+					"type": "mutton",
 					"amount": 1
 				}
 			],
@@ -1328,7 +1313,7 @@
 					"amount": 1
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 2
 				},
 				{
@@ -1350,7 +1335,7 @@
 			"foreground": "celestial/templar",
 			"type": "action",
 			"guilds": ["celestial"],
-			"description": "<sprite=13>, <br>Choose one:\n<indent=25px>\u2022 Place two commoners in prison<br><indent=25px>\u2022 Deplete two guild members that aren't in the <sprite=9> guild.",
+			"description": "<sprite=13>, <br>Choose one:\n<indent=25px>\u2022 Send any commoner to prison<br><indent=25px>\u2022 Deplete a guild member that isn't in the <sprite=9> guild.",
 			"loyalty": 2,
 			"flavor": "",
 			"cost": 
@@ -1360,11 +1345,11 @@
 					"amount": 1
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 2
 				},
 				{
-					"type": "wool",
+					"type": "mutton",
 					"amount": 2
 				}
 			],
@@ -1392,7 +1377,7 @@
 					"amount": 1
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 2
 				},
 				{
@@ -1421,7 +1406,7 @@
 					"amount": 1
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 2
 				}
 			],
@@ -1446,7 +1431,7 @@
 					"amount": 3
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 3
 				}
 			],
@@ -1464,17 +1449,17 @@
 			"foreground": "celestial/bishop",
 			"type": "action",
 			"guilds": ["celestial"],
-			"description": "<sprite=13>, Return the citizens from a basic land to your village and gain its benefits.",
+			"description": "<sprite=13>, Return the commoners from a basic tile to your village and gain its benefits.",
 			"loyalty": 2,
 			"flavor": "",
 			"cost": 
 			[
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 1
 				},
 				{
-					"type": "wool",
+					"type": "mutton",
 					"amount": 2
 				},
 				{
@@ -1506,7 +1491,7 @@
 					"amount": 1
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 1
 				},
 				{
@@ -1538,7 +1523,7 @@
 					"amount": 1
 				},
 				{
-					"type": "wool",
+					"type": "mutton",
 					"amount": 1
 				}
 			],
@@ -1559,7 +1544,7 @@
 			"cost": 
 			[
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 1
 				},
 				{
@@ -1567,7 +1552,7 @@
 					"amount": 1
 				},
 				{
-					"type": "wool",
+					"type": "mutton",
 					"amount": 1
 				}
 			],
@@ -1585,7 +1570,7 @@
 			"foreground": "celestial/plague doctor",
 			"type": "reaction",
 			"guilds": ["celestial"],
-			"description": "<sprite=13>, <b>You may activate this card at any time.</b><br>Deplete a guild member and resupply another guild member.",
+			"description": "<sprite=13>, <b>You may activate this card at any time.</b><br>Deplete a guild member and gain 1 <sprite=0>.",
 			"loyalty": 2,
 			"flavor": "",
 			"cost": 
@@ -1595,7 +1580,7 @@
 					"amount": 1
 				},
 				{
-					"type": "food",
+					"type": "grain",
 					"amount": 2
 				},
 				{
@@ -1617,7 +1602,7 @@
 			"foreground": "celestial/witch hunter",
 			"type": "reaction",
 			"guilds": ["celestial"],
-			"description": "<sprite=13>, <b>When another player buys a guild member from the contract row</b>, deplete it and place a fatique token on it. The next time it is resupplied, remove the fatique token instead.",
+			"description": "<sprite=13>, <b>When another player buys a guild member from the guild row</b>, deplete it and place a fatique token on it. The next time it is resupplied, remove the fatique token instead.",
 			"loyalty": 2,
 			"flavor": "\"We have found a witch! May we burn her?\"",
 			"cost": 
@@ -1631,7 +1616,7 @@
 					"amount": 2
 				},
 				{
-					"type": "gems",
+					"type": "mutton",
 					"amount": 1
 				}
 			],

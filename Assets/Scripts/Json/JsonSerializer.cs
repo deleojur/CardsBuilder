@@ -24,6 +24,18 @@ namespace Json
         private Image foreground;
 
         [SerializeField]
+        private Image cardBorder;
+
+        [SerializeField]
+        private Image cardNameBorder;
+
+        [SerializeField]
+        private Image cardIllustrationBorder;
+
+        [SerializeField]
+        private Image loyaltyBox;
+
+        [SerializeField]
         private TextMeshProUGUI title;
 
         [SerializeField]
@@ -51,10 +63,7 @@ namespace Json
         private Image type;
 
         [SerializeField]
-        private Image tierBackground;
-
-        [SerializeField]
-        private TextMeshProUGUI tierNumber;
+        private TextMeshProUGUI loyaltyNumber;
 
         [SerializeField]
         private ScreenshotWriter screenshotWriter;
@@ -65,12 +74,34 @@ namespace Json
         [SerializeField]
         private Image[] prerequisites;
 
+        private Dictionary<int, Dictionary<string, Sprite>> cardBorderSprites;
+
         private void Awake()
         {
+            LoadCardBordersSprites();
             resourceSort = new ResourceSort();
             prerequisitesSort = new PrerequisitesSort();
             cards = JsonUtility.FromJson<Cards>(JSONCards.text);
             StartCoroutine(YieldAndBuildCards());
+        }
+
+        private void LoadCardBordersSprites()
+        {
+            cardBorderSprites = new Dictionary<int, Dictionary<string, Sprite>>();
+            string[] colors = { "Bronze", "Silver", "Gold", "Platinum", "Purple" };
+            string[] spriteNames = { "border_card", "border_cardname", "border_illustration", "box_loyalty" };
+            for (int i = 0; i < colors.Length; i++)
+            {
+                Dictionary<string, Sprite> colorBorderSprites = new Dictionary<string, Sprite>();
+                string color = colors[i];
+
+                foreach (string spriteName in spriteNames)
+                {
+                    Sprite sprite = LoadSprite(string.Format("Cards/{0}/{1}.png", color, spriteName));
+                    colorBorderSprites.Add(spriteName, sprite);
+                }
+                cardBorderSprites.Add(i + 1, colorBorderSprites);
+            }
         }
 
         private IEnumerator YieldAndBuildCards()
@@ -121,11 +152,10 @@ namespace Json
             }
             else flavor.gameObject.SetActive(false);
             
-
             CreateGuilds(card);
-            CreateTier(card);
+            CreateLoyaltyAndBorderColor(card);
             CreateResources(card);            
-        }
+        }      
 
         private void CreateGuilds(Card card)
         {
@@ -153,16 +183,45 @@ namespace Json
             }
         }
 
-        private void CreateTier(Card card)
+        private void CreateLoyaltyAndBorderColor(Card card)
         {
             if (card.loyalty > 0)
             {
-                tierBackground.gameObject.SetActive(true);
-                tierNumber.text = card.loyalty.ToString();
+                loyaltyBox.gameObject.SetActive(true);
+                loyaltyNumber.text = card.loyalty.ToString();
+                
+                cardBorder.sprite = cardBorderSprites[card.loyalty]["border_card"];
+                cardNameBorder.sprite = cardBorderSprites[card.loyalty]["border_cardname"];
+                cardIllustrationBorder.sprite = cardBorderSprites[card.loyalty]["border_illustration"];
+                loyaltyBox.sprite = cardBorderSprites[card.loyalty]["box_loyalty"];
+
+                switch (card.loyalty)
+                {
+                    case 1:
+                        loyaltyBox.rectTransform.sizeDelta = new Vector2(75, 75);
+                        loyaltyNumber.fontSize = 50;
+                        break;
+                    case 2:
+                        loyaltyBox.rectTransform.sizeDelta = new Vector2(80, 80);
+                        loyaltyNumber.fontSize = 55;
+                        break;
+                    case 3:
+                        loyaltyBox.rectTransform.sizeDelta = new Vector2(85, 85);
+                        loyaltyNumber.fontSize = 60;
+                        break;
+                    case 4:
+                        loyaltyBox.rectTransform.sizeDelta = new Vector2(90, 90);
+                        loyaltyNumber.fontSize = 65;
+                        break;
+                    case 5:
+                        loyaltyBox.rectTransform.sizeDelta = new Vector2(95, 95);
+                        loyaltyNumber.fontSize = 70;
+                        break;
+                }
             }
             else
             {
-                tierBackground.gameObject.SetActive(false);
+                loyaltyBox.gameObject.SetActive(false);
             }
         }
 

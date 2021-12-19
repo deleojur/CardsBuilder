@@ -275,7 +275,7 @@ MonoBehaviour:
   cardBorder: {fileID: 337511478}
   cardNameBorder: {fileID: 1489734485}
   cardIllustrationBorder: {fileID: 1484512787}
-  loyaltyBox: {fileID: 1516141499}
+  loyaltyShield: {fileID: 1516141499}
   title: {fileID: 1516141512}
   guildPanel_1: {fileID: 1516141510}
   guildPanel_2: {fileID: 1516141506}
@@ -454,18 +454,24 @@ PrefabInstance:
     - target: {fileID: 1421803549195826174, guid: cbde3e7118ef0144390968ea851b1c38,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 2.33
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1421803549195826174, guid: cbde3e7118ef0144390968ea851b1c38,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.61
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 4159069409601500933, guid: cbde3e7118ef0144390968ea851b1c38,
         type: 3}
       propertyPath: m_Name
-      value: LoyaltyBox
+      value: LoyaltyShield
       objectReference: {fileID: 0}
+    - target: {fileID: 4595072827760170479, guid: cbde3e7118ef0144390968ea851b1c38,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7f96a4da98e0da440913c1a7e79cd050,
+        type: 3}
     - target: {fileID: 4924760162983389162, guid: cbde3e7118ef0144390968ea851b1c38,
         type: 3}
       propertyPath: m_Pivot.x
@@ -599,12 +605,12 @@ PrefabInstance:
     - target: {fileID: 5750548925907799310, guid: cbde3e7118ef0144390968ea851b1c38,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -147.7
+      value: -147.1
       objectReference: {fileID: 0}
     - target: {fileID: 5750548925907799310, guid: cbde3e7118ef0144390968ea851b1c38,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 216.8
+      value: 217.75002
       objectReference: {fileID: 0}
     - target: {fileID: 7664521386136592574, guid: cbde3e7118ef0144390968ea851b1c38,
         type: 3}
@@ -619,8 +625,14 @@ PrefabInstance:
     - target: {fileID: 8449403491063753184, guid: cbde3e7118ef0144390968ea851b1c38,
         type: 3}
       propertyPath: m_fontSize
-      value: 50
+      value: 65
       objectReference: {fileID: 0}
+    - target: {fileID: 8449403491063753184, guid: cbde3e7118ef0144390968ea851b1c38,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 584fcf786eda1634ab3b9e02bd2af2c3,
+        type: 2}
     - target: {fileID: 8449403491063753184, guid: cbde3e7118ef0144390968ea851b1c38,
         type: 3}
       propertyPath: m_fontStyle
@@ -644,8 +656,14 @@ PrefabInstance:
     - target: {fileID: 8449403491063753184, guid: cbde3e7118ef0144390968ea851b1c38,
         type: 3}
       propertyPath: m_fontSizeBase
-      value: 50
+      value: 65
       objectReference: {fileID: 0}
+    - target: {fileID: 8449403491063753184, guid: cbde3e7118ef0144390968ea851b1c38,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -234680767208877506, guid: 584fcf786eda1634ab3b9e02bd2af2c3,
+        type: 2}
     - target: {fileID: 8449403491063753184, guid: cbde3e7118ef0144390968ea851b1c38,
         type: 3}
       propertyPath: m_fontColor32.rgba
@@ -660,6 +678,71 @@ PrefabInstance:
         type: 3}
       propertyPath: m_HorizontalAlignment
       value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 8449403491063753184, guid: cbde3e7118ef0144390968ea851b1c38,
+        type: 3}
+      propertyPath: m_enableVertexGradient
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8449403491063753184, guid: cbde3e7118ef0144390968ea851b1c38,
+        type: 3}
+      propertyPath: m_fontColorGradient.topLeft.b
+      value: 0.004316493
+      objectReference: {fileID: 0}
+    - target: {fileID: 8449403491063753184, guid: cbde3e7118ef0144390968ea851b1c38,
+        type: 3}
+      propertyPath: m_fontColorGradient.topLeft.g
+      value: 0.9150943
+      objectReference: {fileID: 0}
+    - target: {fileID: 8449403491063753184, guid: cbde3e7118ef0144390968ea851b1c38,
+        type: 3}
+      propertyPath: m_fontColorGradient.topLeft.r
+      value: 0.05268454
+      objectReference: {fileID: 0}
+    - target: {fileID: 8449403491063753184, guid: cbde3e7118ef0144390968ea851b1c38,
+        type: 3}
+      propertyPath: m_fontColorGradient.topRight.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8449403491063753184, guid: cbde3e7118ef0144390968ea851b1c38,
+        type: 3}
+      propertyPath: m_fontColorGradient.topRight.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8449403491063753184, guid: cbde3e7118ef0144390968ea851b1c38,
+        type: 3}
+      propertyPath: m_fontColorGradient.topRight.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8449403491063753184, guid: cbde3e7118ef0144390968ea851b1c38,
+        type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.b
+      value: 0.8743084
+      objectReference: {fileID: 0}
+    - target: {fileID: 8449403491063753184, guid: cbde3e7118ef0144390968ea851b1c38,
+        type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.g
+      value: 0.051886797
+      objectReference: {fileID: 0}
+    - target: {fileID: 8449403491063753184, guid: cbde3e7118ef0144390968ea851b1c38,
+        type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8449403491063753184, guid: cbde3e7118ef0144390968ea851b1c38,
+        type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.b
+      value: 0.2007832
+      objectReference: {fileID: 0}
+    - target: {fileID: 8449403491063753184, guid: cbde3e7118ef0144390968ea851b1c38,
+        type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.g
+      value: 0.8752524
+      objectReference: {fileID: 0}
+    - target: {fileID: 8449403491063753184, guid: cbde3e7118ef0144390968ea851b1c38,
+        type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.r
+      value: 0.9056604
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbde3e7118ef0144390968ea851b1c38, type: 3}

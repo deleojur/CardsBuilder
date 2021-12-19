@@ -7,7 +7,7 @@
 			"foreground": "peasant",
 			"type": "contract",
 			"guilds": [],
-			"description": "Two peasants can be depleted together for 1 devotion of any guild.",
+			"description": "<sprite=13>, Trade two <sprite=0> for one <sprite=0>.\n\nTwo peasants can be depleted together for 1 devotion of any guild.",
 			"loyalty": 0,
 			"flavor": "",
 			"cost": 
@@ -44,12 +44,8 @@
 					"amount": 2
 				},
 				{
-					"type": "sheep",
+					"type": "ale",
 					"amount": 2
-				},
-				{
-					"type": "gems",
-					"amount": 1
 				}
 			],
 			"prerequisites": []			
@@ -61,7 +57,7 @@
 			"type": "action",
 			"guilds": ["shadow"],
 			"loyalty": 0,
-			"description": "<sprite=13>, Deplete a guild member and place a fatique token on it. The next time it is resupplied, remove the fatique token instead.",
+			"description": "<sprite=13>, Choose one:\n<indent=25px>\u2022 Deplete a guild member and place a fatique token on it. The next time it is resupplied, remove the fatique token instead.\n<indent=25px>\u2022 Send any commoner to prison.",
 			"cost": 
 			[
 				{
@@ -74,7 +70,7 @@
 				},
 				{
 					"type": "mutton",
-					"amount": 2
+					"amount": 1
 				}
 			],
 			"prerequisites":
@@ -96,11 +92,11 @@
 			"cost": 
 			[				
 				{
-					"type": "grain",
+					"type": "ale",
 					"amount": 2
 				},
 				{
-					"type": "sheep",
+					"type": "mutton",
 					"amount": 1
 				}
 			],
@@ -156,7 +152,11 @@
 				},
 				{
 					"type": "grain",
-					"amount": 2
+					"amount": 1
+				},
+				{
+					"type": "sheep",
+					"amount": 1
 				}
 			],
 			"prerequisites":
@@ -182,8 +182,8 @@
 					"amount": 1
 				},
 				{
-					"type": "grain",
-					"amount": 2
+					"type": "mutton",
+					"amount": 1
 				}
 			],
 			"prerequisites":
@@ -206,7 +206,7 @@
 					"amount": 3
 				},
 				{
-					"type": "grain",
+					"type": "mutton",
 					"amount": 1
 				}
 			],
@@ -221,16 +221,12 @@
 			"foreground": "shadow/spy",
 			"type": "action",
 			"guilds": ["shadow"],
-			"description": "<sprite=13>, Deplete two guild members that aren't in the <sprite=10> guild.",
+			"description": "<sprite=13>, Deplete a guild member that isn't in the <sprite=10> guild.",
 			"loyalty": 2,
 			"cost": 
 			[
 				{
 					"type": "gold",
-					"amount": 2
-				},
-				{
-					"type": "sheep",
 					"amount": 2
 				},
 				{
@@ -262,8 +258,8 @@
 					"amount": 1
 				},
 				{
-					"type": "grain",
-					"amount": 3
+					"type": "ale",
+					"amount": 1
 				}
 			],
 			"prerequisites":
@@ -284,10 +280,14 @@
 			[
 				{
 					"type": "gold",
-					"amount": 4
+					"amount": 2
 				},				
 				{
 					"type": "mutton",
+					"amount": 1
+				},
+				{
+					"type": "ale",
 					"amount": 1
 				}
 			],
@@ -316,10 +316,10 @@
 				},
 				{
 					"type": "mutton",
-					"amount": 2
+					"amount": 1
 				},
 				{
-					"type": "gems",
+					"type": "ale",
 					"amount": 1
 				}
 			],
@@ -371,7 +371,7 @@
 					"amount": 2
 				},
 				{
-					"type": "sheep",
+					"type": "gold",
 					"amount": 2
 				},
 				{
@@ -403,11 +403,11 @@
 					"amount": 1
 				},
 				{
-					"type": "grain",
+					"type": "mutton",
 					"amount": 2
 				},
 				{
-					"type": "sheep",
+					"type": "ale",
 					"amount": 2
 				}
 			],
@@ -484,7 +484,7 @@
 					"amount": 2
 				},
 				{
-					"type": "grain",
+					"type": "ale",
 					"amount": 2
 				}
 			],
@@ -536,7 +536,7 @@
 					"amount": 2
 				},
 				{
-					"type": "grain",
+					"type": "ale",
 					"amount": 1
 				},
 				{
@@ -618,8 +618,8 @@
 					"amount": 2
 				},
 				{
-					"type": "grain",
-					"amount": 3
+					"type": "ale",
+					"amount": 1
 				},
 				{
 					"type": "mutton",
@@ -640,18 +640,18 @@
 			"foreground": "battle/general",
 			"type": "action",
 			"guilds": ["battle"],
-			"description": "<sprite=13>, Choose a province. Other players may not use any of the tiles in that province this season.",			
+			"description": "<sprite=13>, Send any two commoners to prison.",			
 			"loyalty": 3,
 			"flavor": "",
 			"cost": 
 			[
 				{
-					"type": "grain",
-					"amount": 2
+					"type": "ale",
+					"amount": 1
 				},
 				{
 					"type": "mutton",
-					"amount": 2
+					"amount": 1
 				},
 				{
 					"type": "sheep",
@@ -662,7 +662,7 @@
 			[
 				{
 					"type": "battle",
-					"amount": 2
+					"amount": 1
 				}
 			]
 		},
@@ -686,7 +686,7 @@
 					"amount": 2
 				},
 				{
-					"type": "mutton",
+					"type": "ale",
 					"amount": 2
 				}
 			],
@@ -739,7 +739,7 @@
 					"amount": 1
 				},
 				{
-					"type": "grain",
+					"type": "ale",
 					"amount": 2
 				},
 				{
@@ -800,8 +800,8 @@
 					"amount": 2
 				},
 				{
-					"type": "grain",
-					"amount": 2
+					"type": "sheep",
+					"amount": 1
 				}
 			],
 			"prerequisites":
@@ -819,10 +819,14 @@
 			"loyalty": 1,
 			"flavor": "",
 			"cost": 
-			[				
+			[	
+				{
+					"type": "gold",
+					"amount": 2
+				},
 				{
 					"type": "sheep",
-					"amount": 2
+					"amount": 1
 				}
 			],
 			"prerequisites":
@@ -842,7 +846,7 @@
 			"cost": 
 			[
 				{
-					"type": "grain",
+					"type": "ale",
 					"amount": 1
 				},
 				{
@@ -953,8 +957,8 @@
 			"cost": 
 			[
 				{
-					"type": "grain",
-					"amount": 2
+					"type": "ale",
+					"amount": 1
 				},
 				{
 					"type": "mutton",
@@ -1021,7 +1025,7 @@
 					"amount": 1
 				},
 				{
-					"type": "gems",
+					"type": "ale",
 					"amount": 1
 				}
 			],
@@ -1053,7 +1057,7 @@
 					"amount": 2
 				},
 				{
-					"type": "gems",
+					"type": "ale",
 					"amount": 1
 				}
 			],
@@ -1074,8 +1078,8 @@
 			"cost": 
 			[
 				{
-					"type": "gold",
-					"amount": 2
+					"type": "ale",
+					"amount": 1
 				},
 				{
 					"type": "sheep",
@@ -1103,8 +1107,8 @@
 			"cost": 
 			[
 				{
-					"type": "grain",
-					"amount": 2
+					"type": "ale",
+					"amount": 1
 				},
 				{
 					"type": "sheep",
@@ -1167,12 +1171,12 @@
 			"cost": 
 			[				
 				{
-					"type": "grain",
-					"amount": 3
+					"type": "ale",
+					"amount": 1
 				},
 				{
 					"type": "sheep",
-					"amount": 1
+					"amount": 2
 				},
 				{
 					"type": "mutton",
@@ -1228,14 +1232,14 @@
 			[
 				{
 					"type": "gold",
-					"amount": 2
+					"amount": 1
 				},
 				{
 					"type": "grain",
-					"amount": 3
+					"amount": 2
 				},
 				{
-					"type": "sheep",
+					"type": "ale",
 					"amount": 1
 				}
 			],
@@ -1313,7 +1317,7 @@
 					"amount": 1
 				},
 				{
-					"type": "grain",
+					"type": "ale",
 					"amount": 2
 				},
 				{
@@ -1406,8 +1410,8 @@
 					"amount": 1
 				},
 				{
-					"type": "grain",
-					"amount": 2
+					"type": "ale",
+					"amount": 1
 				}
 			],
 			"prerequisites":
@@ -1421,7 +1425,7 @@
 			"foreground": "celestial/brewer",
 			"type": "action",
 			"guilds": ["celestial"],
-			"description": "<sprite=13>, Gain 2 <sprite=0>.<br>Worth 1 additional loyalty when played together with a monastery.",
+			"description": "<sprite=13>, one <sprite=6>.<br>Worth 1 additional loyalty when played together with a monastery.",
 			"loyalty": 1,
 			"flavor": "",
 			"cost": 
@@ -1431,8 +1435,8 @@
 					"amount": 3
 				},
 				{
-					"type": "grain",
-					"amount": 3
+					"type": "ale",
+					"amount": 2
 				}
 			],
 			"prerequisites":
@@ -1463,15 +1467,15 @@
 					"amount": 2
 				},
 				{
-					"type": "gems",
-					"amount": 1
+					"type": "ale",
+					"amount": 2
 				}
 			],
 			"prerequisites":
 			[
 				{
 					"type": "celestial",
-					"amount": 2
+					"amount": 1
 				}
 			]
 		},
@@ -1495,7 +1499,7 @@
 					"amount": 1
 				},
 				{
-					"type": "sheep",
+					"type": "ale",
 					"amount": 2
 				}
 			],
@@ -1548,7 +1552,7 @@
 					"amount": 1
 				},
 				{
-					"type": "gems",
+					"type": "ale",
 					"amount": 1
 				},
 				{
@@ -1612,8 +1616,8 @@
 					"amount": 2
 				},
 				{
-					"type": "sheep",
-					"amount": 2
+					"type": "ale",
+					"amount": 1
 				},
 				{
 					"type": "mutton",

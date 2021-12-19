@@ -2,12 +2,22 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Json
 {
+    struct CardCost
+    {
+        public int totalValue { get; set; }
+        public int totalNoCards { get; set; }
+        public int Min { get; set; }
+        public int Max { get; set; }
+        public List<int> Values { get; set; }
+    };
+
     public class JsonSerializer : MonoBehaviour
     {
         private Cards cards;
@@ -33,7 +43,7 @@ namespace Json
         private Image cardIllustrationBorder;
 
         [SerializeField]
-        private Image loyaltyBox;
+        private Image loyaltyShield;
 
         [SerializeField]
         private TextMeshProUGUI title;
@@ -76,8 +86,19 @@ namespace Json
 
         private Dictionary<int, Dictionary<string, Sprite>> cardBorderSprites;
 
+        private Dictionary<string, CardCost> cardCostStructure;
+
         private void Awake()
         {
+            cardCostStructure = new Dictionary<string, CardCost>();
+
+            cardCostStructure.Add("gold", new CardCost { totalNoCards = 0, totalValue = 0, Values = new List<int>() });
+            cardCostStructure.Add("grain", new CardCost { totalNoCards = 0, totalValue = 0, Values = new List<int>() });
+            cardCostStructure.Add("ale", new CardCost { totalNoCards = 0, totalValue = 0, Values = new List<int>() });
+            cardCostStructure.Add("sheep", new CardCost { totalNoCards = 0, totalValue = 0, Values = new List<int>() });
+            cardCostStructure.Add("mutton", new CardCost { totalNoCards = 0, totalValue = 0, Values = new List<int>() });
+            cardCostStructure.Add("gems", new CardCost { totalNoCards = 0, totalValue = 0, Values = new List<int>() });
+
             LoadCardBordersSprites();
             resourceSort = new ResourceSort();
             prerequisitesSort = new PrerequisitesSort();
@@ -89,7 +110,7 @@ namespace Json
         {
             cardBorderSprites = new Dictionary<int, Dictionary<string, Sprite>>();
             string[] colors = { "Bronze", "Silver", "Gold", "Platinum", "Purple" };
-            string[] spriteNames = { "border_card", "border_cardname", "border_illustration", "box_loyalty" };
+            string[] spriteNames = { "border_card", "border_cardname", "border_illustration", "loyalty_shield" };
             for (int i = 0; i < colors.Length; i++)
             {
                 Dictionary<string, Sprite> colorBorderSprites = new Dictionary<string, Sprite>();
@@ -102,16 +123,63 @@ namespace Json
                 }
                 cardBorderSprites.Add(i + 1, colorBorderSprites);
             }
+            //add bronze as 0 loyalty color.
+            cardBorderSprites.Add(0, cardBorderSprites[1]);
         }
 
         private IEnumerator YieldAndBuildCards()
-        {            
+        {
             for (int i = 0; i < cards.cards.Length; i++)
             {
                 yield return new WaitForEndOfFrame();
 
-                CreateCard(cards.cards[i]);
+                Card card = cards.cards[i];
+                CreateCard(card);                
                 screenshotWriter.MakeScreenshot(cards.cards[i]);
+            }
+
+            float totalValue = 0;            
+            for (int i = 0; i < cardCostStructure.Count; i++)
+            {
+                CardCost cardCost = cardCostStructure.ElementAt(i).Value;
+
+                float value = cardCost.totalValue;
+                totalValue += value;
+            }
+
+            for (int i = 0; i < cardCostStructure.Count; i++)
+            {
+                string name = cardCostStructure.ElementAt(i).Key;
+                CardCost cardCost = cardCostStructure.ElementAt(i).Value;
+
+                float totalNoCards = cardCost.totalNoCards;
+                float totalValuePerResource = cardCost.totalValue;
+                float percentage = (totalValuePerResource / totalValue) * 100;
+                //float average = 
+
+                int[] values = cardCost.Values.ToArray();
+                Array.Sort(values);
+
+                float halfIndex = (float)values.Length / 2;
+                float median = 0;
+                if (values.Length > 0)
+                {
+                    if (halfIndex % 2 == 0)
+                    {
+                        median = values[(int)halfIndex];
+                    }
+                    else
+                    {
+                        median = (values[(int)Mathf.Floor(halfIndex)] + values[(int)Mathf.Ceil(halfIndex)]) / 2;
+                    }
+                }
+                //percentage of resource of all costs.
+                //lowest value.
+                //highest value.
+                //median value for a resource type.
+                //mean value per card.
+
+                Debug.Log(string.Format("{0}: number of cards : {1}. total value for {0} : {2}. lowest: {3} highest: {4}. median: {5}. mean {6}%.", name, totalNoCards, totalValuePerResource, cardCost.Min, cardCost.Max, median, percentage.ToString("0.00")));
             }
         }
 
@@ -185,43 +253,42 @@ namespace Json
 
         private void CreateLoyaltyAndBorderColor(Card card)
         {
+            cardBorder.sprite = cardBorderSprites[card.loyalty]["border_card"];
+            cardNameBorder.sprite = cardBorderSprites[card.loyalty]["border_cardname"];
+            cardIllustrationBorder.sprite = cardBorderSprites[card.loyalty]["border_illustration"];
+            loyaltyShield.sprite = cardBorderSprites[card.loyalty]["loyalty_shield"];
+
             if (card.loyalty > 0)
             {
-                loyaltyBox.gameObject.SetActive(true);
+                loyaltyShield.gameObject.SetActive(true);
                 loyaltyNumber.text = card.loyalty.ToString();
-                
-                cardBorder.sprite = cardBorderSprites[card.loyalty]["border_card"];
-                cardNameBorder.sprite = cardBorderSprites[card.loyalty]["border_cardname"];
-                cardIllustrationBorder.sprite = cardBorderSprites[card.loyalty]["border_illustration"];
-                loyaltyBox.sprite = cardBorderSprites[card.loyalty]["box_loyalty"];
-
                 switch (card.loyalty)
                 {
                     case 1:
-                        loyaltyBox.rectTransform.sizeDelta = new Vector2(75, 75);
-                        loyaltyNumber.fontSize = 50;
+                        loyaltyShield.rectTransform.sizeDelta = new Vector2(75, 75);
+                        loyaltyNumber.rectTransform.localPosition = new Vector3(0f, -4f);
                         break;
                     case 2:
-                        loyaltyBox.rectTransform.sizeDelta = new Vector2(80, 80);
-                        loyaltyNumber.fontSize = 55;
+                        loyaltyShield.rectTransform.sizeDelta = new Vector2(80, 80);
+                        loyaltyNumber.rectTransform.localPosition = new Vector3(0f, -1f);
                         break;
                     case 3:
-                        loyaltyBox.rectTransform.sizeDelta = new Vector2(85, 85);
-                        loyaltyNumber.fontSize = 60;
+                        loyaltyShield.rectTransform.sizeDelta = new Vector2(85, 85);
+                        loyaltyNumber.rectTransform.localPosition = new Vector3(3.5f, -1f);
                         break;
                     case 4:
-                        loyaltyBox.rectTransform.sizeDelta = new Vector2(90, 90);
+                        loyaltyShield.rectTransform.sizeDelta = new Vector2(90, 90);
                         loyaltyNumber.fontSize = 65;
                         break;
                     case 5:
-                        loyaltyBox.rectTransform.sizeDelta = new Vector2(95, 95);
+                        loyaltyShield.rectTransform.sizeDelta = new Vector2(95, 95);
                         loyaltyNumber.fontSize = 70;
                         break;
                 }
             }
             else
             {
-                loyaltyBox.gameObject.SetActive(false);
+                loyaltyShield.gameObject.SetActive(false);
             }
         }
 
@@ -235,8 +302,15 @@ namespace Json
                 {
                     Resource resource = card.cost[i];
                     resources[i].gameObject.SetActive(true);
-
                     resources[i].SetImageAndAmound(LoadSprite(string.Format("Resources/{0}.png", resource.type.ToLower())), resource.amount);
+
+                    CardCost cardCost = cardCostStructure[resource.type];
+                    cardCost.totalValue += resource.amount;
+                    cardCost.totalNoCards++;
+                    cardCost.Values.Add(resource.amount);
+                    cardCost.Min = cardCost.Values.Min();
+                    cardCost.Max = cardCost.Values.Max();                    
+                    cardCostStructure[resource.type] = cardCost;
                 }
                 catch (IndexOutOfRangeException)
                 {

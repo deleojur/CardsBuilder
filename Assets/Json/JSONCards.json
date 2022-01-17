@@ -1,0 +1,77 @@
+{
+	"cards":
+	[
+		{	
+			"title": "Vigour",		
+			"background": "Strength",
+			"foreground": "Strength",
+			"description": "Add <sprite=0> to a soldier.",			
+			"color": "Red",
+			"cost": 
+			[
+				"Devotion",
+				"Valor"
+			]
+		},
+		{	
+			"title": "Automation",		
+			"background": "Automation",
+			"foreground": "Automation",
+			"description": "Immediately activate a base tile that you occupy.",			
+			"color": "Green",
+			"cost": 
+			[
+				"Devotion",
+				"Diplomacy"
+			]
+		},
+		{	
+			"title": "Legislation",		
+			"background": "Legislation",
+			"foreground": "Legislation",
+			"description": "Send any deployed soldier to prison.",			
+			"color": "Yellow",
+			"cost": 
+			[
+				"Diplomacy",
+				"Valor"
+			]
+		},
+		{	
+			"title": "Foresight",		
+			"background": "Foresight",
+			"foreground": "Foresight",
+			"description": "Gain <sprite=1>.",
+			"color": "Purple",
+			"cost": 
+			[
+				"Diplomacy",
+				"Authority"
+			]
+		},
+		{
+			"title": "Tactics",	
+			"background": "Tactics",
+			"foreground": "Tactics",
+			"description": "Return a soldier to your village.",			
+			"color": "Blue",
+			"cost": 
+			[
+				"Devotion",
+				"Authority"
+			]
+		},
+		{	
+			"title": "Negotiation",		
+			"background": "Negotiation",
+			"foreground": "Negotiation",
+			"description": "Take any <sprite=3> from another player.",
+			"color": "Tan",
+			"cost": 
+			[
+				"Authority",
+				"Valor"
+			]
+		}
+	]
+}

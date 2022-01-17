@@ -5,14 +5,14 @@ using UnityEngine.UI;
 public class ResourcePrefab : MonoBehaviour
 {
     [SerializeField]
-    private Image resourceImage;
+    private Image resourceForeground;
 
     [SerializeField]
-    private TextMeshProUGUI resourceAmount;
+    private Image resourceBackground;
 
-    public void SetImageAndAmound(Sprite sprite, int amount)
+    public void SetImage(Sprite background, Sprite foreground)
     {
-        resourceImage.sprite = sprite;
-        resourceAmount.text = amount.ToString();
+        resourceBackground.sprite = background;
+        resourceForeground.sprite = foreground;
     }
 }

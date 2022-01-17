@@ -9,24 +9,29 @@ using UnityEngine.UI;
 
 namespace Json
 {
-    struct CardCost
-    {
-        public int totalValue { get; set; }
-        public int totalNoCards { get; set; }
-        public int Min { get; set; }
-        public int Max { get; set; }
-        public List<int> Values { get; set; }
-    };
-
     public class JsonSerializer : MonoBehaviour
     {
         private Cards cards;
-        private ResourceSort resourceSort;
-        private PrerequisitesSort prerequisitesSort;
 
         [SerializeField]
         private TextAsset JSONCards;
 
+        [Header("Color images")]
+        [SerializeField]
+        private Image cardFace;
+
+        [SerializeField]
+        private Image titleBackground;
+
+        [SerializeField]
+        private Image border;
+
+        [SerializeField]
+        private Image leftResourceBackground;
+
+        [SerializeField]
+        private Image rightResourceBackground;
+        
         [SerializeField]
         private Image background;
 
@@ -34,47 +39,20 @@ namespace Json
         private Image foreground;
 
         [SerializeField]
-        private Image cardBorder;
-
-        [SerializeField]
-        private Image cardNameBorder;
-
-        [SerializeField]
-        private Image cardIllustrationBorder;
-
-        [SerializeField]
-        private Image loyaltyShield;
+        private Image descriptionBackground;
 
         [SerializeField]
         private TextMeshProUGUI title;
 
         [SerializeField]
-        private RectTransform guildPanel_1;
-
-        [SerializeField]
-        private RectTransform guildPanel_2;
-
-        [SerializeField]
-        private Image guild_1;
-
-        [SerializeField]
-        private Image[] guild_2;
-
-        [SerializeField]
         private TextMeshProUGUI description;
 
         [SerializeField]
-        private TextMeshProUGUI flavor;
+        private Image logoBackground;
 
         [SerializeField]
-        private RectTransform resourcesPanel;
-
-        [SerializeField]
-        private Image type;
-
-        [SerializeField]
-        private TextMeshProUGUI loyaltyNumber;
-
+        private Image logo;        
+        
         [SerializeField]
         private ScreenshotWriter screenshotWriter;
 
@@ -82,269 +60,191 @@ namespace Json
         private ResourcePrefab[] resources;
 
         [SerializeField]
-        private Image[] prerequisites;
+        private NeighboringStructure northNeighbor;
 
-        private Dictionary<int, Dictionary<string, Sprite>> cardBorderSprites;
+        [SerializeField]
+        private NeighboringStructure eastNeighbor;
 
-        private Dictionary<string, CardCost> cardCostStructure;
+        [SerializeField]
+        private NeighboringStructure southNeighbor;
+
+        [SerializeField]
+        private NeighboringStructure westNeighbor;
+
+        private string[] guildnames = new string[6] {"Blue", "Green", "Purple", "Red", "Tan", "Yellow"};
 
         private void Awake()
         {
-            cardCostStructure = new Dictionary<string, CardCost>();
-
-            cardCostStructure.Add("gold", new CardCost { totalNoCards = 0, totalValue = 0, Values = new List<int>() });
-            cardCostStructure.Add("grain", new CardCost { totalNoCards = 0, totalValue = 0, Values = new List<int>() });
-            cardCostStructure.Add("ale", new CardCost { totalNoCards = 0, totalValue = 0, Values = new List<int>() });
-            cardCostStructure.Add("sheep", new CardCost { totalNoCards = 0, totalValue = 0, Values = new List<int>() });
-            cardCostStructure.Add("mutton", new CardCost { totalNoCards = 0, totalValue = 0, Values = new List<int>() });
-            cardCostStructure.Add("gems", new CardCost { totalNoCards = 0, totalValue = 0, Values = new List<int>() });
-
-            LoadCardBordersSprites();
-            resourceSort = new ResourceSort();
-            prerequisitesSort = new PrerequisitesSort();
             cards = JsonUtility.FromJson<Cards>(JSONCards.text);
             StartCoroutine(YieldAndBuildCards());
         }
 
-        private void LoadCardBordersSprites()
+        private string[] GetPossibleGuildNamesForNeighboringStructures(string guildname)
         {
-            cardBorderSprites = new Dictionary<int, Dictionary<string, Sprite>>();
-            string[] colors = { "Bronze", "Silver", "Gold", "Platinum", "Purple" };
-            string[] spriteNames = { "border_card", "border_cardname", "border_illustration", "loyalty_shield" };
-            for (int i = 0; i < colors.Length; i++)
-            {
-                Dictionary<string, Sprite> colorBorderSprites = new Dictionary<string, Sprite>();
-                string color = colors[i];
+            List<string> possibleGuildNames = new List<string>();
+            int indexOfCurrentGuild = Array.IndexOf(guildnames, guildname);
 
-                foreach (string spriteName in spriteNames)
-                {
-                    Sprite sprite = LoadSprite(string.Format("Cards/{0}/{1}.png", color, spriteName));
-                    colorBorderSprites.Add(spriteName, sprite);
-                }
-                cardBorderSprites.Add(i + 1, colorBorderSprites);
+            for (int i = 0; i < 5; i++)
+            {
+                int index = (indexOfCurrentGuild + 1 + i) % 6;
+                possibleGuildNames.Add(guildnames[index]);
             }
-            //add bronze as 0 loyalty color.
-            cardBorderSprites.Add(0, cardBorderSprites[1]);
+            return possibleGuildNames.ToArray<string>();
+        }
+
+        private enum Direction
+        { 
+            West    = 0,
+            East    = 1,
+            North   = 2,
+            South   = 3
+        }
+
+        private class Neighbors
+        {
+            private Dictionary<Direction, string> neighboringStructures;
+
+            public Neighbors()
+            {
+                neighboringStructures = new Dictionary<Direction, string>()
+                {
+                    { Direction.West, "" },
+                    { Direction.East, "" },
+                    { Direction.North, "" },
+                    { Direction.South, "" }
+                };
+            }
+
+            public string WestNeighbor
+            {
+                set { neighboringStructures[Direction.West] = value; }
+                get { return neighboringStructures[Direction.West]; }
+            }
+
+            public string EastNeighbor 
+            {
+                set { neighboringStructures[Direction.East] = value; }
+                get { return neighboringStructures[Direction.East]; }
+            }
+
+            public string NorthNeighbor
+            {
+                set { neighboringStructures[Direction.North] = value; }
+                get { return neighboringStructures[Direction.North]; }
+            }
+
+            public string SouthNeighbor
+            {
+                set { neighboringStructures[Direction.South] = value; }
+                get { return neighboringStructures[Direction.South]; }
+            }            
+        }
+
+
+        private List<Neighbors> CreateNeighboringStructures(string[] guilds)
+        {
+            return new List<Neighbors>
+            {
+                new Neighbors { NorthNeighbor = guilds[0], EastNeighbor = guilds[1], SouthNeighbor = guilds[2], WestNeighbor = guilds[3] }, 
+                new Neighbors { NorthNeighbor = guilds[1], EastNeighbor = guilds[2], SouthNeighbor = guilds[3], WestNeighbor = guilds[4] },
+                new Neighbors { NorthNeighbor = guilds[2], EastNeighbor = guilds[3], SouthNeighbor = guilds[4], WestNeighbor = guilds[0] },
+                new Neighbors { NorthNeighbor = guilds[3], EastNeighbor = guilds[4], SouthNeighbor = guilds[0], WestNeighbor = guilds[1] },
+                new Neighbors { NorthNeighbor = guilds[4], EastNeighbor = guilds[0], SouthNeighbor = guilds[1], WestNeighbor = guilds[2] },
+
+                new Neighbors { NorthNeighbor = guilds[4], EastNeighbor = guilds[3], SouthNeighbor = guilds[1], WestNeighbor = guilds[2] },
+                new Neighbors { NorthNeighbor = guilds[0], EastNeighbor = guilds[4], SouthNeighbor = guilds[2], WestNeighbor = guilds[3] },
+                new Neighbors { NorthNeighbor = guilds[1], EastNeighbor = guilds[0], SouthNeighbor = guilds[3], WestNeighbor = guilds[4] },
+                new Neighbors { NorthNeighbor = guilds[2], EastNeighbor = guilds[1], SouthNeighbor = guilds[4], WestNeighbor = guilds[0] },
+                new Neighbors { NorthNeighbor = guilds[3], EastNeighbor = guilds[2], SouthNeighbor = guilds[0], WestNeighbor = guilds[1] },
+
+                new Neighbors { NorthNeighbor = guilds[3], EastNeighbor = guilds[1], SouthNeighbor = guilds[0], WestNeighbor = guilds[4] },
+                new Neighbors { NorthNeighbor = guilds[0], EastNeighbor = guilds[3], SouthNeighbor = guilds[2], WestNeighbor = guilds[1] },
+                new Neighbors { NorthNeighbor = guilds[2], EastNeighbor = guilds[0], SouthNeighbor = guilds[4], WestNeighbor = guilds[3] },
+                new Neighbors { NorthNeighbor = guilds[4], EastNeighbor = guilds[2], SouthNeighbor = guilds[1], WestNeighbor = guilds[0] },
+                new Neighbors { NorthNeighbor = guilds[1], EastNeighbor = guilds[4], SouthNeighbor = guilds[3], WestNeighbor = guilds[2] },
+
+                new Neighbors { NorthNeighbor = guilds[4], EastNeighbor = guilds[0], SouthNeighbor = guilds[3], WestNeighbor = guilds[1] },
+                new Neighbors { NorthNeighbor = guilds[3], EastNeighbor = guilds[2], SouthNeighbor = guilds[1], WestNeighbor = guilds[0] },
+                new Neighbors { NorthNeighbor = guilds[4], EastNeighbor = guilds[1], SouthNeighbor = guilds[0], WestNeighbor = guilds[2] },
+                new Neighbors { NorthNeighbor = guilds[1], EastNeighbor = guilds[4], SouthNeighbor = guilds[2], WestNeighbor = guilds[3] },
+                new Neighbors { NorthNeighbor = guilds[0], EastNeighbor = guilds[2], SouthNeighbor = guilds[3], WestNeighbor = guilds[4] },
+            };
         }
 
         private IEnumerator YieldAndBuildCards()
         {
+            string color = "NOCOLOR";
             for (int i = 0; i < cards.cards.Length; i++)
             {
-                yield return new WaitForEndOfFrame();
-
                 Card card = cards.cards[i];
-                CreateCard(card);                
-                screenshotWriter.MakeScreenshot(cards.cards[i]);
-            }
+                string[] possibleGuildnames = GetPossibleGuildNamesForNeighboringStructures(card.color);
+                List<Neighbors> neighbors = CreateNeighboringStructures(possibleGuildnames);
 
-            float totalValue = 0;            
-            for (int i = 0; i < cardCostStructure.Count; i++)
-            {
-                CardCost cardCost = cardCostStructure.ElementAt(i).Value;
-
-                float value = cardCost.totalValue;
-                totalValue += value;
-            }
-
-            for (int i = 0; i < cardCostStructure.Count; i++)
-            {
-                string name = cardCostStructure.ElementAt(i).Key;
-                CardCost cardCost = cardCostStructure.ElementAt(i).Value;
-
-                float totalNoCards = cardCost.totalNoCards;
-                float totalValuePerResource = cardCost.totalValue;
-                float percentage = (totalValuePerResource / totalValue) * 100;
-                //float average = 
-
-                int[] values = cardCost.Values.ToArray();
-                Array.Sort(values);
-
-                float halfIndex = (float)values.Length / 2;
-                float median = 0;
-                if (values.Length > 0)
+                while(neighbors.Count > 0)
                 {
-                    if (halfIndex % 2 == 0)
+                    yield return new WaitForEndOfFrame();
+
+                    if (card.color != color)
                     {
-                        median = values[(int)halfIndex];
+                        SetImages(card);
                     }
-                    else
-                    {
-                        median = (values[(int)Mathf.Floor(halfIndex)] + values[(int)Mathf.Ceil(halfIndex)]) / 2;
-                    }
+                    color = card.color;
+
+                    CreateCard(card, neighbors[0]);
+                    neighbors.RemoveAt(0);
+                    screenshotWriter.MakeScreenshot();
                 }
-                //percentage of resource of all costs.
-                //lowest value.
-                //highest value.
-                //median value for a resource type.
-                //mean value per card.
-
-                Debug.Log(string.Format("{0}: number of cards : {1}. total value for {0} : {2}. lowest: {3} highest: {4}. median: {5}. mean {6}%.", name, totalNoCards, totalValuePerResource, cardCost.Min, cardCost.Max, median, percentage.ToString("0.00")));
             }
-        }
+        }        
 
-        private int NumberOfSpaces(int numberOfPrerequisites)
+        private void CreateCard(Card card, Neighbors neighbors)
         {
-            switch (numberOfPrerequisites)
-            {
-                default:
-                    return 0;
-                case 1:
-                    return 4;
-                case 2:
-                    return 6;
-                case 3:
-                    return 8;
-                case 4:
-                    return 10;
-            }
-        }
+            northNeighbor.SetImage(LoadSprite($"/Cards/{card.color}/LogoBackground.png"), LoadSprite($"/Cards/{neighbors.NorthNeighbor}/Logo.png"));
+            eastNeighbor.SetImage(LoadSprite($"/Cards/{card.color}/LogoBackground.png"), LoadSprite($"/Cards/{neighbors.EastNeighbor}/Logo.png"));
+            southNeighbor.SetImage(LoadSprite($"/Cards/{card.color}/LogoBackground.png"), LoadSprite($"/Cards/{neighbors.SouthNeighbor}/Logo.png"));
+            westNeighbor.SetImage(LoadSprite($"/Cards/{card.color}/LogoBackground.png"), LoadSprite($"/Cards/{neighbors.WestNeighbor}/Logo.png"));
 
-        private void CreateCard(Card card)
-        {
-            int numberOfPrerequisites = CreatePrerequisites(card);
-
-            background.sprite = LoadSprite(string.Format("Guilds/Backgrounds/{0}.png", card.background.ToLower()));
-            foreground.sprite = LoadSprite(string.Format("Guilds/Avatars/{0}.png", card.foreground.ToLower()));
-            type.sprite = LoadSprite(string.Format("Types/{0}.png", card.type.ToLower()));
             title.text = card.title;
-
-            description.text = card.description.PadLeft(card.description.Length + NumberOfSpaces(numberOfPrerequisites), ' ');
-            description.fontSize = card.descriptionFontSize > 0 ? card.descriptionFontSize : 22;
-
-
-            if (card.flavor != null)
-            {
-                flavor.gameObject.SetActive(true);
-                flavor.text = card.flavor;
-            }
-            else flavor.gameObject.SetActive(false);
-            
-            CreateGuilds(card);
-            CreateLoyaltyAndBorderColor(card);
-            CreateResources(card);            
-        }      
-
-        private void CreateGuilds(Card card)
-        {
-            if (card.guilds.Length == 0)
-            {
-                guildPanel_1.gameObject.SetActive(false);
-                guildPanel_2.gameObject.SetActive(false);
-            }
-            else if (card.guilds.Length == 1)
-            {
-                guildPanel_1.gameObject.SetActive(true);
-                guildPanel_2.gameObject.SetActive(false);
-
-                guild_1.sprite = LoadSprite(string.Format("Guilds/{0}.png", card.guilds[0].ToLower()));
-            }
-            else if (card.guilds.Length == 2)
-            {
-                guildPanel_1.gameObject.SetActive(false);
-                guildPanel_2.gameObject.SetActive(true);
-
-                for (int i = 0; i < card.guilds.Length; i++)
-                {
-                    guild_2[i].sprite = LoadSprite(string.Format("Guilds/{0}.png", card.guilds[i].ToLower()));
-                }
-            }
+            description.text = card.description;
         }
 
-        private void CreateLoyaltyAndBorderColor(Card card)
+        private void SetImages(Card card)
         {
-            cardBorder.sprite = cardBorderSprites[card.loyalty]["border_card"];
-            cardNameBorder.sprite = cardBorderSprites[card.loyalty]["border_cardname"];
-            cardIllustrationBorder.sprite = cardBorderSprites[card.loyalty]["border_illustration"];
-            loyaltyShield.sprite = cardBorderSprites[card.loyalty]["loyalty_shield"];
+            CreateResources(card);
 
-            if (card.loyalty > 0)
-            {
-                loyaltyShield.gameObject.SetActive(true);
-                loyaltyNumber.text = card.loyalty.ToString();
-                switch (card.loyalty)
-                {
-                    case 1:
-                        loyaltyShield.rectTransform.sizeDelta = new Vector2(75, 75);
-                        loyaltyNumber.rectTransform.localPosition = new Vector3(0f, -4f);
-                        break;
-                    case 2:
-                        loyaltyShield.rectTransform.sizeDelta = new Vector2(80, 80);
-                        loyaltyNumber.rectTransform.localPosition = new Vector3(0f, -1f);
-                        break;
-                    case 3:
-                        loyaltyShield.rectTransform.sizeDelta = new Vector2(85, 85);
-                        loyaltyNumber.rectTransform.localPosition = new Vector3(3.5f, -1f);
-                        break;
-                    case 4:
-                        loyaltyShield.rectTransform.sizeDelta = new Vector2(90, 90);
-                        loyaltyNumber.fontSize = 65;
-                        break;
-                    case 5:
-                        loyaltyShield.rectTransform.sizeDelta = new Vector2(95, 95);
-                        loyaltyNumber.fontSize = 70;
-                        break;
-                }
-            }
-            else
-            {
-                loyaltyShield.gameObject.SetActive(false);
-            }
+            //effect.sprite = LoadSprite($"Guilds/Effects/{card.effect}.png");
+            background.sprite = LoadSprite($"Guilds/Backgrounds/{card.background}.png");
+            foreground.sprite = LoadSprite($"Guilds/Foregrounds/{card.foreground}.png");
+            border.sprite = LoadSprite($"Cards/{card.color}/Border.png");
+            logo.sprite = LoadSprite($"Cards/{card.color}/Logo.png");
+            cardFace.sprite = LoadSprite($"Cards/{card.color}/Face.png");
+            descriptionBackground.sprite = LoadSprite($"Cards/{card.color}/Description.png");
+            logoBackground.sprite = LoadSprite($"Cards/{card.color}/LogoBackground.png");
+            titleBackground.sprite = LoadSprite($"Cards/{card.color}/Title.png");
+            leftResourceBackground.sprite = LoadSprite($"Cards/{card.color}/Resource.png");
+            rightResourceBackground.sprite = LoadSprite($"Cards/{card.color}/Resource.png");
         }
-
+               
         private void CreateResources(Card card)
         {
-            Array.Sort(card.cost, resourceSort);
-
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < resources.Length; i++)
             {
                 try
                 {
-                    Resource resource = card.cost[i];
+                    string resource = card.cost[i];
                     resources[i].gameObject.SetActive(true);
-                    resources[i].SetImageAndAmound(LoadSprite(string.Format("Resources/{0}.png", resource.type.ToLower())), resource.amount);
-
-                    CardCost cardCost = cardCostStructure[resource.type];
-                    cardCost.totalValue += resource.amount;
-                    cardCost.totalNoCards++;
-                    cardCost.Values.Add(resource.amount);
-                    cardCost.Min = cardCost.Values.Min();
-                    cardCost.Max = cardCost.Values.Max();                    
-                    cardCostStructure[resource.type] = cardCost;
+                    resources[i].SetImage(LoadSprite($"Resources/Backgrounds/{resource.ToLower()}.png"), LoadSprite($"Resources/Foregrounds/{resource.ToLower()}.png"));
                 }
                 catch (IndexOutOfRangeException)
                 {
                     resources[i].gameObject.SetActive(false);   
                 }                
             }
-        }
-
-        private int CreatePrerequisites(Card card)
-        {
-            Array.Sort(card.cost, prerequisitesSort);
-            int numberOfPrerequisites = 0;
-            for (int i = 0; i < 5; i++)
-            {
-                prerequisites[i].gameObject.SetActive(false);
-            }
-
-            for (int i = 0; i < card.prerequisites.Length; i++)
-            {                
-                Resource prerequisite = card.prerequisites[i];
-
-                for (int j = 0; j < prerequisite.amount; j++)
-                {
-                    prerequisites[numberOfPrerequisites].gameObject.SetActive(true);
-                    prerequisites[numberOfPrerequisites].sprite = LoadSprite(string.Format("Guilds/{0}.png", prerequisite.type.ToLower()));
-                    numberOfPrerequisites++;
-                }
-            }
-            return numberOfPrerequisites;
-        }
+        }      
 
         private Sprite LoadSprite(string filePath)
         {
-            byte[] pngBytes = File.ReadAllBytes(string.Format("{0}/Images/{1}", Application.dataPath, filePath));
+            byte[] pngBytes = File.ReadAllBytes($"{Application.dataPath}/Images/{filePath}");
             Texture2D texture = new Texture2D(2, 2);
 
             texture.LoadImage(pngBytes);

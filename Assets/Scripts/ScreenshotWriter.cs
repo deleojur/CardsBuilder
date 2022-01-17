@@ -20,7 +20,8 @@ public class ScreenshotWriter : MonoBehaviour
         }
     }
 
-    private IEnumerator YieldAndTakeScreenshot(Card card)
+    private int index = 0;
+    private IEnumerator YieldAndTakeScreenshot()
     {
         yield return new WaitForEndOfFrame(); // it must be a coroutine 
 
@@ -36,17 +37,11 @@ public class ScreenshotWriter : MonoBehaviour
         var bytes = tex.EncodeToPNG();
         Destroy(tex);
 
-        string cardSpecs = "";
-        if (card.guilds.Length == 1)
-        {
-            cardSpecs = string.Format("{0}_{1}", card.guilds[0], card.loyalty);
-        }
-
-        File.WriteAllBytes(string.Format("C:/Users/Jur/OneDrive - HvA/Monarchy/Cards/NewCards/Screenshots/{0}_{1}.png", cardSpecs, card.title), bytes);
+        File.WriteAllBytes(($"C:/Users/Jur/OneDrive - HvA/Monarchy/Cards/NewCards/Screenshots/card_{index++}.png"), bytes);
     }   
 
-    public void MakeScreenshot(Card card)
+    public void MakeScreenshot()
     {        
-        StartCoroutine(YieldAndTakeScreenshot(card));        
+        StartCoroutine(YieldAndTakeScreenshot());        
     }
 }

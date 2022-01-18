@@ -1,0 +1,214 @@
+{
+	"hexagons":
+	[
+		{
+			"title": "Iron mine",
+			"type" : "gain",
+			"logo" : "Iron",
+			"amount": 2,
+			"edges":
+			[
+				{ "colors": ["cool blue"] },
+				{ "colors": ["pastel red"] },
+				{ "colors": ["lawn green"] },
+				{ "colors": ["grape purple"] },
+				{ "colors": ["grape purple", "lawn green", "cool blue"] },
+				{ "colors": [] }
+			]
+		},
+		{
+			"title": "Copper mine",
+			"type" : "gain",
+			"logo" : "Copper",
+			"amount": 2,
+			"": "",
+			"edges":
+			[
+				{ "colors": ["cool blue"] },
+				{ "colors": ["pastel red"] },
+				{ "colors": ["lawn green"] },
+				{ "colors": ["grape purple"] },
+				{ "colors": ["grape purple", "lawn green", "cool blue"] },
+				{ "colors": [] }
+			]
+		},
+		{
+			"title": "Bank",
+			"type" : "gain",
+			"logo" : "Gold",
+			"amount": 2,
+			"edges":
+			[
+				{ "colors": ["cool blue"] },
+				{ "colors": ["pastel red"] },
+				{ "colors": ["lawn green"] },
+				{ "colors": ["grape purple"] },
+				{ "colors": ["grape purple", "lawn green", "cool blue"] },
+				{ "colors": [] }
+			]
+		},
+		{
+			"title": "Sawmill",
+			"type" : "gain",
+			"logo" : "Wood",
+			"amount": 2,
+			"edges":
+			[
+				{ "colors": ["cool blue"] },
+				{ "colors": ["pastel red"] },
+				{ "colors": ["lawn green"] },
+				{ "colors": ["grape purple"] },
+				{ "colors": ["grape purple", "lawn green", "cool blue"] },
+				{ "colors": [] }
+			]
+		},
+		{
+			"title": "Blacksmidth",
+			"type" : "transform",
+			"logo" : "Iron",
+			"amount": 2,
+			"toLogo": "Strength",
+			"edges":
+			[
+				{ "colors": ["cool blue"] },
+				{ "colors": ["pastel red"] },
+				{ "colors": ["lawn green"] },
+				{ "colors": ["grape purple"] },
+				{ "colors": ["grape purple", "lawn green", "cool blue"] },
+				{ "colors": [] }
+			]
+		},
+		{
+			"title": "Blacksmidth",
+			"type" : "transform",
+			"logo" : "Iron",
+			"amount": 2,
+			"toLogo": "Movement",
+			"edges":
+			[
+				{ "colors": ["cool blue"] },
+				{ "colors": ["pastel red"] },
+				{ "colors": ["lawn green"] },
+				{ "colors": ["grape purple"] },
+				{ "colors": ["grape purple", "lawn green", "cool blue"] },
+				{ "colors": [] }
+			]
+		},		
+		{
+			"title": "Sculptor",
+			"type" : "transform",
+			"logo" : "Copper",
+			"amount": 5,
+			"toAmount": 8,
+			"toLogo": "VP",
+			"edges":
+			[
+				{ "colors": ["cool blue"] },
+				{ "colors": ["pastel red"] },
+				{ "colors": ["lawn green"] },
+				{ "colors": ["grape purple"] },
+				{ "colors": ["grape purple", "lawn green", "cool blue"] },
+				{ "colors": [] }
+			]
+		},
+		{
+			"title": "Coin minter",
+			"type" : "transform",
+			"logo" : "Copper",
+			"amount": 2,
+			"toLogo": "VP",
+			"toAmount": 4,
+			"edges":
+			[
+				{ "colors": ["cool blue"] },
+				{ "colors": ["pastel red"] },
+				{ "colors": ["lawn green"] },
+				{ "colors": ["grape purple"] },
+				{ "colors": ["grape purple", "lawn green", "cool blue"] },
+				{ "colors": [] }
+			]
+		},
+		
+		{
+			"title": "Cityhall",
+			"type" : "transform",
+			"logo" : "Gold",
+			"amount": 3,
+			"toLogo": "Cityhall",
+			"edges":
+			[
+				{ "colors": ["cool blue"] },
+				{ "colors": ["pastel red"] },
+				{ "colors": ["lawn green"] },
+				{ "colors": ["grape purple"] },
+				{ "colors": ["grape purple", "lawn green", "cool blue"] },
+				{ "colors": [] }
+			]
+		},
+		{
+			"title": "Tradepost",
+			"type" : "transform",
+			"logo" : "Gold",
+			"amount": 3,
+			"toLogo": "Any",
+			"toAmount": 2,
+			"edges":
+			[
+				{ "colors": ["cool blue"] },
+				{ "colors": ["pastel red"] },
+				{ "colors": ["lawn green"] },
+				{ "colors": ["grape purple"] },
+				{ "colors": ["grape purple", "lawn green", "cool blue"] },
+				{ "colors": [] }
+			]
+		},
+		{
+			"title": "Jeweler",
+			"type" : "transform",
+			"logo" : "Gold",
+			"amount": 2,
+			"toLogo": "VP",
+			"toAmount": 5,
+			"edges":
+			[
+				{ "colors": ["cool blue"] },
+				{ "colors": ["pastel red"] },
+				{ "colors": ["lawn green"] },
+				{ "colors": ["grape purple"] },
+				{ "colors": ["grape purple", "lawn green", "cool blue"] },
+				{ "colors": [] }
+			]
+		},
+		{
+			"title": "Cartmaker",
+			"type" : "gain",
+			"logo" : "Wood",
+			"amount": 2,
+			"edges":
+			[
+				{ "colors": ["cool blue"] },
+				{ "colors": ["pastel red"] },
+				{ "colors": ["lawn green"] },
+				{ "colors": ["grape purple"] },
+				{ "colors": ["grape purple", "lawn green", "cool blue"] },
+				{ "colors": [] }
+			]
+		},
+		{
+			"title": "Cartbuilder",
+			"type" : "transform",
+			"logo" : "Wood",
+			"amount": 2,
+			"toLogo": "Cart",
+			"edges":
+			[
+				{ "colors": ["cool blue"] },
+				{ "colors": ["pastel red"] },
+				{ "colors": ["lawn green"] },
+				{ "colors": ["grape purple"] },
+				{ "colors": ["grape purple", "lawn green", "cool blue"] },
+				{ "colors": [] }
+			]
+		}
+	]
+}

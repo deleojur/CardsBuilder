@@ -4,19 +4,26 @@ using System.Collections;
 namespace Json
 {
     [Serializable]
-    public class Cards
+    public class Hexagons
     {
-        public Card[] cards;
+        public Hexagon[] hexagons;
     }
 
     [Serializable]
-    public class Card
+    public class Hexagon
     {
         public string title;
-        public string description;
-        public string background;
-        public string foreground;        
-        public string color;
-        public string[] cost;
+        public string type;
+        public string logo;
+        public string amount;
+        public string toLogo;
+        public string toAmount;
+        public HexagonEdge[] edges;
+    }
+
+    [Serializable]
+    public class HexagonEdge
+    {
+        public string[] colors;
     }
 }

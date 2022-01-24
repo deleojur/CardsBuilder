@@ -1,213 +1,716 @@
 {
-	"hexagons":
+	"categories":
 	[
 		{
-			"title": "Iron mine",
-			"type" : "gain",
-			"logo" : "Iron",
-			"amount": 2,
-			"edges":
+			"name": "S",
+			"score": 9,
+			"chance": 1,
+			"hexagons":
 			[
-				{ "colors": ["cool blue"] },
-				{ "colors": ["pastel red"] },
-				{ "colors": ["lawn green"] },
-				{ "colors": ["grape purple"] },
-				{ "colors": ["grape purple", "lawn green", "cool blue"] },
-				{ "colors": [] }
+				{
+					"title": "Bank",
+					"type" : "gain",
+					"logo" : "Gold",
+					"amount": 2,
+					"score": 3
+				},
+				{
+					"title": "Bank",
+					"type" : "gain",
+					"logo" : "Gold",
+					"amount": 2,
+					"score": 3
+				},
+				{
+					"title": "Bank",
+					"type" : "gain",
+					"logo" : "Gold",
+					"amount": 2,
+					"score": 3
+				},
+				{
+					"title": "Bank",
+					"type" : "gain",
+					"logo" : "Gold",
+					"amount": 2,
+					"score": 3
+				},
+				{
+					"title": "Bank",
+					"type" : "gain",
+					"logo" : "Gold",
+					"amount": 2,
+					"score": 3
+				}
 			]
 		},
 		{
-			"title": "Copper mine",
-			"type" : "gain",
-			"logo" : "Copper",
-			"amount": 2,
-			"": "",
-			"edges":
+			"name": "I",
+			"score": 9,
+			"hexagons":
 			[
-				{ "colors": ["cool blue"] },
-				{ "colors": ["pastel red"] },
-				{ "colors": ["lawn green"] },
-				{ "colors": ["grape purple"] },
-				{ "colors": ["grape purple", "lawn green", "cool blue"] },
-				{ "colors": [] }
-			]
-		},
-		{
-			"title": "Bank",
-			"type" : "gain",
-			"logo" : "Gold",
-			"amount": 2,
-			"edges":
-			[
-				{ "colors": ["cool blue"] },
-				{ "colors": ["pastel red"] },
-				{ "colors": ["lawn green"] },
-				{ "colors": ["grape purple"] },
-				{ "colors": ["grape purple", "lawn green", "cool blue"] },
-				{ "colors": [] }
-			]
-		},
-		{
-			"title": "Sawmill",
-			"type" : "gain",
-			"logo" : "Wood",
-			"amount": 2,
-			"edges":
-			[
-				{ "colors": ["cool blue"] },
-				{ "colors": ["pastel red"] },
-				{ "colors": ["lawn green"] },
-				{ "colors": ["grape purple"] },
-				{ "colors": ["grape purple", "lawn green", "cool blue"] },
-				{ "colors": [] }
-			]
-		},
-		{
-			"title": "Blacksmidth",
-			"type" : "transform",
-			"logo" : "Iron",
-			"amount": 2,
-			"toLogo": "Strength",
-			"edges":
-			[
-				{ "colors": ["cool blue"] },
-				{ "colors": ["pastel red"] },
-				{ "colors": ["lawn green"] },
-				{ "colors": ["grape purple"] },
-				{ "colors": ["grape purple", "lawn green", "cool blue"] },
-				{ "colors": [] }
-			]
-		},
-		{
-			"title": "Blacksmidth",
-			"type" : "transform",
-			"logo" : "Iron",
-			"amount": 2,
-			"toLogo": "Movement",
-			"edges":
-			[
-				{ "colors": ["cool blue"] },
-				{ "colors": ["pastel red"] },
-				{ "colors": ["lawn green"] },
-				{ "colors": ["grape purple"] },
-				{ "colors": ["grape purple", "lawn green", "cool blue"] },
-				{ "colors": [] }
+				{
+					"title": "Iron mine",
+					"type" : "gain",
+					"logo" : "Iron",
+					"amount": 2,
+					"score": 3
+				},
+				{
+					"title": "Iron mine",
+					"type" : "gain",
+					"logo" : "Iron",
+					"amount": 2,
+					"score": 3
+				},
+				{
+					"title": "Iron mine",
+					"type" : "gain",
+					"logo" : "Iron",
+					"amount": 2,
+					"score": 3
+				},				
+				{
+					"title": "Copper mine",
+					"type" : "gain",
+					"logo" : "Copper",
+					"amount": 3,
+					"score": 3
+				},
+				{
+					"title": "Copper mine",
+					"type" : "gain",
+					"logo" : "Copper",
+					"amount": 3,
+					"score": 3
+				},
+				{
+					"title": "Copper mine",
+					"type" : "gain",
+					"logo" : "Copper",
+					"amount": 3,
+					"score": 3
+				},				
+				{
+					"title": "Bank",
+					"type" : "gain",
+					"logo" : "Gold",
+					"amount": 2,
+					"score": 4
+				},
+				{
+					"title": "Bank",
+					"type" : "gain",
+					"logo" : "Gold",
+					"amount": 2,
+					"score": 4
+				},
+				{
+					"title": "Bank",
+					"type" : "gain",
+					"logo" : "Gold",
+					"amount": 2,
+					"score": 4
+				},
+				{
+					"title": "Sawmill",
+					"type" : "gain",
+					"logo" : "Wood",
+					"amount": 2,
+					"score": 2
+				},
+				{
+					"title": "Sawmill",
+					"type" : "gain",
+					"logo" : "Wood",
+					"amount": 2,
+					"score": 2
+				},
+				{
+					"title": "Sawmill",
+					"type" : "gain",
+					"logo" : "Wood",
+					"amount": 2,
+					"score": 2
+				},				
+				{
+					"title": "Blacksmidth",
+					"type" : "transform",
+					"logo" : "Iron",
+					"amount": 2,
+					"toLogo": "Strength",
+					"score": 3
+				},	
+				{
+					"title": "Blacksmidth",
+					"type" : "transform",
+					"logo" : "Iron",
+					"amount": 2,
+					"toLogo": "Strength",
+					"score": 3
+				},				
+				{
+					"title": "Coin minter",
+					"type" : "transform",
+					"logo" : "Copper",
+					"amount": 2,
+					"toLogo": "VP",
+					"toLogoBackgroundColor": "green",
+					"toAmount": 3,
+					"score": 2
+				},
+				{
+					"title": "Coin minter",
+					"type" : "transform",
+					"logo" : "Copper",
+					"amount": 2,
+					"toLogo": "VP",
+					"toLogoBackgroundColor": "green",
+					"toAmount": 3,
+					"score": 2
+				},
+				{
+					"title": "Coin minter",
+					"type" : "transform",
+					"logo" : "Copper",
+					"amount": 2,
+					"toLogo": "VP",
+					"toLogoBackgroundColor": "green",
+					"toAmount": 4,
+					"score": 3
+				},
+				{
+					"title": "Tradepost",
+					"type" : "transform",
+					"logo" : "Gold",
+					"amount": 2,
+					"toLogoBackgroundColor": "red",
+					"toLogo": "Any",
+					"toAmount": 3,
+					"score": 3
+				},
+				{
+					"title": "Tradepost",
+					"type" : "transform",
+					"logo" : "Gold",
+					"amount": 2,
+					"toLogoBackgroundColor": "red",
+					"toLogo": "Any",
+					"toAmount": 3,
+					"score": 3
+				},
+				{
+					"title": "Tradepost",
+					"type" : "transform",
+					"logo" : "Gold",
+					"amount": 2,
+					"toLogoBackgroundColor": "red",
+					"toLogo": "Any",
+					"toAmount": 3,
+					"score": 3
+				},				
+				{
+					"title": "Cartmaker",
+					"type" : "transform",
+					"logo" : "Wood",
+					"amount": 1,
+					"score": 3,
+					"toLogo": "Cart"
+				},
+				{
+					"title": "Cartmaker",
+					"type" : "transform",
+					"logo" : "Wood",
+					"amount": 1,
+					"score": 3,
+					"toLogo": "Cart"
+				},
+				{
+					"title": "Wheelwright",
+					"type" : "transform",
+					"logo" : "Iron",
+					"logo2": "Wood",
+					"amount": 2,
+					"amount2": 2,
+					"toLogo": "Movement",
+					"score": 5
+				},
+				{
+					"title": "Wheelwright",
+					"type" : "transform",
+					"logo" : "Iron",
+					"logo2": "Wood",
+					"amount": 2,
+					"amount2": 2,
+					"toLogo": "Movement",
+					"score": 5
+				},
+				{
+					"title": "Cityhall",
+					"type" : "transform",
+					"logo" : "Gold",
+					"amount": 2,
+					"toLogoBackgroundColor": "red",
+					"toLogo": "Cityhall",
+					"score": 3
+				},
+				{
+					"title": "Cityhall",
+					"type" : "transform",
+					"logo" : "Gold",
+					"amount": 2,
+					"toLogoBackgroundColor": "red",
+					"toLogo": "Cityhall",
+					"score": 3
+				}
 			]
 		},		
 		{
-			"title": "Sculptor",
-			"type" : "transform",
-			"logo" : "Copper",
-			"amount": 5,
-			"toAmount": 8,
-			"toLogo": "VP",
-			"edges":
-			[
-				{ "colors": ["cool blue"] },
-				{ "colors": ["pastel red"] },
-				{ "colors": ["lawn green"] },
-				{ "colors": ["grape purple"] },
-				{ "colors": ["grape purple", "lawn green", "cool blue"] },
-				{ "colors": [] }
+			"name": "II",
+			"score": 10,
+			"hexagons":
+			[				
+				{
+					"title": "Iron mine",
+					"type" : "gain",
+					"logo" : "Iron",
+					"amount": 3,
+					"score": 4
+				},
+				{
+					"title": "Iron mine",
+					"type" : "gain",
+					"logo" : "Iron",
+					"amount": 3,
+					"score": 4
+				},
+				{
+					"title": "Copper mine",
+					"type" : "gain",
+					"logo" : "Copper",
+					"amount": 4,
+					"score": 4
+				},
+				{
+					"title": "Copper mine",
+					"type" : "gain",
+					"logo" : "Copper",
+					"amount": 4,
+					"score": 4
+				},
+				{
+					"title": "Bank",
+					"type" : "gain",
+					"logo" : "Gold",
+					"amount": 3,
+					"score": 4
+				},
+				{
+					"title": "Bank",
+					"type" : "gain",
+					"logo" : "Gold",
+					"amount": 3,
+					"score": 4
+				},
+				{
+					"title": "Sawmill",
+					"type" : "gain",
+					"logo" : "Wood",
+					"amount": 3,
+					"score": 3
+				},
+				{
+					"title": "Sawmill",
+					"type" : "gain",
+					"logo" : "Wood",
+					"amount": 3,
+					"score": 3
+				},
+				{
+					"title": "Barracks",
+					"type" : "transform",
+					"logo" : "Iron",
+					"amount": 2,
+					"toLogo": "Strength",
+					"score": 3
+				},
+				{
+					"title": "Barracks",
+					"type" : "transform",
+					"logo" : "Iron",
+					"amount": 3,
+					"toLogo": "Strength",
+					"score": 2
+				},
+				{
+					"title": "Barracks",
+					"type" : "transform",
+					"logo" : "Iron",
+					"amount": 3,
+					"toLogo": "Strength",
+					"score": 2
+				},
+				{
+					"title": "Stables",
+					"type" : "transform",
+					"logo" : "Iron",
+					"logo2": "Wood",
+					"amount": 1,
+					"amount2": 2,
+					"toLogo": "Movement",
+					"score": 4
+				},
+				{
+					"title": "Stables",
+					"type" : "transform",
+					"logo" : "Iron",
+					"logo2": "Wood",
+					"amount": 2,
+					"amount2": 1,
+					"toLogo": "Movement",
+					"score": 3
+				},
+				{
+					"title": "Stables",
+					"type" : "transform",
+					"logo" : "Iron",
+					"logo2": "Wood",
+					"amount": 2,
+					"amount2": 2,
+					"toLogo": "Movement",
+					"score": 2
+				},
+				{
+					"title": "Sculptor",
+					"type" : "transform",
+					"logo" : "Copper",
+					"amount": 3,
+					"toAmount": 5,
+					"toLogo": "VP",
+					"toLogoBackgroundColor": "green",
+					"score": 2
+				},
+				{
+					"title": "Sculptor",
+					"type" : "transform",
+					"logo" : "Copper",
+					"amount": 5,
+					"toAmount": 8,
+					"toLogo": "VP",
+					"toLogoBackgroundColor": "green",
+					"score": 3
+				},
+				{
+					"title": "Sculptor",
+					"type" : "transform",
+					"logo" : "Copper",
+					"amount": 5,
+					"toAmount": 8,
+					"toLogo": "VP",
+					"toLogoBackgroundColor": "green",
+					"score": 3
+				},				
+				{
+					"title": "Cityhall",
+					"type" : "transform",
+					"logo" : "Gold",
+					"amount": 2,
+					"toLogo": "Cityhall",
+					"toLogoBackgroundColor": "red",
+					"score": 4
+				},
+				{
+					"title": "Cityhall",
+					"type" : "transform",
+					"logo" : "Gold",
+					"amount": 3,
+					"toLogo": "Cityhall",
+					"toLogoBackgroundColor": "red",
+					"score": 3
+				},
+				{
+					"title": "Jeweler",
+					"type" : "transform",
+					"logo" : "Gold",
+					"amount": 2,
+					"toLogo": "VP",
+					"toLogoBackgroundColor": "green",
+					"toAmount": 5,
+					"score": 3
+				},
+				{
+					"title": "Jeweler",
+					"type" : "transform",
+					"logo" : "Gold",
+					"amount": 3,
+					"toLogo": "VP",
+					"toLogoBackgroundColor": "green",
+					"toAmount": 8,
+					"score": 3
+				},
+				{
+					"title": "Jeweler",
+					"type" : "transform",
+					"logo" : "Gold",
+					"amount": 2,
+					"toLogo": "VP",
+					"toLogoBackgroundColor": "green",
+					"toAmount": 4,
+					"score": 2
+				},				
+				{
+					"title": "Cartmaker",
+					"type" : "transform",
+					"logo" : "Wood",
+					"amount": 3,
+					"score": 3,
+					"toLogo": "Cart"
+				},
+				{
+					"title": "Cartmaker",
+					"type" : "transform",
+					"logo" : "Wood",
+					"amount": 3,
+					"score": 3,
+					"toLogo": "Cart"
+				},
+				{
+					"title": "Shipbuilder",
+					"type" : "transform",
+					"logo" : "Wood",
+					"logo2" : "Iron",
+					"amount": 2,
+					"amount2": 2,
+					"toLogo": "Shipbuilder",
+					"score": 4
+				},
+				{
+					"title": "Shipbuilder",
+					"type" : "transform",
+					"logo" : "Wood",
+					"logo2" : "Iron",
+					"amount": 2,
+					"amount2": 2,
+					"toLogo": "Shipbuilder",
+					"score": 4
+				},
+				{
+					"title": "Tradepost",
+					"type" : "transform",
+					"logo" : "Gold",
+					"amount": 2,
+					"toLogoBackgroundColor": "red",
+					"toLogo": "Any",
+					"toAmount": 3,
+					"score": 3
+				},
+				{
+					"title": "Tradepost",
+					"type" : "transform",
+					"logo" : "Gold",
+					"amount": 2,
+					"toLogoBackgroundColor": "red",
+					"toLogo": "Any",
+					"toAmount": 3,
+					"score": 3
+				}
 			]
 		},
 		{
-			"title": "Coin minter",
-			"type" : "transform",
-			"logo" : "Copper",
-			"amount": 2,
-			"toLogo": "VP",
-			"toAmount": 4,
-			"edges":
-			[
-				{ "colors": ["cool blue"] },
-				{ "colors": ["pastel red"] },
-				{ "colors": ["lawn green"] },
-				{ "colors": ["grape purple"] },
-				{ "colors": ["grape purple", "lawn green", "cool blue"] },
-				{ "colors": [] }
-			]
-		},
-		
-		{
-			"title": "Cityhall",
-			"type" : "transform",
-			"logo" : "Gold",
-			"amount": 3,
-			"toLogo": "Cityhall",
-			"edges":
-			[
-				{ "colors": ["cool blue"] },
-				{ "colors": ["pastel red"] },
-				{ "colors": ["lawn green"] },
-				{ "colors": ["grape purple"] },
-				{ "colors": ["grape purple", "lawn green", "cool blue"] },
-				{ "colors": [] }
-			]
-		},
-		{
-			"title": "Tradepost",
-			"type" : "transform",
-			"logo" : "Gold",
-			"amount": 3,
-			"toLogo": "Any",
-			"toAmount": 2,
-			"edges":
-			[
-				{ "colors": ["cool blue"] },
-				{ "colors": ["pastel red"] },
-				{ "colors": ["lawn green"] },
-				{ "colors": ["grape purple"] },
-				{ "colors": ["grape purple", "lawn green", "cool blue"] },
-				{ "colors": [] }
-			]
-		},
-		{
-			"title": "Jeweler",
-			"type" : "transform",
-			"logo" : "Gold",
-			"amount": 2,
-			"toLogo": "VP",
-			"toAmount": 5,
-			"edges":
-			[
-				{ "colors": ["cool blue"] },
-				{ "colors": ["pastel red"] },
-				{ "colors": ["lawn green"] },
-				{ "colors": ["grape purple"] },
-				{ "colors": ["grape purple", "lawn green", "cool blue"] },
-				{ "colors": [] }
-			]
-		},
-		{
-			"title": "Cartmaker",
-			"type" : "gain",
-			"logo" : "Wood",
-			"amount": 2,
-			"edges":
-			[
-				{ "colors": ["cool blue"] },
-				{ "colors": ["pastel red"] },
-				{ "colors": ["lawn green"] },
-				{ "colors": ["grape purple"] },
-				{ "colors": ["grape purple", "lawn green", "cool blue"] },
-				{ "colors": [] }
-			]
-		},
-		{
-			"title": "Cartbuilder",
-			"type" : "transform",
-			"logo" : "Wood",
-			"amount": 2,
-			"toLogo": "Cart",
-			"edges":
-			[
-				{ "colors": ["cool blue"] },
-				{ "colors": ["pastel red"] },
-				{ "colors": ["lawn green"] },
-				{ "colors": ["grape purple"] },
-				{ "colors": ["grape purple", "lawn green", "cool blue"] },
-				{ "colors": [] }
+			"name": "III",
+			"score": 11,
+			"hexagons":
+			[				
+				{
+					"title": "Iron mine",
+					"type" : "gain",
+					"logo" : "Iron",
+					"amount": 5,
+					"score": 6
+				},
+				{
+					"title": "Iron mine",
+					"type" : "gain",
+					"logo" : "Iron",
+					"amount": 4,
+					"score": 5
+				},
+				{
+					"title": "Copper mine",
+					"type" : "gain",
+					"logo" : "Copper",
+					"amount": 7,
+					"score": 5
+				},
+				{
+					"title": "Copper mine",
+					"type" : "gain",
+					"logo" : "Copper",
+					"amount": 8,
+					"score": 6
+				},
+				{
+					"title": "Bank",
+					"type" : "gain",
+					"logo" : "Gold",
+					"amount": 5,
+					"score": 6
+				},
+				{
+					"title": "Bank",
+					"type" : "gain",
+					"logo" : "Gold",
+					"amount": 6,
+					"score": 7
+				},
+				{
+					"title": "Sawmill",
+					"type" : "gain",
+					"logo" : "Wood",
+					"amount": 4,
+					"score": 5
+				},
+				{
+					"title": "Sawmill",
+					"type" : "gain",
+					"logo" : "Wood",
+					"amount": 5,
+					"score": 6
+				},
+				{
+					"title": "Barracks",
+					"type" : "transform",
+					"logo" : "Iron",
+					"amount": 2,
+					"toLogo": "Strength",
+					"score": 6
+				},
+				{
+					"title": "Barracks",
+					"type" : "transform",
+					"logo" : "Iron",
+					"amount": 3,
+					"toLogo": "Strength",
+					"score": 5
+				},
+				{
+					"title": "Barracks",
+					"type" : "transform",
+					"logo" : "Iron",
+					"amount": 3,
+					"toLogo": "Strength",
+					"score": 5
+				},
+				{
+					"title": "Stables",
+					"type" : "transform",
+					"logo" : "Iron",
+					"logo2": "Wood",
+					"amount": 2,
+					"amount2": 3,
+					"toLogo": "Movement",
+					"score": 4
+				},
+				{
+					"title": "Stables",
+					"type" : "transform",
+					"logo" : "Iron",
+					"logo2": "Wood",
+					"amount": 2,
+					"amount2": 2,
+					"toLogo": "Movement",
+					"score": 5
+				},
+				{
+					"title": "Stables",
+					"type" : "transform",
+					"logo" : "Iron",
+					"logo2": "Wood",
+					"amount": 2,
+					"amount2": 2,
+					"toLogo": "Movement",
+					"score": 5
+				},
+				{
+					"title": "Sculptor",
+					"type" : "transform",
+					"logo" : "Copper",
+					"amount": 3,
+					"toAmount": 10,
+					"toLogo": "VP",
+					"toLogoBackgroundColor": "green",
+					"score": 6
+				},
+				{
+					"title": "Sculptor",
+					"type" : "transform",
+					"logo" : "Copper",
+					"amount": 5,
+					"toAmount": 11,
+					"toLogo": "VP",
+					"toLogoBackgroundColor": "green",
+					"score": 7
+				},
+				{
+					"title": "Sculptor",
+					"type" : "transform",
+					"logo" : "Copper",
+					"amount": 6,
+					"toAmount": 11,
+					"toLogo": "VP",
+					"toLogoBackgroundColor": "green",
+					"score": 5
+				},
+				{
+					"title": "Jeweler",
+					"type" : "transform",
+					"logo" : "Gold",
+					"amount": 4,
+					"toLogo": "VP",
+					"toLogoBackgroundColor": "green",
+					"toAmount": 9,
+					"score": 6
+				},
+				{
+					"title": "Jeweler",
+					"type" : "transform",
+					"logo" : "Gold",
+					"amount": 4,
+					"toLogo": "VP",
+					"toLogoBackgroundColor": "green",
+					"toAmount": 9,
+					"score": 5
+				},
+				{
+					"title": "Jeweler",
+					"type" : "transform",
+					"logo" : "Gold",
+					"amount": 5,
+					"toLogo": "VP",
+					"toLogoBackgroundColor": "green",
+					"toAmount": 11,
+					"score": 12
+				},
+				{
+					"title": "Shipbuilder",
+					"type" : "transform",
+					"logo" : "Wood",
+					"logo2" : "Iron",
+					"amount": 2,
+					"amount2": 2,
+					"toLogo": "Shipbuilder",
+					"score": 4
+				},
+				{
+					"title": "Shipbuilder",
+					"type" : "transform",
+					"logo" : "Wood",
+					"logo2" : "Iron",
+					"amount": 2,
+					"amount2": 2,
+					"toLogo": "Shipbuilder",
+					"score": 4
+				}				
 			]
 		}
 	]

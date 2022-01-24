@@ -6,6 +6,14 @@ namespace Json
     [Serializable]
     public class Hexagons
     {
+        public HexagonCategory[] categories;
+    }
+
+    [Serializable]
+    public class HexagonCategory
+    {
+        public string name;
+        public int score;
         public Hexagon[] hexagons;
     }
 
@@ -13,11 +21,17 @@ namespace Json
     public class Hexagon
     {
         public string title;
+        public string category;
         public string type;
         public string logo;
-        public string amount;
+        public string logo2;
+        public int amount;
+        public int amount2;
         public string toLogo;
-        public string toAmount;
+        public string toLogoBackgroundColor;
+        public int toAmount;
+        public int score;
+        public string background;
         public HexagonEdge[] edges;
     }
 

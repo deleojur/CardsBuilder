@@ -20,28 +20,30 @@ public class ScreenshotWriter : MonoBehaviour
         }
     }
 
-    private int index = 0;
-    private IEnumerator YieldAndTakeScreenshot()
+    private IEnumerator YieldAndTakeScreenshot(string name)
     {
         yield return new WaitForEndOfFrame(); // it must be a coroutine 
 
         Vector2 temp = rectT.transform.position;
         var startX = temp.x - width / 2;
         var startY = temp.y - height / 2;
-
-        var tex = new Texture2D(width, height, TextureFormat.RGB24, false);
+               
+        var tex = new Texture2D(width, height, TextureFormat.ARGB32, false);
+        
         tex.ReadPixels(new Rect(startX, startY, width, height), 0, 0);
         tex.Apply();
+
+        RenderTexture.active = null;
 
         // Encode texture into PNG
         var bytes = tex.EncodeToPNG();
         Destroy(tex);
 
-        File.WriteAllBytes(($"C:/Users/Jur/OneDrive - HvA/Monarchy/Cards/NewCards/Screenshots/card_{index++}.png"), bytes);
+        File.WriteAllBytes(($"C:/Users/Jur/OneDrive - HvA/Monarchy/Cards/NewCards/Screenshots/{name}.png"), bytes);
     }   
 
-    public void MakeScreenshot()
+    public void MakeScreenshot(string name)
     {        
-        StartCoroutine(YieldAndTakeScreenshot());        
+        StartCoroutine(YieldAndTakeScreenshot(name));        
     }
 }
